@@ -28,8 +28,8 @@
 		{#key data.url}
 			<div
 				class="row-start-1 col-start-1"
-				in:fade={{ delay: 1100, duration: 0 }}
-				out:fade={{ delay: 900, duration: 150 }}
+				in:fade={{ delay: 1200, duration: 300 }}
+				out:fade={{ delay: 0, duration: 600 }}
 			>
 				<slot />
 			</div>
