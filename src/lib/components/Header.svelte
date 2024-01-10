@@ -1,7 +1,10 @@
 <script>
+	// @ts-nocheck
+
 	import Icon from '$lib/icon/index.svelte';
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	let coords = spring(
 		{ x: 32 },
@@ -66,45 +69,44 @@
 	];
 </script>
 
-<nav>
-	<ul
-		id="cards"
-		class=" flex gap-2 p-2 fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
-	>
-		{#each nav as nav, i (i)}
-			<a
-				href="#1"
-				on:click={(e) => coords.set({ x: 32 + i * 56 })}
-				on:click={handleClick}
-				class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-			>
-				<li
-					class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
-				>
-					<Icon name={nav.icon} />
-					<div class="size-12 shine absolute pointer-events-none"></div>
-				</li>
-			</a>
-		{/each}
-
+<ul
+	id="cards"
+	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-3 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+>
+	{#each nav as nav, i (i)}
 		<a
+			aria-current={$page.url.pathname === nav.link ? coords.set({ x: 32 + i * 56 }) : undefined}
+			href={nav.link}
+			on:click={(e) => coords.set({ x: 32 + i * 56 })}
 			on:click={handleClick}
-			href="#1"
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 		>
 			<li
 				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
 			>
-				<Icon name="contact" />
+				<Icon name={nav.icon} />
 				<div class="size-12 shine absolute pointer-events-none"></div>
 			</li>
 		</a>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<svg class="absolute w-full h-full top-0 left-0 z-0">
-			<circle cx={$coords.x} cy="60" r="2" fill="#6B6B70" />
-		</svg>
-	</ul>
-</nav>
+	{/each}
+
+	<a
+		on:click={handleClick}
+		href="#1"
+		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+	>
+		<li
+			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
+		>
+			<Icon name="contact" />
+			<div class="size-12 shine absolute pointer-events-none"></div>
+		</li>
+	</a>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<svg class="fadein absolute w-full h-full top-0 left-0 z-0">
+		<circle cx={$coords.x} cy="60" r="2" fill="#6B6B70" />
+	</svg>
+</ul>
 
 <style>
 	.card li {
