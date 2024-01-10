@@ -46,15 +46,18 @@
 	let nav = [
 		{
 			icon: 'home',
-			name: 'Home'
+			name: 'Home',
+			link: '/'
 		},
 		{
 			icon: 'work',
-			name: 'Work'
+			name: 'Work',
+			link: '/work'
 		},
 		{
 			icon: 'resume',
-			name: 'Resume'
+			name: 'Resume',
+			link: '/resume'
 		}
 		// {
 		// 	icon: 'contact',
