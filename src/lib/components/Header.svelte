@@ -6,10 +6,18 @@
 	let coords = spring(
 		{ x: 32 },
 		{
-			stiffness: 0.05,
-			damping: 0.25
+			stiffness: 0.03,
+			damping: 0.1991
 		}
 	);
+
+	function handleClick(event) {
+		const element = event.currentTarget;
+		element.classList.add('animate-bounce-nav');
+		setTimeout(() => {
+			element.classList.remove('animate-bounce-nav');
+		}, 400); // Thời gian của animation
+	}
 
 	onMount(() => {
 		let isMobile = window.matchMedia('(pointer:coarse)').matches;
@@ -38,33 +46,43 @@
 		{
 			icon: 'resume',
 			name: 'Resume'
-		},
-		{
-			icon: 'contact',
-			name: 'Contact'
 		}
+		// {
+		// 	icon: 'contact',
+		// 	name: 'Contact'
+		// }
 	];
 </script>
 
 <nav>
 	<ul
 		id="cards"
-		class=" flex gap-2 p-2 fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+		class=" flex gap-2 p-2 fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 	>
 		{#each nav as nav, i (i)}
-			<li class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative">
-				<a
-					on:click={(e) => coords.set({ x: 32 + i * 56 })}
+			<a
+				href="#1"
+				on:click={(e) => coords.set({ x: 32 + i * 56 })}
+				on:click={handleClick}
+				class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			>
+				<li
 					class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
-					href="#1"
-					><Icon name={nav.icon} />
-					<div class="size-12 shine absolute pointer-events-none"></div></a
 				>
-			</li>
+					<Icon name={nav.icon} />
+					<div class="size-12 shine absolute pointer-events-none"></div>
+				</li>
+			</a>
 		{/each}
-		<!-- <span id="indicator" class="absolute size-1 left-[22px] bg-slate-300 bottom-0.5 rounded-full"
-		></span> -->
 
+		<a href="#1" class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative">
+			<li
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
+			>
+				<Icon name="contact" />
+				<div class="size-12 shine absolute pointer-events-none"></div>
+			</li>
+		</a>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<svg class="absolute w-full h-full top-0 left-0 z-0">
 			<circle cx={$coords.x} cy="60" r="2" fill="#6B6B70" />
@@ -73,7 +91,7 @@
 </nav>
 
 <style>
-	.card a {
+	.card li {
 		z-index: 2;
 	}
 	.card .shine {
