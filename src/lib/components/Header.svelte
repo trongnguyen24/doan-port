@@ -4,8 +4,8 @@
 
 	onMount(() => {
 		document.getElementById('cards').onmousemove = (e) => {
-			// Kiểm tra xem sự kiện có phát sinh từ chuột không
-			if (e.pointerType === 'mouse' || e.pointerType === '') {
+			// Chỉ cập nhật khi sự kiện không phải do touch tạo ra
+			if (e.pointerType !== 'touch') {
 				for (const card of document.getElementsByClassName('card')) {
 					const rect = card.getBoundingClientRect(),
 						x = e.clientX - rect.left,
