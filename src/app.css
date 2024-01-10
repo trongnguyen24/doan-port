@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .animate-bounce-nav {
-	animation: bounce-nav 0.4s infinite;
+	animation: bounce-nav 0.55s infinite;
 }
 
 @keyframes bounce-nav {

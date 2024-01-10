@@ -16,7 +16,7 @@
 		element.classList.add('animate-bounce-nav');
 		setTimeout(() => {
 			element.classList.remove('animate-bounce-nav');
-		}, 400); // Thời gian của animation
+		}, 550); // Thời gian của animation
 	}
 
 	onMount(() => {
