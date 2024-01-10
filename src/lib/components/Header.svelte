@@ -32,6 +32,15 @@
 				}
 			}
 		};
+		if (isMobile) {
+			coords = spring(
+				{ x: 32 },
+				{
+					stiffness: 0.03,
+					damping: 0.16
+				}
+			);
+		}
 	});
 
 	let nav = [
