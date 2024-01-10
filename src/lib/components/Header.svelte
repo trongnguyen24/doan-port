@@ -75,7 +75,11 @@
 			</a>
 		{/each}
 
-		<a href="#1" class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative">
+		<a
+			on:click={handleClick}
+			href="#1"
+			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+		>
 			<li
 				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
 			>
