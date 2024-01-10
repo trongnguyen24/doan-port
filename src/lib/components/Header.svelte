@@ -1,16 +1,24 @@
 <script>
 	import Icon from '$lib/icon/index.svelte';
+	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
-	onMount(() => {
-		document.getElementById('cards').onmousemove = (e) => {
-			// Chỉ cập nhật khi sự kiện không phải do touch tạo ra
-			if (e.pointerType !== 'touch') {
-				for (const card of document.getElementsByClassName('card')) {
-					const rect = card.getBoundingClientRect(),
-						x = e.clientX - rect.left,
-						y = e.clientY - rect.top;
+	let coords = spring(
+		{ x: 32 },
+		{
+			stiffness: 0.05,
+			damping: 0.25
+		}
+	);
 
+	onMount(() => {
+		let isMobile = window.matchMedia('(pointer:coarse)').matches;
+		document.getElementById('cards').onmousemove = (e) => {
+			for (const card of document.getElementsByClassName('card')) {
+				const rect = card.getBoundingClientRect(),
+					x = e.clientX - rect.left,
+					y = e.clientY - rect.top;
+				if (!isMobile) {
 					card.style.setProperty('--mouse-x', `${x}px`);
 					card.style.setProperty('--mouse-y', `${y}px`);
 				}
@@ -43,9 +51,10 @@
 		id="cards"
 		class=" flex gap-2 p-2 fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 	>
-		{#each nav as nav}
+		{#each nav as nav, i (i)}
 			<li class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative">
 				<a
+					on:click={(e) => coords.set({ x: 32 + i * 56 })}
 					class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
 					href="#1"
 					><Icon name={nav.icon} />
@@ -53,6 +62,13 @@
 				>
 			</li>
 		{/each}
+		<!-- <span id="indicator" class="absolute size-1 left-[22px] bg-slate-300 bottom-0.5 rounded-full"
+		></span> -->
+
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<svg class="absolute w-full h-full top-0 left-0 z-0">
+			<circle cx={$coords.x} cy="60" r="2" fill="#6B6B70" />
+		</svg>
 	</ul>
 </nav>
 
