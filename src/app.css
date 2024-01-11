@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	html {
+		font-family: 'Inter', sans-serif;
+	}
+}
+
 html.lenis {
 	height: auto;
 }
