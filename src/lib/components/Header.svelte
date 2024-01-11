@@ -80,6 +80,7 @@
 			on:click={(e) => coords.set({ x: 32 + i * 56 })}
 			on:click={handleClick}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			data-sveltekit-noscroll
 		>
 			<li
 				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
