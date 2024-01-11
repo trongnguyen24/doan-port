@@ -73,12 +73,13 @@
 			</span>
 			based in England
 		</h1>
-		<button class="btn-action relative overflow-hidden w-40 h-10 rounded-full mx-auto bg-violet-600"
+		<button class="btn-action relative overflow-hidden w-12 h-12 rounded-full mx-auto bg-violet-600"
 			><div
-				class="rounded-full bg-white text-violet-600 inset-0.5 absolute flex justify-center items-center"
+				class="rounded-full z-[2] bg-white text-violet-600 inset-0.5 absolute flex justify-center items-center"
 			>
-				Projects
+				>
 			</div>
+			<div class="line-rotate w-12 h-12 absolute z-[1]"></div>
 		</button>
 	</div>
 </div>
@@ -130,6 +131,17 @@
 			transform: rotate(180deg);
 		}
 	}
+
+	@keyframes line-rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
 	@keyframes anim__hello {
 		0% {
 			stroke-dashoffset: 5800;
@@ -185,5 +197,18 @@
 	.btn-action {
 		opacity: 0;
 		animation: 0.5s fadeIn 4.9s ease-in forwards;
+	}
+	.line-rotate {
+		animation: line-rotate 3s linear infinite;
+		left: 0px;
+		top: 0px;
+		background: conic-gradient(
+			from -90deg at 50% 50%,
+			#ede9ff 0deg,
+			#5d35fe 20deg,
+			#5d35fe 154.80000257492065deg,
+			#7ceffd 280deg,
+			#d3c8ff 360deg
+		);
 	}
 </style>
