@@ -1,4 +1,5 @@
 <script>
+	import Button from '$lib/components/Button.svelte';
 </script>
 
 <svelte:head>
@@ -7,10 +8,8 @@
 </svelte:head>
 
 <section>
-	<h1 class="text-2xl">Work</h1>
-	<p class=" py-80">This is the home page</p>
-	<p class=" py-80">This is the home page</p>
-	<p class=" py-80">This is the home page</p>
-	<p class=" py-80">This is the home page</p>
+	<div class="flex h-lvh justify-center items-center">
+		<Button>Click me</Button>
+	</div>
 	<p class=" py-80">This is the home page</p>
 </section>
