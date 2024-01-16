@@ -32,7 +32,7 @@
 <div class="flex h-svh pb-12 container w-full flex-col justify-center md:gap-6 items-center gap-24">
 	<div class="flex gap-6 flex-col">
 		<div class="grid grid-cols-[1fr] max-w-md w-full mx-auto">
-			{#each Array(24) as _, i}
+			{#each Array(20) as _, i}
 				<svg
 					class="hello__svg row-start-1 col-start-1 stroke-violet-400"
 					style="animation-delay:{1.1 + i * 0.007}s"
