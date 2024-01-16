@@ -17,7 +17,7 @@
 </script>
 
 <Header />
-{#key data.url}
+{#key data.pathname}
 	{#if firstload > 1}
 		<PageTransition />
 	{/if}
@@ -25,7 +25,7 @@
 
 <div class="app">
 	<main class="grid grid-cols-[1fr]">
-		{#key data.url}
+		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1"
 				in:fade={{ delay: 1000, duration: 600 }}
