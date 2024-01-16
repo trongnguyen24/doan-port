@@ -72,7 +72,7 @@
 				</span>
 				<span class="magic-text font-medium">amazing designer</span>
 			</span>
-			based in England
+			based in Sai Gon
 		</h1>
 	</div>
 	<div class="textfadein text-center"><Button text="MY PORTFOLIO" link="/work" /></div>
