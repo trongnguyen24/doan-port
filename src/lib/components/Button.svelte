@@ -5,7 +5,7 @@
 
 <a href={link}>
 	<button
-		class="shim_button font-medium bg-violet-400 hover:shadow-xl hover:shadow-violet-200 transition-all duration-500 text-xl relative group overflow-hidden rounded-full"
+		class="shim_button font-medium bg-violet-400 hover:shadow-xl hover:shadow-violet-200 transition-all duration-500 text-lg md:text-xl relative group overflow-hidden rounded-full"
 	>
 		<div class="spark_content absolute w-full top-0 left-0 h-full">
 			<div class="spark absolute w-[200%] aspect-square rounded-full"></div>
@@ -19,7 +19,7 @@
 		</div>
 		<div class="text relative">
 			<div
-				class="px-12 py-3 text-violet-400 group-hover:translate-y-12 transition-all duration-500 scale-100 group-hover:scale-75 w-full h-full text-center"
+				class="px-8 py-2 sm:px-12 sm:py-3 text-violet-400 group-hover:translate-y-12 transition-all duration-500 scale-100 group-hover:scale-75 w-full h-full text-center"
 			>
 				{text}
 			</div>

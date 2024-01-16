@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--title-1: clamp(1.5rem, 1.2672rem + 1.0345vw, 2.25rem);
+}
+
 @layer base {
 	html {
 		font-family: 'Inter', sans-serif;
 	}
+}
+
+.title-1 {
+	font-size: var(--title-1);
 }
 
 html.lenis {

@@ -13,11 +13,7 @@
 
 <Gsapsetup />
 <PageGsapRefresh />
-<section>
-	<div class="container mx-auto h-lvh flex items-center justify-center">
-		<Hello />
-	</div>
-</section>
+<Hello />
 
 <style>
 </style>
