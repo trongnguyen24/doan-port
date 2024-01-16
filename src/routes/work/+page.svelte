@@ -9,7 +9,7 @@
 
 <section>
 	<div class="flex h-lvh justify-center items-center">
-		<Button text="See My"></Button>
+		<Button text="Button"></Button>
 	</div>
 	<p class=" py-80">This is the home page</p>
 </section>
