@@ -54,8 +54,8 @@
 		},
 		{
 			icon: 'work',
-			name: 'Work',
-			link: '/work'
+			name: 'Portfolio',
+			link: '/portfolio'
 		},
 		{
 			icon: 'resume',
@@ -71,7 +71,7 @@
 
 <ul
 	id="cards"
-	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-80 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
 	{#each nav as nav, i (i)}
 		<a

@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 
@@ -29,7 +31,7 @@
 	});
 </script>
 
-<div class="flex h-svh pb-12 container w-full flex-col justify-center md:gap-6 items-center gap-24">
+<div class="flex h-svh pb-16 container w-full flex-col justify-center md:gap-6 items-center gap-8">
 	<div class="flex gap-6 flex-col">
 		<div class="grid grid-cols-[1fr] max-w-md w-full mx-auto">
 			{#each Array(10) as _, i}
@@ -57,44 +59,44 @@
 				</svg>
 			{/each}
 		</div>
-		<h1 class="textfadein text-center font-light title-1 text-gray-500 text-balance">
-			I'm <span class=" font-medium text-gray-700">Doan</span> an
-			<span class="magic">
-				<span class="magic-star">
-					<svg viewBox="0 0 512 512">
-						<path
-							d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
-						/>
-					</svg>
+		<div class="max-w-lg mx-auto">
+			<h1 class="textfadein font-medium text-center title-1 text-gray-700 text-balance">
+				I'm Doan, a
+				<span class="magic">
+					<span class="magic-star">
+						<svg viewBox="0 0 512 512">
+							<path
+								d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+							/>
+						</svg>
+					</span>
+					<span class="magic-star">
+						<svg viewBox="0 0 512 512">
+							<path
+								d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+							/>
+						</svg>
+					</span>
+					<span class="magic-star">
+						<svg viewBox="0 0 512 512">
+							<path
+								d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+							/>
+						</svg>
+					</span>
+					<span class="magic-text">graphic designer</span>
 				</span>
-				<span class="magic-star">
-					<svg viewBox="0 0 512 512">
-						<path
-							d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
-						/>
-					</svg>
-				</span>
-				<span class="magic-star">
-					<svg viewBox="0 0 512 512">
-						<path
-							d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
-						/>
-					</svg>
-				</span>
-				<span class="magic-text font-medium">amazing designer</span>
-			</span>
-			based in Sai Gon
-		</h1>
+			</h1>
+			<h2 class="textfadein text-center font-light title-2 text-gray-500 text-balance">
+				who believes that creativity should always be fun even though you have to mix it with
+				caffein every morning (and night).
+			</h2>
+		</div>
 	</div>
 	<div class="textfadein text-center"><Button text="MY PORTFOLIO" link="/work" /></div>
 </div>
 
 <style>
-	:root {
-		--purple: #a855f7;
-		--violet: #8b5cf6;
-		--pink: #f9a8d4;
-	}
 	.hello__svg {
 		fill: none;
 		stroke-linecap: round;
@@ -165,6 +167,9 @@
 	h1 > .magic {
 		display: inline-block;
 		position: relative;
+		--purple: #a855f7;
+		--violet: #8b5cf6;
+		--pink: #f9a8d4;
 	}
 
 	h1 > .magic > .magic-star {

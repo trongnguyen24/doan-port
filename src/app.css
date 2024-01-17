@@ -4,16 +4,25 @@
 
 :root {
 	--title-1: clamp(1.5rem, 1.2672rem + 1.0345vw, 2.25rem);
+	--title-2: clamp(0.875rem, 0.7974rem + 0.3448vw, 1.125rem);
+	--title-3: clamp(1.5rem, 1.0345rem + 2.069vw, 3rem);
 }
 
 @layer base {
 	html {
-		font-family: 'Inter', sans-serif;
+		font-family: 'Quicksand', sans-serif;
 	}
 }
 
 .title-1 {
 	font-size: var(--title-1);
+}
+
+.title-2 {
+	font-size: var(--title-2);
+}
+.title-3 {
+	font-size: var(--title-3);
 }
 
 html.lenis {
@@ -95,4 +104,33 @@ html {
 	to {
 		opacity: 1;
 	}
+}
+
+div[scroll='reveal'] .reveal-img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+	scale: 0.9;
+	transition:
+		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+	will-change: -webkit-clip-path, clip-path, opacity, scale;
+}
+
+div.reveal .reveal-img {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	opacity: 1;
+	scale: 1;
+}
+
+div[scroll='reveal'] .reveal-text {
+	opacity: 0;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 1.2s;
+	will-change: opacity;
+}
+
+div.reveal .reveal-text {
+	opacity: 1;
 }
