@@ -1,6 +1,6 @@
 <div class="fadein absolute -z-10 inset-0 overflow-hidden">
-	<div class="jumbo absolute -inset-6 opacity-40"></div>
-	<div class="noiseee inset-0 absolute opacity-20"></div>
+	<div class="jumbo absolute -inset-6 opacity-50"></div>
+	<div class="noiseee inset-0 absolute opacity-70"></div>
 </div>
 
 <style>
@@ -25,17 +25,17 @@
 		}
 		50% {
 			background-position:
-				150% -50%,
-				150% 650%;
+				-150% -50%,
+				-150% 650%;
 		}
 		100% {
 			background-position:
-				350% 250%,
-				350% 350%;
+				-350% 250%,
+				-350% 350%;
 		}
 	}
 	.noiseee {
-		background-image: url('glitter.png');
+		background-image: url('nnnoise.svg');
 		animation: noiseee 30s steps(50) infinite;
 	}
 	.jumbo {

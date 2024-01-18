@@ -59,7 +59,7 @@
 				</svg>
 			{/each}
 		</div>
-		<div class="max-w-lg mx-auto">
+		<div class="max-w-xl mx-auto">
 			<h1 class="textfadein font-medium text-center title-1 text-gray-700 text-balance">
 				I'm Doan, a
 				<span class="magic">
@@ -87,7 +87,7 @@
 					<span class="magic-text">graphic designer</span>
 				</span>
 			</h1>
-			<h2 class="textfadein text-center font-light title-2 text-gray-500 text-balance">
+			<h2 class="textfadein text-center title-2 text-gray-500 text-balance">
 				who believes that creativity should always be fun even though you have to mix it with
 				caffein every morning (and night).
 			</h2>
