@@ -93,7 +93,7 @@
 			</h2>
 		</div>
 	</div>
-	<div class="textfadein text-center"><Button text="MY PORTFOLIO" link="/work" /></div>
+	<div class="textfadein text-center"><Button text="MY PORTFOLIO" link="/portfolio" /></div>
 </div>
 
 <style>

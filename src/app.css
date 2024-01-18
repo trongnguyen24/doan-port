@@ -46,8 +46,8 @@ html.lenis {
 }
 
 ::-webkit-scrollbar {
-	width: 4px;
-	height: 4px;
+	width: 8px;
+	height: 8px;
 	border-radius: 4px;
 }
 
