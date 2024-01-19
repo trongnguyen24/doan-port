@@ -12,8 +12,8 @@
 		}
 		to {
 			background-position:
-				1350% 50%,
-				1350% 50%;
+				1550% 50%,
+				1550% 50%;
 		}
 	}
 
@@ -68,7 +68,7 @@
 			#60a5fa 30%
 		);
 		background-image: var(--stripes), var(--rainbow);
-		background-size: 300%, 200%;
+		background-size: 200%, 150%;
 		background-position:
 			50% 50%,
 			50% 50%;
@@ -89,7 +89,7 @@
 		position: absolute;
 		inset: 0;
 		background-image: var(--stripes), var(--rainbow);
-		background-size: 200%, 200%;
+		background-size: 180%, 180%;
 		animation: jumbo 300s linear infinite;
 		background-attachment: fixed;
 		mix-blend-mode: difference;
