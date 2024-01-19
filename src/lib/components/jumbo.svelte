@@ -12,8 +12,8 @@
 		}
 		to {
 			background-position:
-				1850% 50%,
-				1850% 50%;
+				1350% 50%,
+				1350% 50%;
 		}
 	}
 
@@ -35,8 +35,12 @@
 		}
 	}
 	.noiseee {
-		background-image: url('nnnoise.svg');
+		background-image: url('/nnnoise.svg');
 		animation: noiseee 30s steps(50) infinite;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
 	}
 	.jumbo {
 		--stripes: repeating-linear-gradient(
@@ -69,11 +73,15 @@
 			50% 50%,
 			50% 50%;
 
-		filter: blur(20px) invert(100%);
+		filter: blur(10px) invert(100%);
 
 		mask-image: radial-gradient(ellipse at 60% 0%, black 20%, transparent 50%);
 
 		pointer-events: none;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
 	}
 
 	.jumbo::after {
@@ -85,5 +93,9 @@
 		animation: jumbo 300s linear infinite;
 		background-attachment: fixed;
 		mix-blend-mode: difference;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
 	}
 </style>
