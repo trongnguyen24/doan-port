@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 :root {
-	--title-1: clamp(1.5rem, 1.2672rem + 1.0345vw, 2.25rem);
-	--title-2: clamp(0.875rem, 0.7974rem + 0.3448vw, 1.125rem);
-	--title-3: clamp(1.5rem, 1.0345rem + 2.069vw, 3rem);
+	/* Step 0: 16.00px → 22.00px */
+	--step-0: clamp(1rem, 0.8791rem + 0.4959vw, 1.375rem);
+
+	/* Step 1: 24.00px → 30.80px */
+	--step-1: clamp(1.5rem, 1.363rem + 0.562vw, 1.925rem);
+
+	/* Step 2: 36.00px → 43.12px */
+	--step-2: clamp(2.25rem, 2.1066rem + 0.5884vw, 2.695rem);
 }
 
 @layer base {
@@ -15,14 +20,14 @@
 }
 
 .title-1 {
-	font-size: var(--title-1);
+	font-size: var(--step-2);
 }
 
 .title-2 {
-	font-size: var(--title-2);
+	font-size: var(--step-1);
 }
 .title-3 {
-	font-size: var(--title-3);
+	font-size: var(--step-0);
 }
 
 html.lenis {

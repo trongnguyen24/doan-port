@@ -33,7 +33,7 @@
 
 <div class="flex h-svh pb-16 container w-full flex-col justify-center md:gap-6 items-center gap-8">
 	<div class="flex gap-6 flex-col">
-		<div class="grid grid-cols-[1fr] max-w-md w-full mx-auto">
+		<div class="grid grid-cols-[1fr] max-w-lg w-full mx-auto">
 			{#each Array(10) as _, i}
 				<svg class="hello__svg row-start-1 col-start-1 stroke-violet-400" viewBox="0 0 482 167">
 					<path
@@ -59,8 +59,10 @@
 				</svg>
 			{/each}
 		</div>
-		<div class="max-w-xl mx-auto">
-			<h1 class="textfadein font-medium text-center title-1 text-gray-700 text-balance">
+		<div class="max-w-2xl flex flex-col gap-4 mx-auto">
+			<h1
+				class="textfadein font-medium text-center title-1 leading-tight text-gray-700 text-balance"
+			>
 				I'm Doan, a
 				<span class="magic">
 					<span class="magic-star">
@@ -87,7 +89,7 @@
 					<span class="magic-text">graphic designer</span>
 				</span>
 			</h1>
-			<h2 class="textfadein text-center title-2 text-gray-500 text-balance">
+			<h2 class="textfadein text-center title-3 text-gray-500 text-balance">
 				who believes that creativity should always be fun even though you have to mix it with
 				caffein every morning (and night).
 			</h2>
