@@ -9,4 +9,4 @@ published: true
 
 Media inside the **static** folder is served from `/`.
 
-![Svelte](favicon.png)
+![Svelte](/portfolio/first-post/mt-01.webp)
