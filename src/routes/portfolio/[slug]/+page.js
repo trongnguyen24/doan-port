@@ -4,7 +4,7 @@ export const prerender = true;
 import { error } from '@sveltejs/kit';
 export async function load(url) {
 	try {
-		const post = await import(`../../../posts/${url.params.slug}.md`);
+		const post = await import(`../../../posts/${url.params.slug}.svelte`);
 		return {
 			content: post.default,
 			meta: post.metadata
