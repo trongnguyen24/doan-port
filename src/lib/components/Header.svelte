@@ -96,7 +96,7 @@
 		on:click={handleClick}
 		href="#1"
 		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-		aria-label={nav.name}
+		aria-label="Contact"
 	>
 		<div
 			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
