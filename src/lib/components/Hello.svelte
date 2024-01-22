@@ -31,7 +31,9 @@
 	});
 </script>
 
-<div class="flex h-svh pb-16 container w-full flex-col justify-center md:gap-6 items-center gap-8">
+<div
+	class="flex transform-gpu h-svh pb-16 container w-full flex-col justify-center md:gap-6 items-center gap-8"
+>
 	<div class="flex gap-6 flex-col">
 		<div class="grid grid-cols-[1fr] max-w-lg w-full mx-auto">
 			{#each Array(10) as _, i}
