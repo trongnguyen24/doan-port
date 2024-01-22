@@ -23,6 +23,6 @@
 	$: start = starts[position];
 </script>
 
-<div class="{span} {start} bg-green-500">
+<div class="{span} {start} ">
 	<slot />
 </div>
