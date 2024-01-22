@@ -1,7 +1,7 @@
 <script context="module">
 	export const metadata = {
 		title: 'Retro Café Revival',
-		description: 'Reviving a classic café with a blend of retro and modern styles.',
+		description: 'Blend of retro and modern café style.',
 		date: '2023-10-12',
 		image: 'retro',
 		published: true

@@ -10,20 +10,8 @@
 
 <Gsapsetup />
 <PageGsapRefresh />
-<hgroup class="fadein max-w-screen-xl container py-28"></hgroup>
 
-<Blocks>
-	<Block size="3" position="1">aaaaaa</Block>
-	<Block size="3" position="2">aaaaaa</Block>
-	<Block size="1" position="2">aaaaaa</Block>
-	<Block>aaaaaa</Block>
-	<Block>aaaaaa</Block>
-	<Block size="1">aaaaaa</Block>
-</Blocks>
-
-<div class="prose">
-	<svelte:component this={data.content} />
-</div>
+<svelte:component this={data.content} />
 
 <style>
 </style>

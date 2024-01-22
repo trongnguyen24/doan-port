@@ -1,7 +1,7 @@
 <script context="module">
 	export const metadata = {
 		title: 'Eco-friendly Workspace',
-		description: 'An office space design prioritizing sustainability and eco-friendly materials.',
+		description: 'Sustainable office design.',
 		date: '2023-09-05',
 		image: 'eco',
 		published: true

@@ -1,7 +1,7 @@
 <script context="module">
 	export const metadata = {
 		title: 'Minimalist Home',
-		description: 'A minimalist interior design project focusing on simplicity and elegance.',
+		description: 'Simple, elegant interior design.',
 		date: '2023-07-20',
 		image: 'minimalist',
 		published: true

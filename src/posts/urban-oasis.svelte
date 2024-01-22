@@ -3,7 +3,7 @@
 
 	export const metadata = {
 		title: 'Urban Oasis',
-		description: 'A modern urban garden design blending natural elements with city living.',
+		description: 'Modern urban garden in a city setting.',
 		date: '2023-05-15',
 		image: 'urban',
 		published: true

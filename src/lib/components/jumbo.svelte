@@ -1,6 +1,6 @@
-<div class="fadein absolute -z-10 inset-0 overflow-hidden">
-	<div class="jumbo absolute -inset-6 opacity-50"></div>
-	<div class="noiseee inset-0 absolute opacity-70"></div>
+<div class="fadein transform-gpu absolute -z-10 inset-0 overflow-hidden">
+	<div class="jumbo transform-gpu absolute -inset-6 opacity-50"></div>
+	<div class="noiseee transform-gpu inset-0 absolute opacity-70"></div>
 </div>
 
 <style>
@@ -37,10 +37,6 @@
 	.noiseee {
 		background-image: url('/nnnoise.svg');
 		animation: noiseee 30s steps(50) infinite;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
 	}
 	.jumbo {
 		--stripes: repeating-linear-gradient(
@@ -78,10 +74,6 @@
 		mask-image: radial-gradient(ellipse at 60% 0%, black 20%, transparent 50%);
 
 		pointer-events: none;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
 	}
 
 	.jumbo::after {
@@ -93,9 +85,5 @@
 		animation: jumbo 300s linear infinite;
 		background-attachment: fixed;
 		mix-blend-mode: difference;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
 	}
 </style>
