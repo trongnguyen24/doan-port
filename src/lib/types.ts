@@ -13,6 +13,7 @@ export type Post = {
 	title: string;
 	slug: string;
 	description: string;
+	image: string;
 	date: string;
 	published: boolean;
 };

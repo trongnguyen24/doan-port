@@ -6,15 +6,29 @@
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import ferrumpipe from '$lib/images/ferrumpipe.png?enhanced';
+	import eco from '../../posts/eco.png?enhanced';
+	import futuristic from '../../posts/futuristic.png?enhanced';
+	import minimalist from '../../posts/minimalist.png?enhanced';
+	import retro from '../../posts/retro.png?enhanced';
+	import urban from '../../posts/urban.png?enhanced';
 
-	// const pictures = import.meta.glob('$lib/images/*.{jpg,png}', {
-	// 	query: {
-	// 		enhanced: true
-	// 	}
-	// });
+	const modules = {
+		eco: eco,
+		futuristic: futuristic,
+		minimalist: minimalist,
+		retro: retro,
+		urban: urban
+	};
 
 	export let data;
+
+	// Duyệt qua mỗi đối tượng trong data.post
+	data.posts.forEach((post) => {
+		// Kiểm tra xem có module tương ứng với slug không
+		if (modules[post.image]) {
+			post.image2 = modules[post.image];
+		}
+	});
 
 	onMount(() => {
 		document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
@@ -49,16 +63,9 @@
 			<div scroll="reveal" class="md:even:translate-y-24 md:odd:-translate-y-16">
 				<a href="/portfolio/{item.slug}">
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
-						<picture>
-							<source srcset="portfolio/{item.slug}.webp" type="image/webp" />
-							<img
-								class="hover:scale-[1.03] transition-all duration-700"
-								src="portfolio/{item.slug}.png"
-								width="800"
-								height="800"
-								alt={item.title}
-							/>
-						</picture>
+						<div class="tranform hover:scale-[1.03] transition duration-700">
+							<enhanced:img src={item.image2} alt={item.title} />
+						</div>
 					</div>
 					<div class="reveal-text pt-6">
 						<h2 class="title-2 text-slate-900">{item.title}</h2>
