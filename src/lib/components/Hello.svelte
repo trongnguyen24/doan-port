@@ -104,6 +104,7 @@
 	.hello__svg {
 		fill: none;
 		stroke-linecap: round;
+		stroke-linejoin: round;
 		stroke-miterlimit: 10;
 	}
 	.path-1 {
