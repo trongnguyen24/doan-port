@@ -11,7 +11,7 @@
 <script>
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import Blocks from '$lib/mdstyle/Blocks.svelte';
+	import Section from '$lib/mdstyle/Section.svelte';
 	import Block from '$lib/mdstyle/Block.svelte';
 	import Title from '$lib/mdstyle/Title.svelte';
 	import Text from '$lib/mdstyle/Text.svelte';
@@ -25,7 +25,7 @@
 	{metadata.title}
 </Title>
 
-<Blocks>
+<Section>
 	<Block>
 		<Image>
 			<enhanced:img
@@ -34,19 +34,19 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="2" position="2">
+<Section>
+	<Block size="2" position="2" mobile="4">
 		<Text
 			>Tendril was invited to create a launch film and flexible visual system to highlight and
 			envision Microsoft’s new Windows 365 Cloud PC platform and its possibilities.
 		</Text>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="3" position="2">
+<Section>
+	<Block size="3" position="2" mobile="4">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/2.jpg?format=webp&quality=90&w=980;1440"
@@ -55,10 +55,10 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="2">
+<Section>
+	<Block size="2" mobile="31">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/3-a.jpg?format=webp&quality=90&w=980;1440"
@@ -67,7 +67,7 @@
 			/>
 		</Image>
 	</Block>
-	<Block size="2">
+	<Block size="2" mobile="32">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/3b.jpg?format=webp&quality=90&w=980;1440"
@@ -76,10 +76,10 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="2">
+<Section>
+	<Block size="2" mobile="4">
 		<Text
 			>The film takes us on a journey of discovering this new platform, the features and
 			possibilities of the Cloud and the familiar Windows experience available at the user’s
@@ -88,9 +88,9 @@
 			power were all characteristics that needed to be expressed through our designs.
 		</Text>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
+<Section>
 	<Block>
 		<Image>
 			<enhanced:img
@@ -100,10 +100,10 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="3">
+<Section>
+	<Block size="3" mobile="4">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/5.jpg?format=webp&quality=90&w=980;1440"
@@ -112,10 +112,10 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="3" position="2">
+<Section>
+	<Block size="3" position="2" mobile="4">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/6.jpg?format=webp&quality=90&w=980;1440"
@@ -124,10 +124,10 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="2" position="3">
+<Section>
+	<Block size="2" position="3" mobile="4">
 		<Text
 			>We sought to make a clear, informative film that expressed these new features while
 			maintaining an abstract, beautiful world. We wanted to avoid obvious visual metaphors but
@@ -136,10 +136,10 @@
 			and not too abstract.
 		</Text>
 	</Block>
-</Blocks>
+</Section>
 
-<Blocks>
-	<Block size="2">
+<Section>
+	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/7.jpg?format=webp&quality=90&w=980;1440"
@@ -148,7 +148,7 @@
 			/>
 		</Image>
 	</Block>
-	<Block size="1">
+	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
 				src="$lib/images/01/8-a.jpg?format=webp&quality=90&w=980;1440"
@@ -157,4 +157,4 @@
 			/>
 		</Image>
 	</Block>
-</Blocks>
+</Section>

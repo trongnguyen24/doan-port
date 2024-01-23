@@ -6,11 +6,11 @@
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import eco from '../../posts/eco.png?enhanced';
-	import futuristic from '../../posts/futuristic.png?enhanced';
-	import minimalist from '../../posts/minimalist.png?enhanced';
-	import retro from '../../posts/retro.png?enhanced';
-	import urban from '../../posts/urban.png?enhanced';
+	import eco from '../../posts/eco.png?enhanced&format=webp&quality=70&w=560;1024';
+	import futuristic from '../../posts/futuristic.png?enhanced&format=webp&quality=70&w=560;1024';
+	import minimalist from '../../posts/minimalist.png?enhanced&format=webp&quality=70&w=560;1024';
+	import retro from '../../posts/retro.png?enhanced&format=webp&quality=70&w=560;1024';
+	import urban from '../../posts/urban.png?enhanced&format=webp&quality=70&w=560;1024';
 
 	const modules = {
 		eco: eco,
@@ -38,7 +38,7 @@
 				{
 					scrollTrigger: {
 						trigger: element,
-						start: 'top 80% - 150px', // when the top of the trigger hits the top of the viewport
+						start: 'top 95% - 150px', // when the top of the trigger hits the top of the viewport
 						onEnter: () => element.classList.add('reveal'),
 						markers: false
 					}
@@ -64,7 +64,7 @@
 				<a href="/portfolio/futuristic-exhibition-space">
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<enhanced:img src={item.image2} alt={item.title} />
+							<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
 						</div>
 					</div>
 					<div class="reveal-text pt-6">

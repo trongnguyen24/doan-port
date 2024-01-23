@@ -11,7 +11,7 @@
 <script>
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import Blocks from '$lib/mdstyle/Blocks.svelte';
+	import Section from '$lib/mdstyle/Section.svelte';
 	import Block from '$lib/mdstyle/Block.svelte';
 	import Title from '$lib/mdstyle/Title.svelte';
 	import Text from '$lib/mdstyle/Text.svelte';
