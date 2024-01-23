@@ -49,8 +49,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Portfolio</title>
+	<meta name="Portfolio" content="Portfolio" />
 </svelte:head>
 <Gsapsetup />
 <PageGsapRefresh />

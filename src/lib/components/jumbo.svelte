@@ -1,7 +1,7 @@
 <div class="fadein absolute -z-10 inset-0 overflow-hidden">
 	<div class="jumbo inset-0 -z-[3] absolute opacity-50"></div>
 	<!-- <div class="absolute inset-0 -z-[6] backdrop-blur-sm"></div> -->
-	<div class="noiseee inset-0 absolute opacity-70"></div>
+	<div class="noiseee hidden md:block inset-0 absolute opacity-70"></div>
 </div>
 
 <style>
