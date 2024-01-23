@@ -1,6 +1,6 @@
-<div class="fadein transform-gpu absolute -z-10 inset-0 overflow-hidden">
+<div class="fadein absolute -z-10 inset-0 overflow-hidden">
 	<div class="jumbo inset-0 -z-[3] absolute opacity-50"></div>
-	<div class="absolute inset-0 -z-[6] backdrop-blur-sm"></div>
+	<!-- <div class="absolute inset-0 -z-[6] backdrop-blur-sm"></div> -->
 	<div class="noiseee inset-0 absolute opacity-70"></div>
 </div>
 
@@ -8,8 +8,8 @@
 	@keyframes jumbo {
 		from {
 			background-position:
-				0% 50%,
-				0% 50%;
+				50% 50%,
+				50% 50%;
 		}
 		to {
 			background-position:
@@ -41,7 +41,7 @@
 	}
 	.jumbo {
 		--stripes: repeating-linear-gradient(
-			100deg,
+			90deg,
 			#fff 0%,
 			#fff 7%,
 			transparent 10%,
@@ -49,7 +49,7 @@
 			#fff 16%
 		);
 		--stripesDark: repeating-linear-gradient(
-			100deg,
+			90deg,
 			#000 0%,
 			#000 7%,
 			transparent 10%,
@@ -57,7 +57,7 @@
 			#000 16%
 		);
 		--rainbow: repeating-linear-gradient(
-			100deg,
+			90deg,
 			#60a5fa 10%,
 			#e879f9 15%,
 			#60a5fa 20%,
@@ -83,9 +83,18 @@
 		inset: 0;
 		z-index: -5;
 		background-image: var(--stripes), var(--rainbow);
-		background-size: 180%, 180%;
+		background-size: 180%, 160%;
 		animation: jumbo 300s linear infinite;
 		background-attachment: fixed;
 		mix-blend-mode: difference;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.jumbo {
+			background-size: 400%, 300%;
+		}
+		.jumbo::after {
+			background-size: 380%, 320%;
+		}
 	}
 </style>
