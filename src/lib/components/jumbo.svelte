@@ -1,14 +1,15 @@
 <div class="fadein transform-gpu absolute -z-10 inset-0 overflow-hidden">
-	<div class="jumbo transform-gpu absolute -inset-6 opacity-50"></div>
-	<div class="noiseee transform-gpu inset-0 absolute opacity-70"></div>
+	<div class="jumbo inset-0 -z-[3] absolute opacity-50"></div>
+	<div class="absolute inset-0 -z-[6] backdrop-blur-sm"></div>
+	<div class="noiseee inset-0 absolute opacity-70"></div>
 </div>
 
 <style>
 	@keyframes jumbo {
 		from {
 			background-position:
-				50% 50%,
-				50% 50%;
+				0% 50%,
+				0% 50%;
 		}
 		to {
 			background-position:
@@ -69,7 +70,7 @@
 			50% 50%,
 			50% 50%;
 
-		filter: blur(10px) invert(100%);
+		filter: invert(100%);
 
 		mask-image: radial-gradient(ellipse at 60% 0%, black 20%, transparent 50%);
 
@@ -80,6 +81,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
+		z-index: -5;
 		background-image: var(--stripes), var(--rainbow);
 		background-size: 180%, 180%;
 		animation: jumbo 300s linear infinite;

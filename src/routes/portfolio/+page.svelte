@@ -61,7 +61,7 @@
 	<div class="md:pt-32 pt-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-y-32">
 		{#each data.posts as item}
 			<div scroll="reveal" class="md:even:translate-y-24 md:odd:-translate-y-16">
-				<a href="/portfolio/{item.slug}">
+				<a href="/portfolio/futuristic-exhibition-space">
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
 							<enhanced:img src={item.image2} alt={item.title} />
