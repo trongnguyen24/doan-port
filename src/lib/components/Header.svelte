@@ -75,7 +75,9 @@
 >
 	{#each nav as nav, i (i)}
 		<a
-			aria-current={$page.url.pathname === nav.link ? coords.set({ x: 32 + i * 56 }) : undefined}
+			aria-current={$page.url.pathname === nav.link
+				? (coords.set({ x: 32 + i * 56 }), 'true')
+				: 'false'}
 			href={nav.link}
 			on:click={(e) => coords.set({ x: 32 + i * 56 })}
 			on:click={handleClick}

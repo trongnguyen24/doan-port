@@ -38,7 +38,7 @@
 				{
 					scrollTrigger: {
 						trigger: element,
-						start: 'top 95% - 150px', // when the top of the trigger hits the top of the viewport
+						start: 'top 100% - 120px', // when the top of the trigger hits the top of the viewport
 						onEnter: () => element.classList.add('reveal'),
 						markers: false
 					}

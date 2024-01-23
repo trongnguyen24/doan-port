@@ -7,7 +7,6 @@
 	import '$lib/style/app.css';
 	export let data;
 
-	let pathname: string = '';
 	let firstload: number = 0;
 
 	onMount(() => {});
