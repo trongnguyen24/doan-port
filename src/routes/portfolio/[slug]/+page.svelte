@@ -6,20 +6,23 @@
 	export let data: any;
 
 	onMount(() => {
-		document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
-			gsap.fromTo(
-				element,
-				{},
-				{
-					scrollTrigger: {
-						trigger: element,
-						start: 'top 95% - 150px', // when the top of the trigger hits the top of the viewport
-						onEnter: () => element.classList.add('reveal'),
-						markers: false
+		// reveal on scroll
+		setTimeout(() => {
+			document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
+				let page = gsap.fromTo(
+					element,
+					{},
+					{
+						scrollTrigger: {
+							trigger: element,
+							start: 'top 90%-=190px', // when the top of the trigger hits the top of the viewport
+							onEnter: () => element.classList.add('reveal'),
+							markers: false
+						}
 					}
-				}
-			);
-		});
+				);
+			});
+		}, 1000);
 	});
 </script>
 

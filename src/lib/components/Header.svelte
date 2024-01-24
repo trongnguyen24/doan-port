@@ -49,17 +49,17 @@
 	let nav = [
 		{
 			icon: 'home',
-			name: 'Home',
+			name: '/',
 			link: '/'
 		},
 		{
 			icon: 'work',
-			name: 'Portfolio',
+			name: '/portfolio',
 			link: '/portfolio'
 		},
 		{
 			icon: 'resume',
-			name: 'Resume',
+			name: '/resume',
 			link: '/resume'
 		}
 		// {
@@ -67,32 +67,72 @@
 		// 	name: 'Contact'
 		// }
 	];
+
+	// $: firstParam = getFirstParam();
+	// function getFirstParam() {
+	// 	const pathArray = $page.url.pathname.split('/');
+	// 	return pathArray.length > 1 ? pathArray[1] : pathArray[0];
+	// }
 </script>
 
 <div
 	id="cards"
 	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-80 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
-	{#each nav as nav, i (i)}
-		<a
-			aria-current={$page.url.pathname === nav.link
-				? (coords.set({ x: 32 + i * 56 }), 'true')
-				: 'false'}
-			href={nav.link}
-			on:click={(e) => coords.set({ x: 32 + i * 56 })}
-			on:click={handleClick}
-			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-			data-sveltekit-noscroll
-			aria-label={nav.name}
+	<a
+		aria-current={$page.url.pathname === '/' ? (coords.set({ x: 32 + 0 * 56 }), 'page') : undefined}
+		href="/"
+		on:click={(e) => coords.set({ x: 32 + 0 * 56 })}
+		on:click={handleClick}
+		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+		data-sveltekit-noscroll
+		aria-label=""
+	>
+		<div
+			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 		>
-			<div
-				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
-			>
-				<Icon name={nav.icon} />
-				<div class="size-12 shine absolute pointer-events-none"></div>
-			</div>
-		</a>
-	{/each}
+			<Icon name="home" />
+			<div class="size-12 shine absolute pointer-events-none"></div>
+		</div>
+	</a>
+
+	<a
+		aria-current={$page.url.pathname.includes('portfolio')
+			? (coords.set({ x: 32 + 1 * 56 }), 'page')
+			: undefined}
+		href="/portfolio"
+		on:click={(e) => coords.set({ x: 32 + 1 * 56 })}
+		on:click={handleClick}
+		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+		data-sveltekit-noscroll
+		aria-label=""
+	>
+		<div
+			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+		>
+			<Icon name="work" />
+			<div class="size-12 shine absolute pointer-events-none"></div>
+		</div>
+	</a>
+
+	<a
+		aria-current={$page.url.pathname === '/resume'
+			? (coords.set({ x: 32 + 2 * 56 }), 'page')
+			: undefined}
+		href="/resume"
+		on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
+		on:click={handleClick}
+		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+		data-sveltekit-noscroll
+		aria-label=""
+	>
+		<div
+			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+		>
+			<Icon name="resume" />
+			<div class="size-12 shine absolute pointer-events-none"></div>
+		</div>
+	</a>
 
 	<a
 		on:click={handleClick}
@@ -109,29 +149,51 @@
 	</a>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<svg class="fadein absolute w-full h-full top-0 left-0 z-0">
-		<circle cx={$coords.x} cy="60" r="2" fill="#6B6B70" />
+		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
 	</svg>
 </div>
 
 <style>
+	.card {
+		@apply transition-colors duration-300 ease-in-out;
+	}
 	.card .li {
 		z-index: 2;
+		@apply transition-colors duration-300 ease-in-out;
 	}
 	.card .shine {
 		background-image: linear-gradient(
 			135deg,
-			rgba(107, 107, 112, 0.15) 0%,
+			rgba(107, 107, 112, 0.19) 0%,
 			rgba(107, 107, 112, 0) 38.92%,
 			rgba(107, 107, 112, 0) 61.08%,
-			rgba(107, 107, 112, 0.15) 100%
+			rgba(107, 107, 112, 0.22) 100%
 		);
 		background-position: center;
 		background-size: 130% 100%;
 	}
+
+	.card[aria-current='page'] .shine {
+		background-image: linear-gradient(
+			135deg,
+			rgba(201, 147, 213, 0.25) 0%,
+			rgba(110, 88, 115, 0) 38.92%,
+			rgba(110, 88, 115, 0) 61.08%,
+			rgba(201, 147, 213, 0.35) 100%
+		);
+		background-position: center;
+		background-size: 130% 100%;
+	}
+
 	#cards:hover > .card::after {
 		opacity: 1;
 	}
-
+	.card[aria-current='page'] {
+		@apply bg-violet-100;
+	}
+	.card[aria-current='page'] .li {
+		@apply bg-violet-100 text-violet-500;
+	}
 	.card:hover::before {
 		opacity: 1;
 	}
@@ -159,10 +221,28 @@
 		z-index: 3;
 	}
 
+	.card[aria-current='page']::before {
+		background: radial-gradient(
+			2rem circle at var(--mouse-x) var(--mouse-y),
+			rgba(252, 249, 255, 0.9),
+			transparent 90%
+		);
+		z-index: 3;
+	}
+
 	.card::after {
 		background: radial-gradient(
 			4rem circle at var(--mouse-x) var(--mouse-y),
 			rgb(206, 206, 210),
+			transparent 100%
+		);
+		z-index: 1;
+	}
+
+	.card[aria-current='page']::after {
+		background: radial-gradient(
+			4rem circle at var(--mouse-x) var(--mouse-y),
+			rgb(228, 210, 255),
 			transparent 100%
 		);
 		z-index: 1;

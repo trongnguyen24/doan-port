@@ -31,20 +31,22 @@
 	});
 
 	onMount(() => {
-		document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
-			gsap.fromTo(
-				element,
-				{},
-				{
-					scrollTrigger: {
-						trigger: element,
-						start: 'top 100% - 120px', // when the top of the trigger hits the top of the viewport
-						onEnter: () => element.classList.add('reveal'),
-						markers: false
+		setTimeout(() => {
+			document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
+				gsap.fromTo(
+					element,
+					{},
+					{
+						scrollTrigger: {
+							trigger: element,
+							start: 'top 90%-=190px', // when the top of the trigger hits the top of the viewport
+							onEnter: () => element.classList.add('reveal'),
+							markers: false
+						}
 					}
-				}
-			);
-		});
+				);
+			});
+		}, 1000);
 	});
 </script>
 
@@ -61,7 +63,7 @@
 	<div class="md:pt-32 pt-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-y-32">
 		{#each data.posts as item}
 			<div scroll="reveal" class="md:even:translate-y-24 md:odd:-translate-y-16">
-				<a href="/portfolio/futuristic-exhibition-space" data-sveltekit-noscroll>
+				<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
 							<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
