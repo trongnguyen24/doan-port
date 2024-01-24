@@ -5,6 +5,7 @@
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import * as Drawer from '$lib/components/ui/drawer';
 
 	let coords = spring(
 		{ x: 32 },
@@ -45,34 +46,6 @@
 			);
 		}
 	});
-
-	let nav = [
-		{
-			icon: 'home',
-			name: '/',
-			link: '/'
-		},
-		{
-			icon: 'work',
-			name: '/portfolio',
-			link: '/portfolio'
-		},
-		{
-			icon: 'resume',
-			name: '/resume',
-			link: '/resume'
-		}
-		// {
-		// 	icon: 'contact',
-		// 	name: 'Contact'
-		// }
-	];
-
-	// $: firstParam = getFirstParam();
-	// function getFirstParam() {
-	// 	const pathArray = $page.url.pathname.split('/');
-	// 	return pathArray.length > 1 ? pathArray[1] : pathArray[0];
-	// }
 </script>
 
 <div
@@ -134,19 +107,34 @@
 		</div>
 	</a>
 
-	<a
+	<button
 		on:click={handleClick}
-		href="#1"
 		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 		aria-label="Contact"
 	>
-		<div
-			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
-		>
-			<Icon name="contact" />
-			<div class="size-12 shine absolute pointer-events-none"></div>
-		</div>
-	</a>
+		<Drawer.Root>
+			<Drawer.Trigger
+				><div
+					class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+				>
+					<Icon name="contact" />
+					<div class="size-12 shine absolute pointer-events-none"></div>
+				</div>
+			</Drawer.Trigger>
+			<Drawer.Content>
+				<Drawer.Header>
+					<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
+					<Drawer.Description>This action cannot be undone.</Drawer.Description>
+					<Drawer.Description>This action cannot be undone.</Drawer.Description>
+					<Drawer.Description>This action cannot be undone.</Drawer.Description>
+					<Drawer.Description>This action cannot be undone.</Drawer.Description>
+				</Drawer.Header>
+				<Drawer.Footer>
+					<Drawer.Close>Cancel</Drawer.Close>
+				</Drawer.Footer>
+			</Drawer.Content>
+		</Drawer.Root>
+	</button>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<svg class="fadein absolute w-full h-full top-0 left-0 z-0">
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
@@ -189,10 +177,10 @@
 		opacity: 1;
 	}
 	.card[aria-current='page'] {
-		@apply bg-violet-100;
+		@apply bg-violet-50;
 	}
 	.card[aria-current='page'] .li {
-		@apply bg-violet-100 text-violet-500;
+		@apply bg-violet-50 text-violet-500;
 	}
 	.card:hover::before {
 		opacity: 1;

@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	export let text = 'Magic Text';
 	import { onMount } from 'svelte';
 	let index = 0,
 		interval = 1000;
 
-	const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+	const rand = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 	onMount(() => {
-		const animate = (star) => {
+		const animate = (star: any) => {
 			star.style.setProperty('--star-left', `${rand(-10, 100)}%`);
 			star.style.setProperty('--star-top', `${rand(-20, 80)}%`);
 
@@ -88,6 +88,7 @@
 		background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
 		background-size: 200%;
 		-webkit-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		white-space: nowrap;
 	}
