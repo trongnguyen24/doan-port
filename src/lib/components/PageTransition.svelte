@@ -59,6 +59,6 @@
 
 <section id="overlay_trans" class=" h-full w-full fixed top-0 z-[49]">
 	<svg class="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-		<path class="overlay__path" fill="#fafafc" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
+		<path class="overlay__path" fill="#f9f9fb" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
 	</svg>
 </section>

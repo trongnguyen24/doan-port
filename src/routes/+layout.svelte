@@ -4,10 +4,9 @@
 	import { afterNavigate } from '$app/navigation';
 	import PageTransition from '$lib/components/PageTransition.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import '../app.css';
+	import '$lib/style/app.css';
 	export let data;
 
-	let pathname: string = '';
 	let firstload: number = 0;
 
 	onMount(() => {});

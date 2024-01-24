@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Quicksand';
+	src:
+		url('$lib/fonts/Quicksand-Light.woff2') format('woff2'),
+		url('$lib/fonts/Quicksand-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	src:
+		url('$lib/fonts/Quicksand-Medium.woff2') format('woff2'),
+		url('$lib/fonts/Quicksand-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	src:
+		url('$lib/fonts/Quicksand-Regular.woff2') format('woff2'),
+		url('$lib/fonts/Quicksand-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	/* @link https://utopia.fyi/type/calculator?c=390,16,1.5,1600,22,1.4,2,0,&s=0.8|0.5|0.1,1.5|2|3|4|6|8,s-m|m-m&g=s,l,xl,12 */
+
+	/* Step 0: 16.00px → 22.00px */
+	--step-0: clamp(1rem, 0.8791rem + 0.4959vw, 1.375rem);
+
+	/* Step 1: 24.00px → 30.80px */
+	--step-1: clamp(1.5rem, 1.363rem + 0.562vw, 1.925rem);
+
+	/* Step 2: 36.00px → 43.12px */
+	--step-2: clamp(2.25rem, 2.1066rem + 0.5884vw, 2.695rem);
+}
+
+@layer base {
+	html {
+		font-family: 'Quicksand', sans-serif;
+	}
+}
+
+.title-1 {
+	font-size: var(--step-2);
+}
+
+.title-2 {
+	font-size: var(--step-1);
+}
+.title-3 {
+	font-size: var(--step-0);
+}
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #a9b4bc80;
+	border-radius: 15px;
+	border: 1px solid transparent;
+	background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+	background-color: #a9b4bc48;
+}
+
+html {
+	scrollbar-color: rgba(169, 180, 188, 0.11) transparent;
+	scrollbar-width: auto;
+	overflow-y: scroll;
+}
+
+.animate-bounce-nav {
+	animation: bounce-nav 0.55s infinite;
+}
+
+@keyframes bounce-nav {
+	0%,
+	100% {
+		transform: translateY(0%);
+		animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	}
+
+	65% {
+		transform: translateY(-30%);
+		animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+	}
+}
+
+.fadein {
+	opacity: 0;
+	animation: 1.3s fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+div[scroll='reveal'] .reveal-img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+	transition:
+		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+	will-change: -webkit-clip-path, clip-path, opacity;
+}
+
+div.reveal .reveal-img {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	opacity: 1;
+}
+
+div[scroll='reveal'] .reveal-text {
+	opacity: 0;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 1.2s;
+	will-change: opacity;
+}
+
+div.reveal .reveal-text {
+	opacity: 1;
+}
+
+section[scroll='reveal'] .reveal-img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+	transition:
+		-webkit-clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s,
+		clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s,
+		opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+	will-change: -webkit-clip-path, clip-path, opacity;
+}
+
+section.reveal .reveal-img {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	opacity: 1;
+}
+
+section[scroll='reveal'] .reveal-text {
+	opacity: 0;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+	will-change: opacity;
+}
+
+section.reveal .reveal-text {
+	opacity: 1;
+}

@@ -5,21 +5,21 @@
 
 <a href={link}>
 	<button
-		class="shim_button font-medium bg-violet-400 hover:shadow-xl hover:shadow-violet-200 transition-all duration-500 text-lg md:text-xl relative group overflow-hidden rounded-full"
+		class="shim_button font-medium bg-violet-400 hover:shadow-xl hover:shadow-violet-200 transition-all duration-500 text-md md:text-lg relative group overflow-hidden rounded-full"
 	>
 		<div class="spark_content absolute w-full top-0 left-0 h-full">
 			<div class="spark absolute w-[200%] aspect-square rounded-full"></div>
 		</div>
 		<div class="backdrop bg-white absolute inset-0.5 rounded-full">
 			<div
-				class="absolute inset-[-0.05rem] flex justify-center items-center transition-all text-violet-50 bg-violet-400 translate-y-[-100%] scale-75 group-hover:rounded-[24px] group-hover:scale-100 group-hover:translate-y-0 duration-500 rounded-bl-[50%] rounded-br-[50%]"
+				class="absolute inset-[-0.05rem] flex justify-center items-center transition-all text-violet-50 bg-violet-400 translate-y-[-105%] scale-110 group-hover:rounded-[24px] group-hover:scale-100 group-hover:translate-y-0 duration-500 rounded-bl-[50%] rounded-br-[50%]"
 			>
 				{text}
 			</div>
 		</div>
 		<div class="text relative">
 			<div
-				class="px-8 py-2 sm:px-12 sm:py-3 text-violet-400 group-hover:translate-y-12 transition-all duration-500 scale-100 group-hover:scale-75 w-full h-full text-center"
+				class="px-8 py-2 sm:px-10 sm:py-2 text-violet-400 group-hover:translate-y-12 transition-all duration-500 scale-100 group-hover:scale-75 w-full h-full text-center"
 			>
 				{text}
 			</div>

@@ -54,8 +54,8 @@
 		},
 		{
 			icon: 'work',
-			name: 'Work',
-			link: '/work'
+			name: 'Portfolio',
+			link: '/portfolio'
 		},
 		{
 			icon: 'resume',
@@ -69,25 +69,28 @@
 	];
 </script>
 
-<ul
+<div
 	id="cards"
-	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-85 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-80 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
 	{#each nav as nav, i (i)}
 		<a
-			aria-current={$page.url.pathname === nav.link ? coords.set({ x: 32 + i * 56 }) : undefined}
+			aria-current={$page.url.pathname === nav.link
+				? (coords.set({ x: 32 + i * 56 }), 'true')
+				: 'false'}
 			href={nav.link}
 			on:click={(e) => coords.set({ x: 32 + i * 56 })}
 			on:click={handleClick}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll
+			aria-label={nav.name}
 		>
-			<li
-				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
+			<div
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 			>
 				<Icon name={nav.icon} />
 				<div class="size-12 shine absolute pointer-events-none"></div>
-			</li>
+			</div>
 		</a>
 	{/each}
 
@@ -95,22 +98,23 @@
 		on:click={handleClick}
 		href="#1"
 		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+		aria-label="Contact"
 	>
-		<li
-			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center"
+		<div
+			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 		>
 			<Icon name="contact" />
 			<div class="size-12 shine absolute pointer-events-none"></div>
-		</li>
+		</div>
 	</a>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<svg class="fadein absolute w-full h-full top-0 left-0 z-0">
 		<circle cx={$coords.x} cy="60" r="2" fill="#6B6B70" />
 	</svg>
-</ul>
+</div>
 
 <style>
-	.card li {
+	.card .li {
 		z-index: 2;
 	}
 	.card .shine {
