@@ -27,8 +27,8 @@
 		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1"
-				in:fade={{ delay: 1000, duration: 600 }}
-				out:fade={{ delay: 0, duration: 600 }}
+				in:fade={{ delay: 950, duration: 600 }}
+				out:fade={{ duration: 600 }}
 			>
 				<slot />
 			</div>
