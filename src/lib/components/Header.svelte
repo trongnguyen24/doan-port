@@ -2,6 +2,7 @@
 	// @ts-nocheck
 
 	import Icon from '$lib/icon/index.svelte';
+	import gsap from 'gsap';
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
@@ -45,6 +46,40 @@
 				}
 			);
 		}
+
+		let cards = document.getElementById('cards');
+		let card = gsap.utils.toArray('.card');
+		let dotnav = document.getElementsByClassName('nav-dot');
+		let menutl = gsap.timeline({});
+		menutl.set(cards, {
+			width: '2rem',
+			height: '1rem',
+			y: '3rem',
+			duration: 0
+		});
+		menutl.to(cards, {
+			width: '4.125rem',
+			height: '4.125rem',
+			opacity: 1,
+			y: '0',
+			scale: 1,
+			duration: 0.8
+		});
+		menutl.to(cards, {
+			width: '14.5rem',
+			duration: 1
+		});
+		menutl.to(card, {
+			display: 'block',
+			opacity: 1,
+			stagger: 0.15,
+			duration: 0.6
+		});
+		menutl.to(dotnav, {
+			display: 'block',
+			opacity: 1,
+			duration: 0.3
+		});
 	});
 </script>
 
@@ -136,19 +171,30 @@
 		</Drawer.Root>
 	</button>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<svg class="fadein absolute w-full h-full top-0 left-0 z-0">
+	<svg class="nav-dot absolute w-full h-full top-0 left-0 z-0 hidden opacity-0">
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
 	</svg>
 </div>
 
 <style>
+	#cards {
+		opacity: 0;
+	}
 	.card {
+		min-width: 3rem;
+		aspect-ratio: 1;
+		opacity: 0;
+		display: none;
 		@apply transition-colors duration-300 ease-in-out;
 	}
 	.card .li {
 		z-index: 2;
+
 		@apply transition-colors duration-300 ease-in-out;
 	}
+	/* .card[aria-current='page'] {
+		display: block;
+	} */
 	.card .shine {
 		background-image: linear-gradient(
 			135deg,

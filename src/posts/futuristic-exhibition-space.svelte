@@ -21,9 +21,13 @@
 <Gsapsetup />
 <PageGsapRefresh />
 
-<Title>
-	{metadata.title}
-</Title>
+<Section>
+	<Block>
+		<Title>
+			{metadata.title}
+		</Title>
+	</Block>
+</Section>
 
 <Section>
 	<Block>

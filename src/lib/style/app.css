@@ -248,9 +248,9 @@ section[scroll='reveal'] .reveal-img {
 	clip-path: inset(0 0 100% 0);
 	opacity: 0;
 	transition:
-		-webkit-clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s,
-		clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s,
-		opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+		-webkit-clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
 	will-change: -webkit-clip-path, clip-path, opacity;
 }
 
@@ -262,7 +262,7 @@ section.reveal .reveal-img {
 
 section[scroll='reveal'] .reveal-text {
 	opacity: 0;
-	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.4s;
 	will-change: opacity;
 }
 
