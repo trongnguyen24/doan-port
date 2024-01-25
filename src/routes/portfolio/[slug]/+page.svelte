@@ -47,15 +47,20 @@
 			});
 		}, 1000);
 
-		gsap.to('.portfolio', {
-			left: 1000,
-			scrollTrigger: {
-				trigger: '.portfolios',
-				start: 'top top',
-				end: 'top 50% ',
-				markers: true
-			}
-		});
+		const pic = document.getElementsByClassName('portfolio');
+
+		// @ts-ignore
+		let tl = gsap
+			.timeline({
+				scrollTrigger: {
+					pin: '.portfolios',
+					start: 'bottom 10%',
+					end: 'top 100%',
+					markers: true,
+					pinSpacing: true
+				}
+			})
+			.to(pic, { left: 1000, duration: 10 });
 	});
 </script>
 
@@ -68,10 +73,14 @@
 <div class="pb-24 md:pb-32">
 	<svelte:component this={data.content} />
 </div>
-<section class="h-lvh relative overflow-hidden portfolios">
-	<div class="grid portfolio grid-flow-col gap-24 absolute">
+<div class="portfolios"></div>
+<section class=" h-screen relative overflow-hidden">
+	<div class="flex absolute portfolio gap-24">
+		<div class="w-[25vw] flex items-center justify-center flex-shrink-0">
+			<h2 class="title-2 text-slate-900">Portfolio</h2>
+		</div>
 		{#each data.posts as item}
-			<div scroll="reveal" class="w-96 flex-shrink-0">
+			<div class="w-[25vw] flex-shrink-0">
 				<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
