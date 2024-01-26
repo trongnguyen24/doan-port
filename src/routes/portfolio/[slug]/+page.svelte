@@ -5,12 +5,13 @@
 	import { gsap } from 'gsap';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	export let data;
+	import MagicText from '$lib/components/MagicText.svelte';
 	import eco from '$lib/posts/eco.png?enhanced&format=webp&quality=70&w=560;1024';
 	import futuristic from '$lib/posts/futuristic.png?enhanced&format=webp&quality=70&w=560;1024';
 	import minimalist from '$lib/posts/minimalist.png?enhanced&format=webp&quality=70&w=560;1024';
 	import retro from '$lib/posts/retro.png?enhanced&format=webp&quality=70&w=560;1024';
 	import urban from '$lib/posts/urban.png?enhanced&format=webp&quality=70&w=560;1024';
+	export let data;
 
 	const modules = {
 		eco: eco,
@@ -48,12 +49,16 @@
 
 			let portfolio = gsap.utils.toArray('.portfolio');
 			let maxWidth = 0;
-			portfolio.forEach((item, index) => {
-				if (index < portfolio.length - 1) {
-					// Skip the last item
-					maxWidth += item.offsetWidth;
-				}
+			portfolio.forEach((item) => {
+				// Skip the last item
+				maxWidth += item.offsetWidth;
 			});
+			// portfolio.forEach((item, index) => {
+			// 	if (index < portfolio.length - 1) {
+			// 		// Skip the last item
+			// 		maxWidth += item.offsetWidth;
+			// 	}
+			// });
 
 			let tl = gsap
 				.timeline({
@@ -64,7 +69,7 @@
 						markers: false
 					}
 				})
-				.to('#portfolios', { x: () => -maxWidth });
+				.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
 		}, 1000);
 	});
 </script>
@@ -81,12 +86,14 @@
 
 <section class="overflow-hidden">
 	<div id="portfolios" class="flex h-screen items-center">
-		<div class="flex gap-20">
-			<div class="w-[35vw] portfolio flex items-center justify-center flex-shrink-0">
-				<h2 class="title-2 text-slate-900">Portfolio</h2>
+		<div class="flex">
+			<div
+				class="w-screen px-10 max-w-[576px] portfolio flex items-center justify-center flex-shrink-0"
+			>
+				<h2 class="title-1 text-slate-900"><MagicText text="Portfolio"></MagicText></h2>
 			</div>
 			{#each data.posts as item}
-				<div class="w-[35vw] portfolio flex-shrink-0">
+				<div class=" w-screen px-10 max-w-[576px] portfolio flex-shrink-0">
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 							<div class="tranform hover:scale-[1.03] transition duration-700">
