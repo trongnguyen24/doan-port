@@ -94,7 +94,7 @@
 		on:click={handleClick}
 		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 		data-sveltekit-noscroll
-		aria-label=""
+		aria-label="Home"
 	>
 		<div
 			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
@@ -113,7 +113,7 @@
 		on:click={handleClick}
 		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 		data-sveltekit-noscroll
-		aria-label=""
+		aria-label="Portfolio"
 	>
 		<div
 			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
@@ -132,7 +132,7 @@
 		on:click={handleClick}
 		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 		data-sveltekit-noscroll
-		aria-label=""
+		aria-label="Resume"
 	>
 		<div
 			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"

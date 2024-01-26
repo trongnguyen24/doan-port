@@ -85,7 +85,7 @@
 </div>
 
 <section class="overflow-hidden">
-	<div id="portfolios" class="flex h-screen items-center">
+	<div id="portfolios" class="flex h-screen pb-24 items-center">
 		<div class="flex">
 			<div
 				class="w-screen px-10 max-w-[576px] portfolio flex items-center justify-center flex-shrink-0"
@@ -93,7 +93,7 @@
 				<h2 class="title-1 text-slate-900"><MagicText text="Portfolio"></MagicText></h2>
 			</div>
 			{#each data.posts as item}
-				<div class=" w-screen px-10 max-w-[576px] portfolio flex-shrink-0">
+				<div class="w-screen px-10 max-w-[576px] portfolio flex-shrink-0">
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 							<div class="tranform hover:scale-[1.03] transition duration-700">
