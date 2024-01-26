@@ -45,22 +45,27 @@
 					}
 				);
 			});
-		}, 1000);
 
-		const pic = document.getElementsByClassName('portfolio');
-
-		// @ts-ignore
-		let tl = gsap
-			.timeline({
-				scrollTrigger: {
-					pin: '.portfolios',
-					start: 'bottom 10%',
-					end: 'top 100%',
-					markers: true,
-					pinSpacing: true
+			let portfolio = gsap.utils.toArray('.portfolio');
+			let maxWidth = 0;
+			portfolio.forEach((item, index) => {
+				if (index < portfolio.length - 1) {
+					// Skip the last item
+					maxWidth += item.offsetWidth;
 				}
-			})
-			.to(pic, { left: 1000, duration: 10 });
+			});
+
+			let tl = gsap
+				.timeline({
+					scrollTrigger: {
+						pin: '#portfolios',
+						end: () => `+=${maxWidth}`,
+						scrub: 1,
+						markers: false
+					}
+				})
+				.to('#portfolios', { x: () => -maxWidth });
+		}, 1000);
 	});
 </script>
 
@@ -73,27 +78,29 @@
 <div class="pb-24 md:pb-32">
 	<svelte:component this={data.content} />
 </div>
-<div class="portfolios"></div>
-<section class=" h-screen relative overflow-hidden">
-	<div class="flex absolute portfolio gap-24">
-		<div class="w-[25vw] flex items-center justify-center flex-shrink-0">
-			<h2 class="title-2 text-slate-900">Portfolio</h2>
-		</div>
-		{#each data.posts as item}
-			<div class="w-[25vw] flex-shrink-0">
-				<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
-					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
-						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
-						</div>
-					</div>
-					<div class="reveal-text pt-6">
-						<h2 class="title-2 text-slate-900">{item.title}</h2>
-						<p class="title-3 text-slate-500">{item.description}</p>
-					</div>
-				</a>
+
+<section class="overflow-hidden">
+	<div id="portfolios" class="flex h-screen items-center">
+		<div class="flex gap-20">
+			<div class="w-[35vw] portfolio flex items-center justify-center flex-shrink-0">
+				<h2 class="title-2 text-slate-900">Portfolio</h2>
 			</div>
-		{/each}
+			{#each data.posts as item}
+				<div class="w-[35vw] portfolio flex-shrink-0">
+					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
+						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+							<div class="tranform hover:scale-[1.03] transition duration-700">
+								<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
+							</div>
+						</div>
+						<div class="reveal-text pt-6">
+							<h2 class="title-2 text-slate-900">{item.title}</h2>
+							<p class="title-3 text-slate-500">{item.description}</p>
+						</div>
+					</a>
+				</div>
+			{/each}
+		</div>
 	</div>
 </section>
 

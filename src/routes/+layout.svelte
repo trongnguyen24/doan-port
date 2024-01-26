@@ -26,7 +26,7 @@
 	<main class="grid grid-cols-[1fr]">
 		{#key data.pathname}
 			<div
-				class="row-start-1 col-start-1"
+				class="row-start-1 col-start-1 inline-grid"
 				in:fade={{ delay: 950, duration: 600 }}
 				out:fade={{ duration: 600 }}
 			>
