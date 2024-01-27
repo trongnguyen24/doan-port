@@ -85,7 +85,7 @@
 
 <div
 	id="cards"
-	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-80 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-90 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
 	<div class="relative group">
 		<span

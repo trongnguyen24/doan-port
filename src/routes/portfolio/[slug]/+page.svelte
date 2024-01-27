@@ -3,6 +3,7 @@
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import { page } from '$app/stores';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
@@ -28,6 +29,8 @@
 			post.image2 = modules[post.image];
 		}
 	});
+
+	data.posts = data.posts.filter((post) => post.slug !== $page.params.slug);
 
 	onMount(() => {
 		// reveal on scroll
@@ -88,9 +91,9 @@
 	<div id="portfolios" class="flex h-screen pb-24 items-center">
 		<div class="flex">
 			<div
-				class="w-screen px-10 max-w-[576px] portfolio flex items-center justify-center flex-shrink-0"
+				class="w-screen px-10 max-w-80 md:max-w-[576px] portfolio flex items-center justify-center flex-shrink-0"
 			>
-				<h2 class="title-1 text-slate-900"><MagicText text="Portfolio"></MagicText></h2>
+				<h2 class="title-1 text-slate-900"><MagicText text="Other Project"></MagicText></h2>
 			</div>
 			{#each data.posts as item}
 				<div class="w-screen px-10 max-w-[576px] portfolio flex-shrink-0">

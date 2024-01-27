@@ -33,7 +33,7 @@
 	<Block>
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/1.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/1.jpg?format=webp&quality=90&w=900;1440"
 				alt={metadata.title}
 			/>
 		</Image>
@@ -53,7 +53,7 @@
 	<Block size="3" position="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/2.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/2.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(720px, 70vw)"
 				alt={metadata.title}
 			/>
@@ -65,7 +65,7 @@
 	<Block size="2" mobile="31">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/3-a.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/3-a.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(400px, 100vw)"
 				alt={metadata.title}
 			/>
@@ -74,7 +74,7 @@
 	<Block size="2" mobile="32">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/3b.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/3b.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(400px, 100vw)"
 				alt={metadata.title}
 			/>
@@ -98,7 +98,7 @@
 	<Block>
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/4.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/4.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(1440px, 100vw)"
 				alt={metadata.title}
 			/>
@@ -110,7 +110,7 @@
 	<Block size="3" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/5.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/5.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(720px, 50vw)"
 				alt={metadata.title}
 			/>
@@ -122,7 +122,7 @@
 	<Block size="3" position="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/6.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/6.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(720px, 50vw)"
 				alt={metadata.title}
 			/>
@@ -146,7 +146,7 @@
 	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/7.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/7.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(400px, 50vw)"
 				alt={metadata.title}
 			/>
@@ -155,7 +155,7 @@
 	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/8-a.jpg?format=avif;webp;jpg&quality=90&w=900;1440"
+				src="$lib/images/01/8-a.jpg?format=webp&quality=90&w=900;1440"
 				sizes="min(400px, 50vw)"
 				alt={metadata.title}
 			/>
