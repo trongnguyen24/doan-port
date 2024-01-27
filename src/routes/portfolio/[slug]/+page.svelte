@@ -53,15 +53,8 @@
 			let portfolio = gsap.utils.toArray('.portfolio');
 			let maxWidth = 0;
 			portfolio.forEach((item) => {
-				// Skip the last item
 				maxWidth += item.offsetWidth;
 			});
-			// portfolio.forEach((item, index) => {
-			// 	if (index < portfolio.length - 1) {
-			// 		// Skip the last item
-			// 		maxWidth += item.offsetWidth;
-			// 	}
-			// });
 
 			let tl = gsap
 				.timeline({
