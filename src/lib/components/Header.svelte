@@ -87,89 +87,115 @@
 	id="cards"
 	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-80 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
-	<a
-		aria-current={$page.url.pathname === '/' ? (coords.set({ x: 32 + 0 * 56 }), 'page') : undefined}
-		href="/"
-		on:click={(e) => coords.set({ x: 32 + 0 * 56 })}
-		on:click={handleClick}
-		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-		data-sveltekit-noscroll
-		aria-label="Home"
-	>
-		<div
-			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+	<div class="relative group">
+		<span
+			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
+			>Home</span
 		>
-			<Icon name="home" />
-			<div class="size-12 shine absolute pointer-events-none"></div>
-		</div>
-	</a>
-
-	<a
-		aria-current={$page.url.pathname.includes('portfolio')
-			? (coords.set({ x: 32 + 1 * 56 }), 'page')
-			: undefined}
-		href="/portfolio"
-		on:click={(e) => coords.set({ x: 32 + 1 * 56 })}
-		on:click={handleClick}
-		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-		data-sveltekit-noscroll
-		aria-label="Portfolio"
-	>
-		<div
-			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+		<a
+			aria-current={$page.url.pathname === '/'
+				? (coords.set({ x: 32 + 0 * 56 }), 'page')
+				: undefined}
+			href="/"
+			on:click={(e) => coords.set({ x: 32 + 0 * 56 })}
+			on:click={handleClick}
+			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			data-sveltekit-noscroll
+			aria-label="Home"
 		>
-			<Icon name="work" />
-			<div class="size-12 shine absolute pointer-events-none"></div>
-		</div>
-	</a>
+			<div
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+			>
+				<Icon name="home" />
+				<div class="size-12 shine absolute pointer-events-none"></div>
+			</div>
+		</a>
+	</div>
 
-	<a
-		aria-current={$page.url.pathname === '/resume'
-			? (coords.set({ x: 32 + 2 * 56 }), 'page')
-			: undefined}
-		href="/resume"
-		on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
-		on:click={handleClick}
-		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-		data-sveltekit-noscroll
-		aria-label="Resume"
-	>
-		<div
-			class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+	<div class="relative group">
+		<span
+			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
+			>Portfolio</span
 		>
-			<Icon name="resume" />
-			<div class="size-12 shine absolute pointer-events-none"></div>
-		</div>
-	</a>
+		<a
+			aria-current={$page.url.pathname.includes('portfolio')
+				? (coords.set({ x: 32 + 1 * 56 }), 'page')
+				: undefined}
+			href="/portfolio"
+			on:click={(e) => coords.set({ x: 32 + 1 * 56 })}
+			on:click={handleClick}
+			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			data-sveltekit-noscroll
+			aria-label="Portfolio"
+		>
+			<div
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+			>
+				<Icon name="work" />
+				<div class="size-12 shine absolute pointer-events-none"></div>
+			</div>
+		</a>
+	</div>
 
-	<button
-		on:click={handleClick}
-		class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-		aria-label="Contact"
-	>
-		<Drawer.Root>
-			<Drawer.Trigger
-				><div
-					class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
-				>
-					<Icon name="contact" />
-					<div class="size-12 shine absolute pointer-events-none"></div>
-				</div>
-			</Drawer.Trigger>
-			<Drawer.Content>
-				<Drawer.Header>
-					<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-					<Drawer.Description>This action cannot be undone.</Drawer.Description>
-					<Drawer.Description>This action cannot be undone.</Drawer.Description>
-					<Drawer.Description>This action cannot be undone.</Drawer.Description>
-					<Drawer.Description>This action cannot be undone.</Drawer.Description>
-				</Drawer.Header>
-				<Drawer.Footer>
-					<Drawer.Close>Cancel</Drawer.Close>
-				</Drawer.Footer>
-			</Drawer.Content>
-		</Drawer.Root>
-	</button>
+	<div class="relative group">
+		<span
+			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
+			>Resume</span
+		>
+		<a
+			aria-current={$page.url.pathname === '/resume'
+				? (coords.set({ x: 32 + 2 * 56 }), 'page')
+				: undefined}
+			href="/resume"
+			on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
+			on:click={handleClick}
+			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			data-sveltekit-noscroll
+			aria-label="Resume"
+		>
+			<div
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+			>
+				<Icon name="resume" />
+				<div class="size-12 shine absolute pointer-events-none"></div>
+			</div>
+		</a>
+	</div>
+
+	<div class="relative group">
+		<span
+			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
+			>Contact</span
+		>
+		<button
+			on:click={handleClick}
+			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			aria-label="Contact"
+		>
+			<Drawer.Root>
+				<Drawer.Trigger
+					><div
+						class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+					>
+						<Icon name="contact" />
+						<div class="size-12 shine absolute pointer-events-none"></div>
+					</div>
+				</Drawer.Trigger>
+				<Drawer.Content>
+					<Drawer.Header>
+						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
+						<Drawer.Description>This action cannot be undone.</Drawer.Description>
+						<Drawer.Description>This action cannot be undone.</Drawer.Description>
+						<Drawer.Description>This action cannot be undone.</Drawer.Description>
+						<Drawer.Description>This action cannot be undone.</Drawer.Description>
+					</Drawer.Header>
+					<Drawer.Footer>
+						<Drawer.Close>Cancel</Drawer.Close>
+					</Drawer.Footer>
+				</Drawer.Content>
+			</Drawer.Root>
+		</button>
+	</div>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<svg class="nav-dot absolute w-full h-full top-0 left-0 z-0 hidden opacity-0">
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
