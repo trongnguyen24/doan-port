@@ -184,10 +184,11 @@
 				<Drawer.Content>
 					<Drawer.Header>
 						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description>This action cannot be undone.</Drawer.Description>
-						<Drawer.Description>This action cannot be undone.</Drawer.Description>
-						<Drawer.Description>This action cannot be undone.</Drawer.Description>
-						<Drawer.Description>This action cannot be undone.</Drawer.Description>
+						<Drawer.Description>
+							This action cannot be undone.
+							<h2 class="title-1">This action cannot be undone.</h2>
+							<h2 class="title-1">This action cannot be undone.</h2>
+						</Drawer.Description>
 					</Drawer.Header>
 					<Drawer.Footer>
 						<Drawer.Close>Cancel</Drawer.Close>
