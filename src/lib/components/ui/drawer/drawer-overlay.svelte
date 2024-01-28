@@ -9,6 +9,10 @@
 	export { className as class };
 </script>
 
-<DrawerPrimitive.Overlay bind:el class={cn('fixed inset-0 z-50 ', className)} {...$$restProps}>
+<DrawerPrimitive.Overlay
+	bind:el
+	class={cn('fixed inset-0 z-50 bg-white bg-opacity-80', className)}
+	{...$$restProps}
+>
 	<slot />
 </DrawerPrimitive.Overlay>
