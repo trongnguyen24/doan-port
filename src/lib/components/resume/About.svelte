@@ -2,7 +2,6 @@
 	// @ts-nocheck
 
 	import { onMount, onDestroy } from 'svelte';
-	import { afterNavigate } from '$app/navigation';
 	import { gsap } from 'gsap';
 	import { page } from '$app/stores';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
@@ -49,7 +48,11 @@
 			updateWindowSize();
 
 			function movePointer() {
-				// console.log('running');
+				let element = document.getElementById('pointer');
+				if (!element) {
+					return;
+				}
+				console.log('running');
 				let rect = handPointer.getBoundingClientRect();
 				xPointer = rect.x + rect.width / 2;
 				yPointer = rect.y + rect.height / 2;
@@ -103,7 +106,12 @@
 				});
 			}
 
-			gsap.ticker.add(movePointer);
+			// Nếu phần tử tồn tại, gắn sự kiện
+			document.addEventListener('mousemove', movePointer);
+			document.addEventListener('touchmove', movePointer);
+			// Gọi hàm khi trang tải xong
+
+			// gsap.ticker.add(movePointer);
 			// gsap.ticker.remove(movePointer);
 		})();
 	});
@@ -114,8 +122,8 @@
 
 <section class="">
 	<div class="size-52 bg-slate-100 rounded-3xl">
-		<div class="pointer">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 185 186">
+		<div id="pointer" class="pointer">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 185 185">
 				<g>
 					<g id="hair-back">
 						<path

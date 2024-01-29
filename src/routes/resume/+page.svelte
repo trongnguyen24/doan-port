@@ -59,51 +59,53 @@
 </svelte:head>
 <Gsapsetup />
 <PageGsapRefresh />
-<section class=" max-w-screen-md container py-10 md:py-28">
-	<h1 class="title-1 font-medium fadein"><MagicText text="Resume" /></h1>
-	<div class="grid gap-10 py-10">
-		<div
-			class="resume-nav grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
-		>
-			<div class=" w-1/2 sm:w-auto">
-				<button
-					class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-					active="true"
-					on:click={handleClick}>About</button
-				>
+<section class="col-span-1 col-start-1 min-h-screen">
+	<div class=" max-w-screen-md container py-10 md:py-28">
+		<h1 class="title-1 font-medium fadein"><MagicText text="Resume" /></h1>
+		<div class="grid gap-10 py-10">
+			<div
+				class="resume-nav grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
+			>
+				<div class=" w-1/2 sm:w-auto">
+					<button
+						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						active="true"
+						on:click={handleClick}>About</button
+					>
+				</div>
+				<div class=" w-1/2 sm:w-auto">
+					<button
+						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={handleClick}>Experience</button
+					>
+				</div>
+				<div class=" w-1/2 sm:w-auto">
+					<button
+						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={handleClick}>Education</button
+					>
+				</div>
+				<div class=" w-1/2 sm:w-auto">
+					<button
+						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={handleClick}>Skill</button
+					>
+				</div>
+				<div class=" w-1/2 sm:w-auto">
+					<button
+						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={handleClick}>References</button
+					>
+				</div>
+				<span
+					style="width: {$coords.activeBtWidth}px; left: {$coords.activeBtXPos}px; top: {$coords.activeBtYPos}px"
+					class="absolute -z-10 active-bt h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"
+				></span>
 			</div>
-			<div class=" w-1/2 sm:w-auto">
-				<button
-					class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-					on:click={handleClick}>Experience</button
-				>
-			</div>
-			<div class=" w-1/2 sm:w-auto">
-				<button
-					class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-					on:click={handleClick}>Education</button
-				>
-			</div>
-			<div class=" w-1/2 sm:w-auto">
-				<button
-					class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-					on:click={handleClick}>Skill</button
-				>
-			</div>
-			<div class=" w-1/2 sm:w-auto">
-				<button
-					class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-					on:click={handleClick}>References</button
-				>
-			</div>
-			<span
-				style="width: {$coords.activeBtWidth}px; left: {$coords.activeBtXPos}px; top: {$coords.activeBtYPos}px"
-				class="absolute -z-10 active-bt h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"
-			></span>
 		</div>
-	</div>
-	<div>
-		<About />
+		<div>
+			<About />
+		</div>
 	</div>
 </section>
 
