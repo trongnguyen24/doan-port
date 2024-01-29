@@ -184,11 +184,7 @@
 				<Drawer.Content>
 					<Drawer.Header>
 						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description>
-							This action cannot be undone.
-							<h2 class="title-1">This action cannot be undone.</h2>
-							<h2 class="title-1">This action cannot be undone.</h2>
-						</Drawer.Description>
+						<Drawer.Description></Drawer.Description>
 					</Drawer.Header>
 					<Drawer.Footer>
 						<Drawer.Close>Cancel</Drawer.Close>
@@ -216,12 +212,8 @@
 	}
 	.card .li {
 		z-index: 2;
-
 		@apply transition-colors duration-300 ease-in-out;
 	}
-	/* .card[aria-current='page'] {
-		display: block;
-	} */
 	.card .shine {
 		background-image: linear-gradient(
 			135deg,
