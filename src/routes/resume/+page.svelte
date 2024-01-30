@@ -1,7 +1,7 @@
 <script>
 	// @ts-nocheck
 
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { gsap } from 'gsap';
 	import { page } from '$app/stores';
 	import { spring } from 'svelte/motion';
@@ -9,14 +9,32 @@
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import About from '$lib/components/resume/About.svelte';
+	import Education from '$lib/components/resume/Education.svelte';
+	import Experience from '$lib/components/resume/Experience.svelte';
+	import References from '$lib/components/resume/References.svelte';
+	import Skills from '$lib/components/resume/Skills.svelte';
 
-	let nav = [
-		{ name: 'About', url: 1 },
-		{ name: 'Experience', url: 2 },
-		{ name: 'Education', url: 3 },
-		{ name: 'Skill', url: 4 },
-		{ name: 'References', url: 5 }
-	];
+	function fadeScale(node, { delay = 0, duration = 200, easing = (x) => x, baseScale = 0.95 }) {
+		const o = +getComputedStyle(node).opacity;
+		const m = getComputedStyle(node).transform.match(/scale\(([0-9.]+)\)/);
+		const s = m ? m[1] : 1;
+		const is = 1 - baseScale;
+
+		return {
+			delay,
+			duration,
+			css: (t) => {
+				const eased = easing(t);
+				return `opacity: ${eased * o}; transform: scale(${eased * s * is + baseScale})`;
+			}
+		};
+	}
+
+	let pagecur = 'About';
+
+	function switchPage(componentName) {
+		pagecur = componentName;
+	}
 
 	let coords = spring(
 		{ activeBtXPos: 0, activeBtYPos: 0, activeBtWidth: 82 },
@@ -43,13 +61,24 @@
 
 	onMount(() => {
 		const firstButton = document.querySelector('.item-nav[active="true"]');
-		if (firstButton) {
-			coords.set({
-				activeBtXPos: firstButton.offsetLeft,
-				activeBtYPos: firstButton.offsetTop,
-				activeBtWidth: firstButton.offsetWidth
-			});
+		updateCoords(firstButton);
+
+		function updateCoords(button) {
+			if (button) {
+				coords.set({
+					activeBtXPos: button.offsetLeft,
+					activeBtYPos: button.offsetTop,
+					activeBtWidth: button.offsetWidth
+				});
+			}
 		}
+
+		function handleResize() {
+			const activeButton = document.querySelector('.item-nav[active="true"]');
+			updateCoords(activeButton);
+		}
+
+		window.addEventListener('resize', handleResize);
 	});
 </script>
 
@@ -60,40 +89,45 @@
 <Gsapsetup />
 <PageGsapRefresh />
 <section class="col-span-1 col-start-1 min-h-screen">
-	<div class=" max-w-screen-md container py-10 md:py-28">
-		<h1 class="title-1 font-medium fadein"><MagicText text="Resume" /></h1>
+	<div class=" max-w-3xl container py-10 md:py-28">
+		<h1 class="title-1 text-center font-medium fadein"><MagicText text="Resume" /></h1>
 		<div class="grid gap-10 py-10">
 			<div
-				class="resume-nav grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
+				class="resume-nav justify-center grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
 			>
 				<div class=" w-1/2 sm:w-auto">
 					<button
 						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						active="true"
+						on:click={() => switchPage('About')}
 						on:click={handleClick}>About</button
 					>
 				</div>
 				<div class=" w-1/2 sm:w-auto">
 					<button
 						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={() => switchPage('Experience')}
 						on:click={handleClick}>Experience</button
 					>
 				</div>
 				<div class=" w-1/2 sm:w-auto">
 					<button
 						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={() => switchPage('Education')}
 						on:click={handleClick}>Education</button
 					>
 				</div>
 				<div class=" w-1/2 sm:w-auto">
 					<button
 						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-						on:click={handleClick}>Skill</button
+						on:click={() => switchPage('Skills')}
+						on:click={handleClick}>Skills</button
 					>
 				</div>
 				<div class=" w-1/2 sm:w-auto">
 					<button
 						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						on:click={() => switchPage('References')}
 						on:click={handleClick}>References</button
 					>
 				</div>
@@ -103,8 +137,48 @@
 				></span>
 			</div>
 		</div>
-		<div>
-			<About />
+		<div class="grid grid-cols-[1fr]">
+			{#if pagecur === 'About'}
+				<div
+					class="row-start-1 col-start-1 inline-grid transform-gpu"
+					in:fadeScale={{ delay: 310, duration: 300 }}
+					out:fadeScale={{ duration: 300 }}
+				>
+					<About />
+				</div>
+			{:else if pagecur === 'Experience'}
+				<div
+					class="row-start-1 col-start-1 inline-grid transform-gpu"
+					in:fadeScale={{ delay: 310, duration: 300 }}
+					out:fadeScale={{ duration: 300 }}
+				>
+					<Experience />
+				</div>
+			{:else if pagecur === 'Education'}
+				<div
+					class="row-start-1 col-start-1 inline-grid transform-gpu"
+					in:fadeScale={{ delay: 310, duration: 300 }}
+					out:fadeScale={{ duration: 300 }}
+				>
+					<Education />
+				</div>
+			{:else if pagecur === 'Skills'}
+				<div
+					class="row-start-1 col-start-1 inline-grid transform-gpu"
+					in:fadeScale={{ delay: 310, duration: 300 }}
+					out:fadeScale={{ duration: 300 }}
+				>
+					<Skills />
+				</div>
+			{:else if pagecur === 'References'}
+				<div
+					class="row-start-1 col-start-1 inline-grid transform-gpu"
+					in:fadeScale={{ delay: 310, duration: 300 }}
+					out:fadeScale={{ duration: 300 }}
+				>
+					<References />
+				</div>
+			{/if}
 		</div>
 	</div>
 </section>
