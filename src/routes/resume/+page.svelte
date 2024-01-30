@@ -90,10 +90,10 @@
 <PageGsapRefresh />
 <section class="col-span-1 col-start-1 min-h-screen">
 	<div class=" max-w-3xl container py-10 md:py-28">
-		<h1 class="title-1 text-center font-medium fadein"><MagicText text="Resume" /></h1>
+		<h1 class="title-1 font-medium fadein"><MagicText text="Resume" /></h1>
 		<div class="grid gap-10 py-10">
 			<div
-				class="resume-nav justify-center grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
+				class="resume-nav grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
 			>
 				<div class=" w-1/2 sm:w-auto">
 					<button
@@ -141,7 +141,7 @@
 			{#if pagecur === 'About'}
 				<div
 					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300 }}
+					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
 					out:fadeScale={{ duration: 300 }}
 				>
 					<About />
@@ -149,7 +149,7 @@
 			{:else if pagecur === 'Experience'}
 				<div
 					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300 }}
+					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
 					out:fadeScale={{ duration: 300 }}
 				>
 					<Experience />
@@ -157,7 +157,7 @@
 			{:else if pagecur === 'Education'}
 				<div
 					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300 }}
+					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
 					out:fadeScale={{ duration: 300 }}
 				>
 					<Education />
@@ -165,7 +165,7 @@
 			{:else if pagecur === 'Skills'}
 				<div
 					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300 }}
+					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
 					out:fadeScale={{ duration: 300 }}
 				>
 					<Skills />
@@ -173,7 +173,7 @@
 			{:else if pagecur === 'References'}
 				<div
 					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300 }}
+					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
 					out:fadeScale={{ duration: 300 }}
 				>
 					<References />

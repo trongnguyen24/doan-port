@@ -122,8 +122,8 @@
 <Gsapsetup />
 <PageGsapRefresh />
 
-<section class="">
-	<div class=" size-56 bg-indigo-50 rounded-3xl">
+<section class="flex gap-8">
+	<div class=" size-44 aspect-square bg-indigo-50 rounded-3xl">
 		<div id="pointer" class="pointer">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 185 204">
 				<g id="aaaaa">
@@ -432,5 +432,14 @@
 				</g>
 			</svg>
 		</div>
+	</div>
+	<div class="title 3">
+		<p>I am Doan (Đoan) - a Graphic Designer based in Saigon, Vietnam.</p>
+		<p>
+			I enjoy playing around with layouts and typography, and I have a certain amount of fondness
+			for photography. In terms of illustration, I tend to stylise everything geometrically and fill
+			them with vibrant colours. I am a rookie in the 3D field, but I am more than willing to learn,
+			and do it without cease.
+		</p>
 	</div>
 </section>
