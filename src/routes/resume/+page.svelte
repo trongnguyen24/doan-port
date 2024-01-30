@@ -3,7 +3,7 @@
 
 	import { onMount, onDestroy } from 'svelte';
 	import { gsap } from 'gsap';
-	import { page } from '$app/stores';
+	import Icon from '$lib/icon/index.svelte';
 	import { spring } from 'svelte/motion';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
@@ -13,6 +13,11 @@
 	import Experience from '$lib/components/resume/Experience.svelte';
 	import References from '$lib/components/resume/References.svelte';
 	import Skills from '$lib/components/resume/Skills.svelte';
+	import IconAbout from '$lib/icon/iconAbout.svelte';
+	import IconEducation from '$lib/icon/iconEducation.svelte';
+	import IconExperience from '$lib/icon/iconExperience.svelte';
+	import IconReferences from '$lib/icon/iconReferences.svelte';
+	import IconSkills from '$lib/icon/iconSkills.svelte';
 
 	function fadeScale(node, { delay = 0, duration = 200, easing = (x) => x, baseScale = 0.95 }) {
 		const o = +getComputedStyle(node).opacity;
@@ -89,46 +94,61 @@
 <Gsapsetup />
 <PageGsapRefresh />
 <section class="col-span-1 col-start-1 min-h-screen">
-	<div class=" max-w-3xl container py-10 md:py-28">
+	<div class=" max-w-screen-lg container py-10 md:py-28">
 		<h1 class="title-1 font-medium fadein"><MagicText text="Resume" /></h1>
-		<div class="grid gap-10 py-10">
+		<div class="flex flex-col md:flex-row gap-10 pt-14">
 			<div
-				class="resume-nav grid-cols-2 grid sm:flex gap-3 md:gap-4 relative flex-wrap text-gray-900"
+				class="resume-nav w-full shrink-0 md:w-60 grid grid-cols-2 md:grid-cols-1 gap-3 relative text-gray-900 font-medium"
 			>
-				<div class=" w-1/2 sm:w-auto">
+				<div class="">
 					<button
-						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						active="true"
 						on:click={() => switchPage('About')}
-						on:click={handleClick}>About</button
+						on:click={handleClick}
+					>
+						<IconAbout />
+						About</button
 					>
 				</div>
-				<div class=" w-1/2 sm:w-auto">
+				<div class=" ">
 					<button
-						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Experience')}
-						on:click={handleClick}>Experience</button
+						on:click={handleClick}
+					>
+						<IconExperience />
+						Experience</button
 					>
 				</div>
-				<div class=" w-1/2 sm:w-auto">
+				<div class=" ">
 					<button
-						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Education')}
-						on:click={handleClick}>Education</button
+						on:click={handleClick}
+					>
+						<IconEducation />
+						Education</button
 					>
 				</div>
-				<div class=" w-1/2 sm:w-auto">
+				<div class=" ">
 					<button
-						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Skills')}
-						on:click={handleClick}>Skills</button
+						on:click={handleClick}
+					>
+						<IconSkills />
+						Skills</button
 					>
 				</div>
-				<div class=" w-1/2 sm:w-auto">
+				<div class=" ">
 					<button
-						class="text-lg item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('References')}
-						on:click={handleClick}>References</button
+						on:click={handleClick}
+					>
+						<IconReferences />
+						References</button
 					>
 				</div>
 				<span
@@ -136,49 +156,50 @@
 					class="absolute -z-10 active-bt h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"
 				></span>
 			</div>
-		</div>
-		<div class="grid grid-cols-[1fr]">
-			{#if pagecur === 'About'}
-				<div
-					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
-					out:fadeScale={{ duration: 300 }}
-				>
-					<About />
-				</div>
-			{:else if pagecur === 'Experience'}
-				<div
-					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
-					out:fadeScale={{ duration: 300 }}
-				>
-					<Experience />
-				</div>
-			{:else if pagecur === 'Education'}
-				<div
-					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
-					out:fadeScale={{ duration: 300 }}
-				>
-					<Education />
-				</div>
-			{:else if pagecur === 'Skills'}
-				<div
-					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
-					out:fadeScale={{ duration: 300 }}
-				>
-					<Skills />
-				</div>
-			{:else if pagecur === 'References'}
-				<div
-					class="row-start-1 col-start-1 inline-grid transform-gpu"
-					in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
-					out:fadeScale={{ duration: 300 }}
-				>
-					<References />
-				</div>
-			{/if}
+
+			<div class="grid grid-cols-[1fr]">
+				{#if pagecur === 'About'}
+					<div
+						class="row-start-1 col-start-1 inline-grid transform-gpu"
+						in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
+						out:fadeScale={{ duration: 300 }}
+					>
+						<About />
+					</div>
+				{:else if pagecur === 'Experience'}
+					<div
+						class="row-start-1 col-start-1 inline-grid transform-gpu"
+						in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
+						out:fadeScale={{ duration: 300 }}
+					>
+						<Experience />
+					</div>
+				{:else if pagecur === 'Education'}
+					<div
+						class="row-start-1 col-start-1 inline-grid transform-gpu"
+						in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
+						out:fadeScale={{ duration: 300 }}
+					>
+						<Education />
+					</div>
+				{:else if pagecur === 'Skills'}
+					<div
+						class="row-start-1 col-start-1 inline-grid transform-gpu"
+						in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
+						out:fadeScale={{ duration: 300 }}
+					>
+						<Skills />
+					</div>
+				{:else if pagecur === 'References'}
+					<div
+						class="row-start-1 col-start-1 inline-grid transform-gpu"
+						in:fadeScale={{ delay: 310, duration: 300, baseScale: 1.05 }}
+						out:fadeScale={{ duration: 300 }}
+					>
+						<References />
+					</div>
+				{/if}
+			</div>
 		</div>
 	</div>
 </section>

@@ -123,7 +123,7 @@
 <PageGsapRefresh />
 
 <section class="flex gap-8">
-	<div class=" size-44 aspect-square bg-indigo-50 rounded-3xl">
+	<div class="bg-avatar size-44 aspect-square rounded-3xl">
 		<div id="pointer" class="pointer">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 185 204">
 				<g id="aaaaa">
@@ -443,3 +443,29 @@
 		</p>
 	</div>
 </section>
+
+<style>
+	.bg-avatar {
+		--purple: #f8f1ff;
+		--violet: #e2d7ff;
+		--pink: #ffe1f2;
+		animation: background-pan 3s linear infinite;
+		background-size: 200% 200%;
+		background-image: linear-gradient(
+			to right,
+			var(--purple),
+			var(--violet),
+			var(--pink),
+			var(--purple)
+		);
+	}
+	@keyframes background-pan {
+		from {
+			background-position: 0% 0%;
+		}
+
+		to {
+			background-position: -200% -200%;
+		}
+	}
+</style>
