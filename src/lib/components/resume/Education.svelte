@@ -1,3 +1,7 @@
+<script>
+	import Cat from '$lib/icon/cat.svelte';
+</script>
+
 <section>
 	<h3>Education</h3>
 	<div class="title 3">
@@ -9,4 +13,5 @@
 			and do it without cease.
 		</p>
 	</div>
+	<div class="w-24 absolute top-0 -translate-y-full"><Cat /></div>
 </section>

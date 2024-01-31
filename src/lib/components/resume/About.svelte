@@ -43,7 +43,6 @@
 			function updateWindowSize() {
 				windowHeight = window.innerHeight;
 				windowWidth = window.innerWidth;
-				rect = handPointer.getBoundingClientRect();
 			}
 			window.addEventListener('resize', updateWindowSize);
 			updateWindowSize();
@@ -55,6 +54,7 @@
 					document.removeEventListener('touchmove', movePointer);
 					return;
 				}
+				rect = handPointer.getBoundingClientRect();
 				// console.log('running');
 				xPointer = rect.x + rect.width / 2;
 				yPointer = rect.y + rect.height / 2;

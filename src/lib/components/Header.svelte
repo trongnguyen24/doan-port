@@ -6,6 +6,7 @@
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import Cat from '$lib/icon/cat.svelte';
 	import * as Drawer from '$lib/components/ui/drawer';
 
 	let coords = spring(
@@ -183,12 +184,9 @@
 				</Drawer.Trigger>
 				<Drawer.Content>
 					<Drawer.Header>
-						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description></Drawer.Description>
+						<div class="title-1">Title 1</div>
+						<!-- <div class="w-24 absolute top-0 -translate-y-full"><Cat /></div> -->
 					</Drawer.Header>
-					<Drawer.Footer>
-						<Drawer.Close>Cancel</Drawer.Close>
-					</Drawer.Footer>
 				</Drawer.Content>
 			</Drawer.Root>
 		</button>
