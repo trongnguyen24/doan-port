@@ -185,7 +185,7 @@
 				<Drawer.Content>
 					<Drawer.Header>
 						<div class="title-1">Title 1</div>
-						<!-- <div class="w-24 absolute top-0 -translate-y-full"><Cat /></div> -->
+						<Cat />
 					</Drawer.Header>
 				</Drawer.Content>
 			</Drawer.Root>
