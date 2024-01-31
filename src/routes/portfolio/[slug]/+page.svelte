@@ -22,6 +22,11 @@
 		urban: urban
 	};
 
+	if (modules[data.nextPost.image]) {
+		data.nextPost.image2 = modules[data.nextPost.image];
+	}
+
+	console.log(data.nextPost);
 	// Duyệt qua mỗi đối tượng trong data.post
 	data.posts.forEach((post) => {
 		// Kiểm tra xem có module tương ứng với slug không
@@ -50,22 +55,22 @@
 				);
 			});
 
-			let portfolio = gsap.utils.toArray('.portfolio');
-			let maxWidth = 0;
-			portfolio.forEach((item) => {
-				maxWidth += item.offsetWidth;
-			});
+			// let portfolio = gsap.utils.toArray('.portfolio');
+			// let maxWidth = 0;
+			// portfolio.forEach((item) => {
+			// 	maxWidth += item.offsetWidth;
+			// });
 
-			let tl = gsap
-				.timeline({
-					scrollTrigger: {
-						pin: '#portfolios',
-						end: () => `+=${maxWidth}`,
-						scrub: 1,
-						markers: false
-					}
-				})
-				.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
+			// let tl = gsap
+			// 	.timeline({
+			// 		scrollTrigger: {
+			// 			pin: '#portfolios',
+			// 			end: () => `+=${maxWidth}`,
+			// 			scrub: 1,
+			// 			markers: false
+			// 		}
+			// 	})
+			// 	.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
 		}, 1000);
 	});
 </script>
@@ -78,9 +83,52 @@
 <PageGsapRefresh />
 <div class="pb-24 md:pb-32">
 	<svelte:component this={data.content} />
+	<section
+		class="nextproject flex gap-10 flex-col overflow-hidden items-center py-12 justify-center"
+	>
+		<div class="overflow-hidden flex max-w-80 relative">
+			<div side="left" class="horizontalFade"></div>
+			<div side="right" class="horizontalFade"></div>
+			<div class="moveLeft shrink-0 flex justify-center items-center">
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+			</div>
+		</div>
+		<div>
+			<div scroll="reveal">
+				<div class="px-10 max-w-[576px]">
+					<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
+						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+							<div class="tranform hover:scale-[1.03] transition duration-700">
+								<enhanced:img
+									src={data.nextPost.image2}
+									alt={data.nextPost.title}
+									sizes="min(540px, 100vw)"
+								/>
+							</div>
+						</div>
+						<div class="reveal-text pt-6">
+							<h2 class="title-2 text-slate-900">{data.nextPost.title}</h2>
+							<p class="title-3 text-slate-500">{data.nextPost.description}</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
 
-<section class="overflow-hidden">
+<!-- <section class="overflow-hidden">
 	<div id="portfolios" class="flex h-screen pb-24 items-center">
 		<div class="flex">
 			<div
@@ -105,7 +153,45 @@
 			{/each}
 		</div>
 	</div>
-</section>
+</section> -->
 
 <style>
+	.horizontalFade {
+		@apply absolute inset-y-0 w-24 z-10;
+		-webkit-backdrop-filter: blur(2px);
+		backdrop-filter: blur(2px);
+	}
+	.horizontalFade[side='left'] {
+		background: linear-gradient(to right, white 10%, transparent);
+		left: 0;
+		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
+		mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
+	}
+	.horizontalFade[side='right'] {
+		background: linear-gradient(to left, white 10%, transparent);
+		right: 0;
+		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
+		mask-image: linear-gradient(to left, #fcfcfc 25%, transparent);
+	}
+	.moveLeft {
+		animation: moveLeft 6s linear infinite;
+	}
+
+	@keyframes background-pan {
+		from {
+			background-position: 0% center;
+		}
+
+		to {
+			background-position: -200% center;
+		}
+	}
+	@keyframes moveLeft {
+		from {
+			transform: translateX(-25%);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
 </style>

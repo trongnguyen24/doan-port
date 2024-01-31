@@ -140,18 +140,18 @@
 	<div class="relative group">
 		<span
 			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
-			>Resume</span
+			>Cv</span
 		>
 		<a
-			aria-current={$page.url.pathname === '/resume'
+			aria-current={$page.url.pathname === '/cv'
 				? (coords.set({ x: 32 + 2 * 56 }), 'page')
 				: undefined}
-			href="/resume"
+			href="/cv"
 			on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
 			on:click={handleClick}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll
-			aria-label="Resume"
+			aria-label="Curriculum vitae"
 		>
 			<div
 				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"

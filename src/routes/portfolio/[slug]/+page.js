@@ -19,9 +19,21 @@ export async function load({ params, fetch }) {
 		postsStore.set(posts); // Cập nhật store
 	}
 
+	let nextPost;
+	let currentIndex = posts.findIndex((post) => post.slug === params.slug);
+
+	if (currentIndex === -1 || currentIndex + 1 === posts.length) {
+		// Trả về post đầu tiên nếu không tìm thấy slug hoặc là post cuối cùng
+		nextPost = posts[0];
+	} else {
+		// Trả về post kế tiếp
+		nextPost = posts[currentIndex + 1];
+	}
+
 	return {
 		content: post.default,
 		meta: post.metadata,
-		posts
+		posts,
+		nextPost
 	};
 }
