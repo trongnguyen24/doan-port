@@ -3,6 +3,7 @@
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 	import { page } from '$app/stores';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
@@ -37,7 +38,6 @@
 	data.posts = data.posts.filter((post) => post.slug !== $page.params.slug);
 
 	onMount(() => {
-		// reveal on scroll
 		setTimeout(() => {
 			document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
 				let page = gsap.fromTo(
@@ -76,8 +76,8 @@
 							el,
 							{
 								ease: 'none',
-								scale: 0.7,
-								opacity: 0,
+								scale: isLast ? 1 : 0.7,
+								opacity: isLast ? 1 : 0,
 								yPercent: isLast ? 90 : 0
 							},
 							0
@@ -103,6 +103,12 @@
 			// 		}
 			// 	})
 			// 	.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
+		}, 1050);
+	});
+	afterNavigate(() => {
+		disableScrollHandling;
+		setTimeout(() => {
+			scrollTo({ top: 0, behavior: 'instant' });
 		}, 1000);
 	});
 </script>
@@ -158,7 +164,7 @@
 			</div>
 		</div>
 	</section> -->
-	<div class="overflow-hidden mx-auto flex max-w-96 relative">
+	<div class="overflow-hidden fadein mx-auto flex max-w-96 relative">
 		<div side="left" class="horizontalFade"></div>
 		<div side="right" class="horizontalFade"></div>
 		<div class="moveLeft shrink-0 flex justify-center items-center">
@@ -176,8 +182,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="portfolios" class="flex justify-center relative">
-		<div class="flex flex-col">
+	<div id="portfolios" class="flex fadein flex-col items-center justify-center relative">
+		<div class="flex justify-center items-center flex-col">
 			{#each data.posts as item}
 				<div
 					class="w-screen max-w-[24rem] portfolio top-0 flex justify-center items-center py-16 sticky"
@@ -195,10 +201,14 @@
 					</a>
 				</div>
 			{/each}
+			<div
+				class=" container bg-white max-w-7xl text-balance portfolio top-0 flex justify-center items-center h-[80vh] sticky"
+			>
+				<div class=" relative flex justify-center z-10">
+					<h1 class="title-1">Explore my journey in more detail by viewing my Curriculum Vitae.</h1>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="h-screen bg-white relative flex items-center justify-center z-10">
-		<h1 class="title-1">AAAAAAA</h1>
 	</div>
 </div>
 

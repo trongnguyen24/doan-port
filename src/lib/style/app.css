@@ -139,6 +139,12 @@ html.lenis {
 	height: auto;
 }
 
+html {
+	scrollbar-color: auto !important;
+	scrollbar-width: auto;
+	overflow-y: auto !important;
+}
+
 .lenis.lenis-smooth {
 	scroll-behavior: auto;
 }
@@ -175,13 +181,13 @@ html.lenis {
 
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-	background-color: #a9b4bc48;
+	background-color: #a9b4bc48 !important;
 }
 
 html {
 	scrollbar-color: rgba(169, 180, 188, 0.11) transparent;
 	scrollbar-width: auto;
-	overflow-y: scroll;
+	overflow-y: scroll !important;
 }
 
 .animate-bounce-nav {

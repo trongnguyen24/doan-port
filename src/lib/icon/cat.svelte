@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	onMount(() => {
-		document.querySelector('.bg-white.bg-opacity-80').addEventListener('mousemove', function (e) {
+		document.querySelector('.bg-white.inset-0').addEventListener('mousemove', function (e) {
 			moveIris(e, 'cat', 'iris');
 			moveIris(e, 'cat', 'iris_2');
 		});

@@ -50,9 +50,10 @@
 		openMenu();
 	});
 	afterNavigate(() => {
+		disableScrollHandling;
 		setTimeout(() => {
 			scrollTo({ top: 0, behavior: 'instant' });
-		}, 1100);
+		}, 980);
 	});
 </script>
 

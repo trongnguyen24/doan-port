@@ -3,6 +3,7 @@
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
@@ -46,6 +47,12 @@
 					}
 				);
 			});
+		}, 1050);
+	});
+	afterNavigate(() => {
+		disableScrollHandling;
+		setTimeout(() => {
+			scrollTo({ top: 0, behavior: 'instant' });
 		}, 1000);
 	});
 </script>

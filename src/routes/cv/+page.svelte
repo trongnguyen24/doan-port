@@ -95,7 +95,7 @@
 <PageGsapRefresh />
 <section class="col-span-1 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg container py-10 md:py-28">
-		<h1 class="title-1 font-medium fadein"><MagicText text="Resume" /></h1>
+		<h1 class="title-1 font-medium fadein"><MagicText text="Curriculum Vitae" /></h1>
 		<div class="flex flex-col md:flex-row gap-10 pt-14">
 			<div
 				class="resume-nav w-full shrink-0 md:w-60 grid grid-cols-2 md:grid-cols-1 gap-3 relative text-gray-900 font-medium"
