@@ -26,7 +26,6 @@
 		data.nextPost.image2 = modules[data.nextPost.image];
 	}
 
-	console.log(data.nextPost);
 	// Duyệt qua mỗi đối tượng trong data.post
 	data.posts.forEach((post) => {
 		// Kiểm tra xem có module tương ứng với slug không
@@ -54,6 +53,39 @@
 					}
 				);
 			});
+
+			const contentElements = [...document.querySelectorAll('.portfolio')];
+
+			const totalContentElements = contentElements.length;
+
+			// Function to handle scroll-triggered animations
+			const scroll = () => {
+				contentElements.forEach((el, position) => {
+					const isLast = position === totalContentElements - 1;
+
+					gsap
+						.timeline({
+							scrollTrigger: {
+								trigger: el,
+								start: 'center center',
+								end: '+=100%',
+								scrub: true
+							}
+						})
+						.to(
+							el,
+							{
+								ease: 'none',
+								scale: isLast ? 1 : 0.7,
+								opacity: isLast ? 1 : 0,
+								yPercent: isLast ? 100 : 0
+							},
+							0
+						);
+				});
+			};
+
+			scroll();
 
 			// let portfolio = gsap.utils.toArray('.portfolio');
 			// let maxWidth = 0;
@@ -83,7 +115,7 @@
 <PageGsapRefresh />
 <div class="pb-24 md:pb-32">
 	<svelte:component this={data.content} />
-	<section
+	<!-- <section
 		class="nextproject flex gap-10 flex-col overflow-hidden items-center py-12 justify-center"
 	>
 		<div class="overflow-hidden flex max-w-80 relative">
@@ -125,7 +157,49 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
+	<div class="overflow-hidden mx-auto pt-10 flex max-w-96 sticky top-0 relative">
+		<div side="left" class="horizontalFade"></div>
+		<div side="right" class="horizontalFade"></div>
+		<div class="moveLeft shrink-0 flex justify-center items-center">
+			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+				<MagicText text="Next project" />
+			</div>
+			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+				<MagicText text="Next project" />
+			</div>
+			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+				<MagicText text="Next project" />
+			</div>
+			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+				<MagicText text="Next project" />
+			</div>
+		</div>
+	</div>
+	<div id="portfolios" class="flex justify-center relative">
+		<div class="flex flex-col">
+			{#each data.posts as item}
+				<div
+					class="w-screen h-screen max-w-[30rem] portfolio top-0 flex justify-center items-center pt-24 sticky"
+				>
+					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
+						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+							<div class="tranform hover:scale-[1.03] transition duration-700">
+								<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
+							</div>
+						</div>
+						<div class="reveal-text pt-6">
+							<h2 class="title-2 text-slate-900">{item.title}</h2>
+							<p class="title-3 text-slate-500">{item.description}</p>
+						</div>
+					</a>
+				</div>
+			{/each}
+		</div>
+	</div>
+	<div class="h-screen bg-white relative flex items-center justify-center z-10">
+		<h1 class="title-1">AAAAAAA</h1>
+	</div>
 </div>
 
 <!-- <section class="overflow-hidden">
