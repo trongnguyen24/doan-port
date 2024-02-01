@@ -67,7 +67,7 @@
 						.timeline({
 							scrollTrigger: {
 								trigger: el,
-								start: 'center center',
+								start: 'top top',
 								end: '+=80%',
 								scrub: true
 							}
@@ -164,7 +164,7 @@
 			</div>
 		</div>
 	</section> -->
-	<div class="overflow-hidden fadein mx-auto flex max-w-96 relative">
+	<div class="overflow-hidden fadein container flex max-w-96 relative">
 		<div side="left" class="horizontalFade"></div>
 		<div side="right" class="horizontalFade"></div>
 		<div class="moveLeft shrink-0 flex justify-center items-center">
@@ -186,7 +186,7 @@
 		<div class="flex justify-center items-center flex-col">
 			{#each data.posts as item}
 				<div
-					class="w-screen max-w-[24rem] portfolio top-0 flex justify-center items-center py-16 sticky"
+					class="max-w-[38rem] px-6 max-h-screen h-[80vh] portfolio top-0 flex justify-center items-center py-16 sticky"
 				>
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
@@ -202,7 +202,7 @@
 				</div>
 			{/each}
 			<div
-				class=" container bg-white max-w-7xl text-balance portfolio top-0 flex justify-center items-center h-[80vh] sticky"
+				class="container bg-white max-w-7xl text-balance portfolio top-0 flex justify-center items-center h-screen sticky"
 			>
 				<div class=" relative flex justify-center z-10">
 					<h1 class="title-1">Explore my journey in more detail by viewing my Curriculum Vitae.</h1>

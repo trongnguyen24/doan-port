@@ -1,0 +1,12 @@
+import { Dialog as DialogPrimitive } from "bits-ui";
+export { default as Root } from "./root.svelte";
+export { default as Content } from "./content.svelte";
+export { default as Overlay } from "./overlay.svelte";
+export { default as NestedRoot } from "./nested-root.svelte";
+export { default as Close } from "./close.svelte";
+export { default as Trigger } from "./trigger.svelte";
+declare const Portal: typeof DialogPrimitive.Portal;
+declare const Title: typeof DialogPrimitive.Title;
+declare const Description: typeof DialogPrimitive.Description;
+export { Portal, Title, Description };
+export * from "./types.js";

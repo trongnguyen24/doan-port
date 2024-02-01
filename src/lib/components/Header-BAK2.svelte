@@ -7,7 +7,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Cat from '$lib/icon/cat.svelte';
-	import { Drawer } from '$lib/components/ui/vaul-svelte/dist';
+	import * as Drawer from '$lib/components/ui/drawer';
 	import * as Dialog from '$lib/components/ui/dialog';
 
 	let dialogOpen = false;
@@ -89,7 +89,7 @@
 
 <div
 	id="cards"
-	class="z-20 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-90 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-90 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
 	<div class="relative group">
 		<span
@@ -177,51 +177,12 @@
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			aria-label="Contact"
 		>
-			<Drawer.Root>
-				<Drawer.Trigger
-					><div
-						class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
-					>
-						<Icon name="contact" />
-						<div class="size-12 shine absolute pointer-events-none"></div>
-					</div></Drawer.Trigger
-				>
-				<Drawer.Portal class=" relative inset-0 z-50 overflow-y-auto">
-					<Drawer.Overlay class="fixed inset-0 bg-black/40" />
-					<Drawer.Content
-						class="bg-zinc-100 flex flex-col rounded-t-[10px] mt-24 fixed bottom-0 left-0 right-0"
-					>
-						<div class="p-4 bg-white rounded-t-[10px] flex-1">
-							<div class="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
-							<div class="max-w-md mx-auto">
-								<Drawer.Title class="font-medium mb-4">Unstyled drawer for Svelte.</Drawer.Title>
-								<p class="text-zinc-600 mb-2">
-									This component can be used as a replacement for a Dialog on mobile and tablet
-									devices.
-								</p>
-								<p class="text-zinc-600 mb-8">
-									It uses
-									<a
-										href="https://www.bits-ui.com/docs/components/dialog"
-										class="underline"
-										target="_blank"
-									>
-										Bits' Dialog primitive
-									</a>
-									under the hood and is inspired by
-									<a
-										href="https://twitter.com/devongovett/status/1674470185783402496"
-										class="underline"
-										target="_blank"
-									>
-										this tweet.
-									</a>
-								</p>
-							</div>
-						</div>
-					</Drawer.Content>
-				</Drawer.Portal>
-			</Drawer.Root>
+			<div
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+			>
+				<Icon name="contact" />
+				<div class="size-12 shine absolute pointer-events-none"></div>
+			</div>
 		</button>
 	</div>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -229,6 +190,17 @@
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
 	</svg>
 </div>
+<Dialog.Root bind:open={dialogOpen}>
+	<Dialog.Content>
+		<Dialog.Header>
+			<Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
+			<Dialog.Description>
+				This action cannot be undone. This will permanently delete your account and remove your data
+				from our servers.
+			</Dialog.Description>
+		</Dialog.Header>
+	</Dialog.Content>
+</Dialog.Root>
 
 <style>
 	#cards {
