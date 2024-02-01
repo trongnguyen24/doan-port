@@ -8,9 +8,6 @@
 	import { page } from '$app/stores';
 	import Cat from '$lib/icon/cat.svelte';
 	import * as Drawer from '$lib/components/ui/drawer';
-	import * as Dialog from '$lib/components/ui/dialog';
-
-	let dialogOpen = false;
 
 	let coords = spring(
 		{ x: 32 },
@@ -173,16 +170,25 @@
 		>
 		<button
 			on:click={handleClick}
-			on:click={() => (dialogOpen = true)}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			aria-label="Contact"
 		>
-			<div
-				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
-			>
-				<Icon name="contact" />
-				<div class="size-12 shine absolute pointer-events-none"></div>
-			</div>
+			<Drawer.Root>
+				<Drawer.Trigger
+					><div
+						class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+					>
+						<Icon name="contact" />
+						<div class="size-12 shine absolute pointer-events-none"></div>
+					</div>
+				</Drawer.Trigger>
+				<Drawer.Content>
+					<Drawer.Header>
+						<div class="title-1">Title 1</div>
+						<Cat />
+					</Drawer.Header>
+				</Drawer.Content>
+			</Drawer.Root>
 		</button>
 	</div>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -190,18 +196,6 @@
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
 	</svg>
 </div>
-<Dialog.Root bind:open={dialogOpen}>
-	<Dialog.Trigger></Dialog.Trigger>
-	<Dialog.Content>
-		<Dialog.Header>
-			<Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
-			<Dialog.Description>
-				This action cannot be undone. This will permanently delete your account and remove your data
-				from our servers.
-			</Dialog.Description>
-		</Dialog.Header>
-	</Dialog.Content>
-</Dialog.Root>
 
 <style>
 	#cards {

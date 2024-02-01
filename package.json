@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@fontsource-variable/inter": "^5.0.16",
 		"@studio-freight/lenis": "^1.0.33",
+		"bits-ui": "^0.16.0",
 		"clsx": "^2.1.0",
 		"gsap": "^3.12.4",
 		"lucide-svelte": "^0.314.0",

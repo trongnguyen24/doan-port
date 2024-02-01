@@ -56,7 +56,8 @@ const config = {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'4xl': '2.25rem'
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
