@@ -68,7 +68,7 @@
 							scrollTrigger: {
 								trigger: el,
 								start: 'center center',
-								end: '+=100%',
+								end: '+=80%',
 								scrub: true
 							}
 						})
@@ -76,9 +76,9 @@
 							el,
 							{
 								ease: 'none',
-								scale: isLast ? 1 : 0.7,
-								opacity: isLast ? 1 : 0,
-								yPercent: isLast ? 100 : 0
+								scale: 0.7,
+								opacity: 0,
+								yPercent: isLast ? 90 : 0
 							},
 							0
 						);
@@ -158,7 +158,7 @@
 			</div>
 		</div>
 	</section> -->
-	<div class="overflow-hidden mx-auto pt-10 flex max-w-96 sticky top-0 relative">
+	<div class="overflow-hidden mx-auto flex max-w-96 relative">
 		<div side="left" class="horizontalFade"></div>
 		<div side="right" class="horizontalFade"></div>
 		<div class="moveLeft shrink-0 flex justify-center items-center">
@@ -180,7 +180,7 @@
 		<div class="flex flex-col">
 			{#each data.posts as item}
 				<div
-					class="w-screen h-screen max-w-[30rem] portfolio top-0 flex justify-center items-center pt-24 sticky"
+					class="w-screen max-w-[24rem] portfolio top-0 flex justify-center items-center py-16 sticky"
 				>
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
