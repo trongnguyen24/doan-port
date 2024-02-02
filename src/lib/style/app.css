@@ -163,26 +163,23 @@ html.lenis {
 
 ::-webkit-scrollbar-track {
 	background: transparent;
-	border-radius: 4px;
+	border-left: 1px solid #a9b4bc2b;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #a9b4bc80;
+	background-color: #a9b4bc48;
 	border-radius: 15px;
-	border: 1px solid transparent;
-	background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-	background-color: #a9b4bc48 !important;
+	background-color: #a9b4bc70 !important;
 }
 
-html,
-body {
+html {
 	scrollbar-color: auto !important;
 	scrollbar-width: auto;
-	overflow-y: visible !important;
+	overflow-y: scroll !important;
 }
 
 .animate-bounce-nav {
