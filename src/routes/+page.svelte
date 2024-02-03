@@ -15,7 +15,8 @@
 <Gsapsetup />
 <PageGsapRefresh />
 <Hello />
-<Jumbo />
+
+<!-- <Jumbo /> -->
 
 <style>
 </style>
