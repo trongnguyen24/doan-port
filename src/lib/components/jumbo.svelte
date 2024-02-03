@@ -1,7 +1,7 @@
 <div class="fadein absolute -z-10 inset-0 overflow-hidden">
-	<div class="jumbo inset-0 -z-[3] absolute opacity-50"></div>
+	<div class="jumbo inset-0 -z-[3] absolute"></div>
 	<!-- <div class="absolute inset-0 -z-[6] backdrop-blur-sm"></div> -->
-	<div class="noiseee inset-0 absolute opacity-80"></div>
+	<!-- <div class="noiseee inset-0 absolute opacity-80"></div> -->
 </div>
 
 <style>
@@ -18,7 +18,7 @@
 		}
 	}
 
-	@keyframes noiseee {
+	/* @keyframes noiseee {
 		0% {
 			background-position:
 				50% 50%,
@@ -38,7 +38,7 @@
 	.noiseee {
 		background-image: url('/nnnoise.png');
 		animation: noiseee 30s steps(50) infinite;
-	}
+	} */
 	.jumbo {
 		--stripes: repeating-linear-gradient(
 			90deg,
@@ -58,12 +58,20 @@
 		);
 		--rainbow: repeating-linear-gradient(
 			90deg,
+			#bfdbfe 10%,
+			#f6c3ff 15%,
+			#93c5fd 20%,
+			#99f6e4 25%,
+			#bfdbfe 30%
+		);
+		/* --rainbow: repeating-linear-gradient(
+			90deg,
 			#60a5fa 10%,
 			#e879f9 15%,
 			#60a5fa 20%,
 			#5eead4 25%,
 			#60a5fa 30%
-		);
+		); */
 		background-image: var(--stripes), var(--rainbow);
 		background-size: 200%, 150%;
 		background-position:
