@@ -106,12 +106,12 @@
 			// 	.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
 		}, 1050);
 	});
-	afterNavigate(() => {
-		disableScrollHandling;
-		setTimeout(() => {
-			scrollTo({ top: 0, behavior: 'instant' });
-		}, 1000);
-	});
+	// afterNavigate(() => {
+	// 	disableScrollHandling;
+	// 	setTimeout(() => {
+	// 		scrollTo({ top: 0, behavior: 'instant' });
+	// 	}, 100);
+	// });
 </script>
 
 <svelte:head>
@@ -187,7 +187,7 @@
 		<div class="flex justify-center items-center flex-col">
 			{#each data.posts as item}
 				<div
-					class="max-w-[38rem] px-6 max-h-screen h-[80vh] portfolio top-0 flex justify-center items-center py-16"
+					class="max-w-[38rem] px-6 max-h-svh h-full portfolio top-0 flex justify-center items-center p-16"
 				>
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
@@ -273,7 +273,7 @@
 	}
 	@keyframes moveLeft {
 		from {
-			transform: translateX(-25%);
+			transform: translateX(0%);
 		}
 		to {
 			transform: translateX(-50%);
