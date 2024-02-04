@@ -194,7 +194,7 @@
 						<Cat />
 						<Drawer.Close>
 							<button
-								class="absolute z-10 flex h-8 w-8 top-6 right-6 items-center justify-center rounded-full bg-[#F7F8F9] text-[#949595] transition-transform focus:scale-95 focus-visible:shadow-focus-ring-button active:scale-75"
+								class="absolute z-10 flex h-8 w-8 top-6 right-6 items-center justify-center rounded-full bg-gray-100 transition-transform focus:scale-95 focus-visible:shadow-focus-ring-button active:scale-75"
 								type="button"
 								><svg
 									width="12"
@@ -250,7 +250,7 @@
 
 									npkhanhdoan@gmail.com
 
-									<div class="c-hover">
+									<div data-copy="npkhanhdoan@gmail.com" class="c-hover">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -295,7 +295,7 @@
 
 									(+84) 939 004 133
 
-									<div class="c-hover">
+									<div data-copy="0939004133" class="c-hover c-copy">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -433,10 +433,10 @@
 
 <style>
 	.c-button {
-		@apply bg-gray-50 transition-transform relative overflow-hidden rounded-xl flex gap-3 items-center text-lg px-4 py-3;
+		@apply bg-gray-100 transition-transform relative overflow-hidden rounded-xl flex gap-3 items-center text-lg px-4 py-3;
 	}
 	.c-hover {
-		@apply inset-x-0 inset-y-1/2 group-hover:inset-y-0 transform transition-all duration-500 overflow-hidden absolute flex items-center font-medium text-violet-200 bg-violet-950;
+		@apply inset-x-0 inset-y-1/2 group-hover:inset-y-0 transform transition-all duration-500 overflow-hidden absolute flex items-center font-medium text-violet-200 bg-gray-950;
 	}
 	@keyframes marquee {
 		0% {
@@ -516,7 +516,7 @@
 		background: radial-gradient(
 			2rem circle at var(--mouse-x) var(--mouse-y),
 			rgba(255, 255, 255, 0.9),
-			transparent 90%
+			pi/posts transparent 90%
 		);
 		z-index: 3;
 	}
@@ -548,36 +548,10 @@
 		z-index: 1;
 	}
 
-	.horizontalFade {
-		@apply absolute inset-y-0 w-12 z-10;
-		-webkit-backdrop-filter: blur(1px);
-		backdrop-filter: blur(1px);
-	}
-	.horizontalFade[side='left'] {
-		background: linear-gradient(to right, #f3f4f6 10%, transparent);
-		left: 0;
-		-webkit-mask-image: linear-gradient(to right, #f3f4f6 25%, transparent);
-		mask-image: linear-gradient(to right, #f3f4f6 25%, transparent);
-	}
-	.horizontalFade[side='right'] {
-		background: linear-gradient(to left, #f3f4f6 10%, transparent);
-		right: 0;
-		-webkit-mask-image: linear-gradient(to right, #f3f4f6 25%, transparent);
-		mask-image: linear-gradient(to left, #f3f4f6 25%, transparent);
-	}
 	.moveLeft {
 		animation: moveLeft 6s linear infinite;
 	}
 
-	@keyframes background-pan {
-		from {
-			background-position: 0% center;
-		}
-
-		to {
-			background-position: -200% center;
-		}
-	}
 	@keyframes moveLeft {
 		from {
 			transform: translateX(0%);

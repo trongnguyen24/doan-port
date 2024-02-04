@@ -183,10 +183,10 @@
 		</div>
 	</div>
 	<div id="portfolios" class="flex fadein flex-col items-center justify-center relative">
-		<div class="flex relative justify-center items-center gap-32 flex-col">
+		<div class="flex relative justify-center items-center gap-16 flex-col">
 			{#each data.posts as item}
 				<div
-					class="max-w-[38rem] px-6 max-h-[46rem] h-screen portfolio top-0 flex justify-center items-center sticky"
+					class="max-w-[38rem] px-6 max-h-[46rem] py-20 sm:h-screen portfolio top-0 flex justify-center items-center sticky"
 				>
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
