@@ -67,7 +67,6 @@
 						.timeline({
 							scrollTrigger: {
 								trigger: el,
-								pin: true,
 								start: 'top top',
 								end: '+=80%',
 								scrub: true
@@ -184,10 +183,10 @@
 		</div>
 	</div>
 	<div id="portfolios" class="flex fadein flex-col items-center justify-center relative">
-		<div class="flex justify-center items-center gap-32 flex-col">
+		<div class="flex relative justify-center items-center gap-32 flex-col">
 			{#each data.posts as item}
 				<div
-					class="max-w-[38rem] px-6 max-h-svh h-full portfolio top-0 flex justify-center items-center"
+					class="max-w-[38rem] px-6 max-h-[46rem] h-screen portfolio top-0 flex justify-center items-center sticky"
 				>
 					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
@@ -202,12 +201,12 @@
 					</a>
 				</div>
 			{/each}
-		</div>
-		<div
-			class="container bg-white max-w-7xl text-balance portfolio top-0 flex justify-center items-center h-svh"
-		>
-			<div class=" relative flex justify-center z-10">
-				<h1 class="title-1">Explore my journey in more detail by viewing my Curriculum Vitae.</h1>
+			<div
+				class="container bg-white max-w-7xl text-balance portfolio top-0 flex justify-center items-center h-svh"
+			>
+				<div class=" relative flex justify-center z-10">
+					<h1 class="title-1">Explore my journey in more detail by viewing my Curriculum Vitae.</h1>
+				</div>
 			</div>
 		</div>
 	</div>
