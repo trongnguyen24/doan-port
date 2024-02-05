@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let text = 'Magic Text';
+	export let color = '';
 	import { onMount } from 'svelte';
 	let index = 0,
 		interval = 1000;
@@ -28,7 +29,7 @@
 	});
 </script>
 
-<span class="magic">
+<span class="magic {color}">
 	<span class="magic-star">
 		<svg viewBox="0 0 512 512">
 			<path
@@ -60,6 +61,14 @@
 		--purple: #a855f7;
 		--violet: #8b5cf6;
 		--pink: #f9a8d4;
+	}
+
+	.magic2 {
+		display: inline-block;
+		position: relative;
+		--purple: #ffffff;
+		--violet: #fcd7ff;
+		--pink: #ffffff;
 	}
 
 	.magic > .magic-star {

@@ -8,9 +8,7 @@
 	import { page } from '$app/stores';
 	import Cat from '$lib/icon/cat.svelte';
 	import { Drawer } from '$lib/components/ui/vaul-svelte/dist';
-	import * as Dialog from '$lib/components/ui/dialog';
-	import Close from './ui/vaul-svelte/dist/vaul/components/close.svelte';
-	import { X } from 'lucide-svelte';
+	import MagicText from './MagicText.svelte';
 
 	let dialogOpen = false;
 
@@ -295,7 +293,7 @@
 											{/each}
 										</div>
 									</button>
-									<div class="c-noti">Copied email</div>
+									<div class="c-noti"><MagicText text="Copied" color="magic2" /></div>
 								</div>
 								<div class="c-button group">
 									<svg
@@ -341,7 +339,7 @@
 											{/each}
 										</div>
 									</button>
-									<div class="c-noti">Copied phone number</div>
+									<div class="c-noti"><MagicText text="Copied" color="magic2" /></div>
 								</div>
 								<div class="c-button group">
 									<svg
@@ -466,7 +464,7 @@
 		transform: translateY(0) !important;
 	}
 	.c-hover {
-		@apply inset-x-0 inset-y-1/2 group-hover:inset-y-0 transform transition-all duration-500 overflow-hidden absolute flex items-center font-medium text-violet-200 bg-gray-950;
+		@apply inset-x-0 inset-y-1/2 group-hover:inset-y-0 transform transition-all duration-500 overflow-hidden absolute flex items-center font-medium text-violet-300 bg-gray-950;
 	}
 	.c-coping {
 		inset: 0 !important;
