@@ -41,10 +41,10 @@
 			notiElement.classList.add('c-copied');
 			setTimeout(() => {
 				notiElement.classList.remove('c-copied');
-				hoverElement.parentNode.style.setProperty('pointer-events', 'auto');
-			}, 3000);
+			}, 2000);
 			setTimeout(() => {
 				hoverElement.classList.remove('c-coping');
+				hoverElement.parentNode.style.setProperty('pointer-events', 'auto');
 			}, 500);
 		});
 	}
@@ -270,7 +270,7 @@
 
 									npkhanhdoan@gmail.com
 
-									<div data-copy="npkhanhdoan@gmail.com" on:click={handleCopy} class="c-hover">
+									<button data-copy="npkhanhdoan@gmail.com" on:click={handleCopy} class="c-hover">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -294,7 +294,7 @@
 												</div>
 											{/each}
 										</div>
-									</div>
+									</button>
 									<div class="c-noti">Copied email</div>
 								</div>
 								<div class="c-button group">
@@ -316,7 +316,7 @@
 
 									(+84) 939 004 133
 
-									<div data-copy="0939004133" class="c-hover c-copy">
+									<button data-copy="0939004133" on:click={handleCopy} class="c-hover c-copy">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -340,7 +340,8 @@
 												</div>
 											{/each}
 										</div>
-									</div>
+									</button>
+									<div class="c-noti">Copied phone number</div>
 								</div>
 								<div class="c-button group">
 									<svg
