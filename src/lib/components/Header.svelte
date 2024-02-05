@@ -10,6 +10,7 @@
 	import { Drawer } from '$lib/components/ui/vaul-svelte/dist';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import Close from './ui/vaul-svelte/dist/vaul/components/close.svelte';
+	import { X } from 'lucide-svelte';
 
 	let dialogOpen = false;
 
@@ -27,6 +28,25 @@
 		setTimeout(() => {
 			element.classList.remove('animate-bounce-nav');
 		}, 550); // Thời gian của animation
+	}
+
+	function handleCopy(event) {
+		const hoverElement = event.currentTarget; // Lấy phần tử c-hover được click
+		const emailToCopy = hoverElement.getAttribute('data-copy'); // Lấy giá trị data-copy
+		const notiElement = hoverElement.parentNode.querySelector('.c-noti'); // Tìm phần tử c-noti
+
+		navigator.clipboard.writeText(emailToCopy).then(() => {
+			hoverElement.classList.add('c-coping');
+			hoverElement.parentNode.style.setProperty('pointer-events', 'none');
+			notiElement.classList.add('c-copied');
+			setTimeout(() => {
+				notiElement.classList.remove('c-copied');
+				hoverElement.parentNode.style.setProperty('pointer-events', 'auto');
+			}, 3000);
+			setTimeout(() => {
+				hoverElement.classList.remove('c-coping');
+			}, 500);
+		});
 	}
 
 	onMount(() => {
@@ -250,7 +270,7 @@
 
 									npkhanhdoan@gmail.com
 
-									<div data-copy="npkhanhdoan@gmail.com" class="c-hover">
+									<div data-copy="npkhanhdoan@gmail.com" on:click={handleCopy} class="c-hover">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -275,6 +295,7 @@
 											{/each}
 										</div>
 									</div>
+									<div class="c-noti">Copied email</div>
 								</div>
 								<div class="c-button group">
 									<svg
@@ -429,14 +450,25 @@
 	<svg class="nav-dot absolute w-full h-full top-0 left-0 z-0 hidden opacity-0">
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
 	</svg>
+	<span class="c-coping c-copied"></span>
 </div>
 
 <style>
 	.c-button {
 		@apply bg-gray-100 transition-transform relative overflow-hidden rounded-xl flex gap-3 items-center text-lg px-4 py-3;
 	}
+	.c-noti {
+		@apply inset-0 bg-violet-500 absolute text-white flex justify-center items-center z-10 -translate-y-[110%] transition-all scale-110 duration-500 rounded-bl-[50%] rounded-br-[50%];
+	}
+	.c-copied {
+		@apply rounded scale-100;
+		transform: translateY(0) !important;
+	}
 	.c-hover {
 		@apply inset-x-0 inset-y-1/2 group-hover:inset-y-0 transform transition-all duration-500 overflow-hidden absolute flex items-center font-medium text-violet-200 bg-gray-950;
+	}
+	.c-coping {
+		inset: 0 !important;
 	}
 	@keyframes marquee {
 		0% {
