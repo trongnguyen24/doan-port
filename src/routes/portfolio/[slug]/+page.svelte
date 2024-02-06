@@ -3,6 +3,7 @@
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { page } from '$app/stores';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
@@ -114,10 +115,8 @@
 	// });
 </script>
 
-<svelte:head>
-	<title>{data.meta.title}</title>
-	<meta name={data.meta.description} content={data.meta.title} />
-</svelte:head>
+<OpenGraph title={data.meta.title} description={data.meta.description} />
+
 <Gsapsetup />
 <PageGsapRefresh />
 <div class="pb-24 md:pb-32">

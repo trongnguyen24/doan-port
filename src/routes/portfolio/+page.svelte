@@ -3,6 +3,7 @@
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
@@ -57,10 +58,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Portfolio</title>
-	<meta name="Portfolio" content="Portfolio" />
-</svelte:head>
+<OpenGraph title="Doan's Portfolio" />
 <Gsapsetup />
 <PageGsapRefresh />
 

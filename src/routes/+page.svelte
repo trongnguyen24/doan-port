@@ -5,12 +5,10 @@
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Hello from '$lib/components/Hello.svelte';
 	import Jumbo from '$lib/components/jumbo.svelte';
+	import OpenGraph from '$lib/components/OpenGraph.svelte';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<OpenGraph />
 
 <Gsapsetup />
 <PageGsapRefresh />
