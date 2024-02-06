@@ -67,7 +67,6 @@
 						.timeline({
 							scrollTrigger: {
 								trigger: el,
-								pin: true,
 								start: 'top top',
 								end: '+=80%',
 								scrub: true
@@ -122,51 +121,91 @@
 <PageGsapRefresh />
 <div class="pb-24 md:pb-32">
 	<svelte:component this={data.content} />
+	<!-- <section
+		class="nextproject flex gap-10 flex-col overflow-hidden items-center py-12 justify-center"
+	>
+		<div class="overflow-hidden flex max-w-80 relative">
+			<div side="left" class="horizontalFade"></div>
+			<div side="right" class="horizontalFade"></div>
+			<div class="moveLeft shrink-0 flex justify-center items-center">
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+			</div>
+		</div>
+		<div>
+			<div scroll="reveal">
+				<div class="px-10 max-w-[576px]">
+					<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
+						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+							<div class="tranform hover:scale-[1.03] transition duration-700">
+								<enhanced:img
+									src={data.nextPost.image2}
+									alt={data.nextPost.title}
+									sizes="min(540px, 100vw)"
+								/>
+							</div>
+						</div>
+						<div class="reveal-text pt-6">
+							<h2 class="title-2 text-slate-900">{data.nextPost.title}</h2>
+							<p class="title-3 text-slate-500">{data.nextPost.description}</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section> -->
 	<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
 		<div side="left" class="horizontalFade"></div>
 		<div side="right" class="horizontalFade"></div>
 		<div class="moveLeft shrink-0 flex justify-center items-center">
 			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
+				<MagicText text="Other project" />
 			</div>
 			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
+				<MagicText text="Other project" />
 			</div>
 			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
+				<MagicText text="Other project" />
 			</div>
 			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
+				<MagicText text="Other project" />
 			</div>
 		</div>
 	</div>
 	<div id="portfolios" class="flex fadein flex-col items-center justify-center relative">
 		<div class="flex relative justify-center items-center gap-16 flex-col">
-			<div
-				class="max-w-[38rem] px-6 max-h-[46rem] py-20 sm:h-screen portfolio top-0 flex justify-center items-center"
-			>
-				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
-					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
-						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<enhanced:img
-								src={data.nextPost.image2}
-								alt={data.nextPost.title}
-								sizes="min(540px, 100vw)"
-							/>
+			{#each data.posts as item}
+				<div
+					class="max-w-[38rem] px-6 max-h-[46rem] py-20 sm:h-screen portfolio top-0 flex justify-center items-center sticky"
+				>
+					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
+						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+							<div class="tranform hover:scale-[1.03] transition duration-700">
+								<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
+							</div>
 						</div>
-					</div>
-					<div class="reveal-text pt-6">
-						<h2 class="title-2 text-slate-900">{data.nextPost.title}</h2>
-						<p class="title-3 text-slate-500">{data.nextPost.description}</p>
-					</div>
-				</a>
-			</div>
-
+						<div class="reveal-text pt-6">
+							<h2 class="title-2 text-slate-900">{item.title}</h2>
+							<p class="title-3 text-slate-500">{item.description}</p>
+						</div>
+					</a>
+				</div>
+			{/each}
 			<div
 				class="container bg-white max-w-5xl text-center text-balance portfolio top-0 flex justify-center items-center h-svh"
 			>
 				<div class="relative flex flex-col gap-8 justify-center z-10">
-					<h1 class="title-2 sm:title-1">
+					<h1 class="title-1">
 						Explore my journey in more detail by viewing <MagicText text="my CV" />.
 					</h1>
 					<Button text="See the CV" link="/cv"></Button>
@@ -175,6 +214,33 @@
 		</div>
 	</div>
 </div>
+
+<!-- <section class="overflow-hidden">
+	<div id="portfolios" class="flex h-screen pb-24 items-center">
+		<div class="flex">
+			<div
+				class="w-screen px-10 max-w-80 md:max-w-[576px] portfolio flex items-center justify-center flex-shrink-0"
+			>
+				<h2 class="title-1 text-slate-900"><MagicText text="Other Project"></MagicText></h2>
+			</div>
+			{#each data.posts as item}
+				<div class="w-screen px-10 max-w-[576px] portfolio flex-shrink-0">
+					<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
+						<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+							<div class="tranform hover:scale-[1.03] transition duration-700">
+								<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
+							</div>
+						</div>
+						<div class="reveal-text pt-6">
+							<h2 class="title-2 text-slate-900">{item.title}</h2>
+							<p class="title-3 text-slate-500">{item.description}</p>
+						</div>
+					</a>
+				</div>
+			{/each}
+		</div>
+	</div>
+</section> -->
 
 <style>
 	.horizontalFade {
