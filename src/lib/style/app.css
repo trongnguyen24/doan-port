@@ -269,15 +269,40 @@ section.reveal .reveal-text {
 }
 
 #con img {
-	/* @apply rounded-md md:rounded-2xl; */
-	margin: 0;
+	@apply rounded-md md:rounded-2xl;
 }
 
 #con p {
-	margin: 0;
+	margin: 3rem auto;
 }
 
 #con p:not(:has(> img)) {
 	max-width: 65ch;
-	margin: 3rem auto;
+}
+
+#con > p img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+	transition:
+		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+	will-change: -webkit-clip-path, clip-path, opacity;
+}
+
+#con > p img.reveal {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	opacity: 1;
+}
+
+#con p:not(:has(> img)) {
+	opacity: 0;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+	will-change: opacity;
+}
+
+#con p:not(:has(> img)).reveal {
+	opacity: 1;
 }

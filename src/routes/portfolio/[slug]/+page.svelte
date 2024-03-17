@@ -14,7 +14,21 @@
 
 	onMount(() => {
 		setTimeout(() => {
-			document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
+			document.querySelectorAll('#con p').forEach((element) => {
+				let page2 = gsap.fromTo(
+					element,
+					{},
+					{
+						scrollTrigger: {
+							trigger: element,
+							start: 'top 100%-=80px', // when the top of the trigger hits the top of the viewport
+							onEnter: () => element.classList.add('reveal'),
+							markers: false
+						}
+					}
+				);
+			});
+			document.querySelectorAll('#con p img').forEach((element) => {
 				let page = gsap.fromTo(
 					element,
 					{},
@@ -28,38 +42,6 @@
 					}
 				);
 			});
-
-			const contentElements = [...document.querySelectorAll('.portfolio')];
-
-			const totalContentElements = contentElements.length;
-
-			// Function to handle scroll-triggered animations
-			const scroll = () => {
-				contentElements.forEach((el, position) => {
-					const isLast = position === totalContentElements - 1;
-
-					gsap
-						.timeline({
-							scrollTrigger: {
-								trigger: el,
-								pin: true,
-								start: 'top top',
-								end: '+=80%',
-								scrub: true
-							}
-						})
-						.to(
-							el,
-							{
-								ease: 'none',
-								scale: isLast ? 1 : 0.7,
-								opacity: isLast ? 1 : 1,
-								yPercent: 0
-							},
-							0
-						);
-				});
-			};
 
 			scroll();
 
@@ -95,7 +77,13 @@
 
 <PageGsapRefresh />
 
-<div class="pb-32 md:pb-32">
+<div class="py-10 md:py-28">
+	<h1
+		class="title-1 opacity-0 fadein container pb-8 text-center text-balance reveal-text text-gray-900"
+	>
+		<MagicText text={data.post.title} />
+	</h1>
+
 	<div id="con" class="prose lg:prose-2xl container max-w-screen-xl">{@html data.post.content}</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">

@@ -179,7 +179,7 @@
 			<div
 				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 			>
-				<Icon name="work" />
+				<Icon name="plays" />
 				<div class="size-12 shine absolute pointer-events-none"></div>
 			</div>
 		</a>
@@ -318,7 +318,7 @@
 											{/each}
 										</div>
 									</button>
-									<div class="c-noti"><MagicText text="Copied" color="magic2" /></div>
+									<div class="c-noti">Copied</div>
 								</div>
 								<div class="c-button group">
 									<svg
@@ -364,7 +364,7 @@
 											{/each}
 										</div>
 									</button>
-									<div class="c-noti"><MagicText text="Copied" color="magic2" /></div>
+									<div class="c-noti">Copied</div>
 								</div>
 								<div class="c-button group">
 									<svg

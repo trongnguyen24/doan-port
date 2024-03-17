@@ -35,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fancyapps/ui": "^5.0.35",
 		"@fontsource-variable/inter": "^5.0.16",
 		"@studio-freight/lenis": "^1.0.33",
 		"bits-ui": "^0.16.0",
