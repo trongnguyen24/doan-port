@@ -98,7 +98,7 @@
 <PageGsapRefresh />
 
 <div class="pb-24 md:pb-32">
-	<div id="con" class="max-w-screen-xl mx-auto prose">{@html data.post.content}</div>
+	<div id="con" class="container prose">{@html data.post.content}</div>
 	<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
 		<div side="left" class="horizontalFade"></div>
 		<div side="right" class="horizontalFade"></div>
@@ -155,10 +155,9 @@
 <style>
 	img {
 		border-radius: 1rem;
+		margin: 0;
 	}
-	p {
-		max-width: 800px;
-	}
+
 	.horizontalFade {
 		@apply absolute inset-y-0 w-24 z-10;
 		-webkit-backdrop-filter: blur(2px);
