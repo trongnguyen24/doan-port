@@ -8,29 +8,9 @@
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import eco from '$lib/posts/eco.png?enhanced&format=webp&quality=70&w=560;1024';
-	import futuristic from '$lib/posts/futuristic.png?enhanced&format=webp&quality=70&w=560;1024';
-	import minimalist from '$lib/posts/minimalist.png?enhanced&format=webp&quality=70&w=560;1024';
-	import retro from '$lib/posts/retro.png?enhanced&format=webp&quality=70&w=560;1024';
-	import urban from '$lib/posts/urban.png?enhanced&format=webp&quality=70&w=560;1024';
-
-	const modules = {
-		eco: eco,
-		futuristic: futuristic,
-		minimalist: minimalist,
-		retro: retro,
-		urban: urban
-	};
+	import { getImageURL } from '$lib/js/utils.js';
 
 	export let data;
-
-	// Duyệt qua mỗi đối tượng trong data.post
-	data.posts.forEach((post) => {
-		// Kiểm tra xem có module tương ứng với slug không
-		if (modules[post.image]) {
-			post.image2 = modules[post.image];
-		}
-	});
 
 	onMount(() => {
 		setTimeout(() => {
@@ -66,12 +46,12 @@
 	<h1 class="title-1 font-medium fadein"><MagicText text="Portfolio" /></h1>
 
 	<div class="md:pt-32 pt-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-y-32">
-		{#each data.posts as item}
+		{#each data.posts.items as item}
 			<div scroll="reveal" class="md:even:translate-y-24 md:odd:-translate-y-16">
 				<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<enhanced:img src={item.image2} alt={item.title} sizes="min(540px, 100vw)" />
+							<img src={getImageURL(item.collectionId, item.id, item.image)} alt={item.title} />
 						</div>
 					</div>
 					<div class="reveal-text pt-6">

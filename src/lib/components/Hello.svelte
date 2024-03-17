@@ -76,7 +76,9 @@
 			</h2>
 		</div>
 	</div>
-	<div class="textfadein text-center"><Button text="MY PORTFOLIO" link="/portfolio" /></div>
+	<div class="textfadein text-center flex gap-6">
+		<Button text="MY PORTFOLIO" link="/portfolio" /><Button text="MY CV" link="/cv" />
+	</div>
 </div>
 
 <style>
