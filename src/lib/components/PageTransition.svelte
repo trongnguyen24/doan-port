@@ -53,7 +53,7 @@
 		disableScrollHandling;
 		setTimeout(() => {
 			scrollTo({ top: 0, behavior: 'instant' });
-		}, 980);
+		}, 1000);
 	});
 </script>
 

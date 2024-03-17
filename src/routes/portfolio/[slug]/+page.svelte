@@ -12,8 +12,6 @@
 
 	export let data;
 
-	console.log(data.post);
-
 	onMount(() => {
 		setTimeout(() => {
 			document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
@@ -91,37 +89,36 @@
 	// });
 </script>
 
-<!-- <OpenGraph title={data.title} description={data.description} /> -->
+<OpenGraph title={data.post.title} description={data.post.description} />
 
 <Gsapsetup />
 
 <PageGsapRefresh />
 
-<div class="pb-24 md:pb-32">
-	<div id="con" class="container prose">{@html data.post.content}</div>
-	<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
-		<div side="left" class="horizontalFade"></div>
-		<div side="right" class="horizontalFade"></div>
-		<div class="moveLeft shrink-0 flex justify-center items-center">
-			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
-			</div>
-			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
-			</div>
-			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
-			</div>
-			<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-				<MagicText text="Next project" />
+<div class="pb-32 md:pb-32">
+	<div id="con" class="prose lg:prose-2xl container max-w-screen-xl">{@html data.post.content}</div>
+
+	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
+		<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
+			<div side="left" class="horizontalFade"></div>
+			<div side="right" class="horizontalFade"></div>
+			<div class="moveLeft shrink-0 flex justify-center items-center">
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
+				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
+					<MagicText text="Next project" />
+				</div>
 			</div>
 		</div>
-	</div>
-	<div id="portfolios" class="flex fadein flex-col items-center justify-center">
-		<div class="flex justify-center items-center gap-16 flex-col">
-			<div
-				class="max-w-[38rem] px-6 max-h-[46rem] py-20 sm:h-screen portfolio top-0 flex justify-center items-center"
-			>
+		<div class="flex justify-center items-center gap-8 flex-col">
+			<div class="max-w-[38rem] px-6 max-h-[46rem] portfolio flex justify-center items-center">
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
@@ -138,8 +135,8 @@
 				</a>
 			</div>
 
-			<div
-				class="container bg-white max-w-5xl text-center text-balance portfolio top-0 flex justify-center items-center h-svh"
+			<!-- <div
+				class="container bg-white max-w-5xl text-center text-balance portfolio top-0 flex justify-center items-center"
 			>
 				<div class="flex flex-col gap-8 justify-center">
 					<h1 class="title-2 sm:title-1">
@@ -147,7 +144,7 @@
 					</h1>
 					<Button text="See the CV" link="/cv"></Button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
@@ -155,9 +152,7 @@
 <style>
 	img {
 		border-radius: 1rem;
-		margin: 0;
 	}
-
 	.horizontalFade {
 		@apply absolute inset-y-0 w-24 z-10;
 		-webkit-backdrop-filter: blur(2px);

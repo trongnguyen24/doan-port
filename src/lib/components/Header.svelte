@@ -64,8 +64,8 @@
 			coords = spring(
 				{ x: 32 },
 				{
-					stiffness: 0.03,
-					damping: 0.16
+					stiffness: 0.02,
+					damping: 0.19
 				}
 			);
 		}
@@ -89,7 +89,7 @@
 			duration: 0.8
 		});
 		menutl.to(cards, {
-			width: '14.5rem',
+			width: '18.15rem',
 			duration: 1
 		});
 		menutl.to(card, {
@@ -108,7 +108,7 @@
 
 <div
 	id="cards"
-	class="z-20 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-90 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
+	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-90 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
 	<div class="relative group">
 		<span
@@ -163,14 +163,39 @@
 	<div class="relative group">
 		<span
 			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
+			>Plays</span
+		>
+		<a
+			aria-current={$page.url.pathname.includes('plays')
+				? (coords.set({ x: 32 + 2 * 56 }), 'page')
+				: undefined}
+			href="/plays"
+			on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
+			on:click={handleClick}
+			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+			data-sveltekit-noscroll
+			aria-label="Plays"
+		>
+			<div
+				class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
+			>
+				<Icon name="work" />
+				<div class="size-12 shine absolute pointer-events-none"></div>
+			</div>
+		</a>
+	</div>
+
+	<div class="relative group">
+		<span
+			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
 			>Cv</span
 		>
 		<a
 			aria-current={$page.url.pathname === '/cv'
-				? (coords.set({ x: 32 + 2 * 56 }), 'page')
+				? (coords.set({ x: 32 + 3 * 56 }), 'page')
 				: undefined}
 			href="/cv"
-			on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
+			on:click={(e) => coords.set({ x: 32 + 3 * 56 })}
 			on:click={handleClick}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll

@@ -267,3 +267,17 @@ section[scroll='reveal'] .reveal-text {
 section.reveal .reveal-text {
 	opacity: 1;
 }
+
+#con img {
+	/* @apply rounded-md md:rounded-2xl; */
+	margin: 0;
+}
+
+#con p {
+	margin: 0;
+}
+
+#con p:not(:has(> img)) {
+	max-width: 65ch;
+	margin: 3rem auto;
+}

@@ -5,7 +5,7 @@ const config = {
 	darkMode: ['class'],
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	safelist: ['dark'],
-	plugins: [require('@tailwindcss/typography')],
+
 	theme: {
 		container: {
 			center: true,
@@ -65,7 +65,8 @@ const config = {
 				sans: [...fontFamily.sans]
 			}
 		}
-	}
+	},
+	plugins: [require('@tailwindcss/typography')]
 };
 
 export default config;

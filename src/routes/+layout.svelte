@@ -26,8 +26,8 @@
 		{#key data.pathname}
 			<div
 				class="row-start-1 col-start-1 inline-grid"
-				in:fade={{ delay: 900, duration: 600 }}
-				out:fade={{ duration: 600 }}
+				in:fade={{ delay: 980, duration: 800 }}
+				out:fade={{ duration: 800 }}
 			>
 				<slot />
 			</div>
