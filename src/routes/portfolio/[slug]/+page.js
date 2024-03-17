@@ -12,7 +12,7 @@ export async function load({ params, fetch }) {
 
 	// Nếu store chưa có dữ liệu, fetch dữ liệu
 	if (posts === null) {
-		const response = await fetch('http://doan.nguyenle.de/api/collections/posts/records');
+		const response = await fetch('https://doan.nguyenle.de/api/collections/posts/records');
 		posts = await response.json();
 		postsStore.set(posts); // Cập nhật store
 	}
