@@ -306,3 +306,10 @@ section.reveal .reveal-text {
 #con p:not(:has(> img)).reveal {
 	opacity: 1;
 }
+
+html.with-fancybox body.hide-scrollbar {
+	margin-right: 0 !important;
+}
+.fancybox__backdrop {
+	background: rgb(255 255 255 / 100%) !important;
+}

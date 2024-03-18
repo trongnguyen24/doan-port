@@ -1,31 +1,31 @@
 <script>
 	// @ts-nocheck
 
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { gsap } from 'gsap';
-	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
+	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import { getImageURL } from '$lib/js/utils.js';
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	onMount(() => {
-		Fancybox.bind('[data-fancybox="gallery"]', {});
-	});
+	const startFancy = () =>
+		Fancybox.bind('[data-fancybox="gallery"]', {
+			caption: function (fancybox, slide) {
+				const figurecaption = slide.triggerEl?.querySelector('figurecaption');
+				return figurecaption ? figurecaption.innerHTML : slide.caption || '';
+			},
+			Thumbs: false
+		});
 </script>
 
 <OpenGraph title="Doan's Portfolio" />
 <Gsapsetup />
 <PageGsapRefresh />
-
-<svelte:head>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"
-	></script>
-</svelte:head>
 
 <section class="max-w-screen-xl container py-10 md:py-28">
 	<div class="">
@@ -36,45 +36,19 @@
 	</div>
 
 	<div class="md:pt-32 pt-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (1).webp">
-				<img class=" h-full w-full object-cover" src="/i (1).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (2).webp">
-				<img class=" h-full w-full object-cover" src="/i (2).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (3).webp">
-				<img class=" h-full w-full object-cover" src="/i (3).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (4).webp">
-				<img class=" h-full w-full object-cover" src="/i (4).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (5).webp">
-				<img class=" h-full w-full object-cover" src="/i (5).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (6).webp">
-				<img class=" h-full w-full object-cover" src="/i (6).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (7).webp">
-				<img class=" h-full w-full object-cover" src="/i (7).webp" alt="" />
-			</a>
-		</div>
-		<div class=" aspect-square rounded-xl overflow-hidden">
-			<a data-fancybox="gallery" href="/i (8).webp">
-				<img class=" h-full w-full object-cover" src="/i (8).webp" alt="" />
-			</a>
-		</div>
+		{#each { length: 8 } as _, i}
+			<figure
+				class="aspect-square rounded-xl overflow-hidden"
+				data-fancybox="gallery"
+				on:click={startFancy}
+				data-src="/i ({i + 1}).webp"
+			>
+				<img class="h-full w-full object-cover" src="/i ({i + 1}).webp" alt="" />
+				<figurecaption>Caption #1</figurecaption>
+			</figure>
+		{/each}
 	</div>
 </section>
+
+<style>
+</style>
