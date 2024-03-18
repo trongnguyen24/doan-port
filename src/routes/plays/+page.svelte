@@ -77,12 +77,10 @@
 					class="h-full w-full object-cover"
 					src={getImageURL(item.collectionId, item.id, item.thumb)}
 					alt={item.name}
+					loading="lazy"
 				/>
 				<figurecaption>{item.name}</figurecaption>
 			</figure>
 		{/each}
 	</div>
 </section>
-
-<style>
-</style>
