@@ -85,7 +85,4 @@
 </section>
 
 <style>
-	.reveal {
-		opacity: 1;
-	}
 </style>

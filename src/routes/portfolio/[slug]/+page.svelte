@@ -4,7 +4,6 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
-	import Button from '$lib/components/Button.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';

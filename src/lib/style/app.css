@@ -348,3 +348,6 @@ html.with-fancybox body.hide-scrollbar {
 img.fancybox-image {
 	@apply rounded-2xl;
 }
+.reveal {
+	opacity: 1;
+}
