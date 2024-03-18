@@ -92,16 +92,16 @@
 
 <Gsapsetup />
 <PageGsapRefresh />
-<section class="col-span-1 col-start-1 min-h-screen">
-	<div class=" max-w-screen-lg container py-10 md:py-28">
+<section class="col-span-1 pt-12 md:py-28 col-start-1 min-h-screen">
+	<div class=" max-w-screen-lg container">
 		<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
-		<div class="flex flex-col md:flex-row gap-10 pt-14">
+		<div class="flex items-start flex-col md:flex-row gap-10 pt-10">
 			<div
-				class="resume-nav w-full shrink-0 md:w-60 grid grid-cols-2 md:grid-cols-1 gap-3 relative text-gray-900 font-medium"
+				class="resume-nav title-3 w-full shrink-0 md:w-60 grid grid-cols-2 md:grid-cols-1 gap-3 relative text-gray-900 font-medium"
 			>
 				<div class="">
 					<button
-						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						active="true"
 						on:click={() => switchPage('About')}
 						on:click={handleClick}
@@ -112,7 +112,7 @@
 				</div>
 				<div class=" ">
 					<button
-						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Experience')}
 						on:click={handleClick}
 					>
@@ -122,7 +122,7 @@
 				</div>
 				<div class=" ">
 					<button
-						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Education')}
 						on:click={handleClick}
 					>
@@ -132,7 +132,7 @@
 				</div>
 				<div class=" ">
 					<button
-						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Skills')}
 						on:click={handleClick}
 					>
@@ -142,7 +142,7 @@
 				</div>
 				<div class=" ">
 					<button
-						class="text-lg flex gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('References')}
 						on:click={handleClick}
 					>
@@ -152,7 +152,7 @@
 				</div>
 				<span
 					style="width: {$coords.activeBtWidth}px; left: {$coords.activeBtXPos}px; top: {$coords.activeBtYPos}px"
-					class="absolute -z-10 active-bt h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"
+					class="absolute -z-10 active-bt h-8 md:h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"
 				></span>
 			</div>
 

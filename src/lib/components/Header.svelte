@@ -388,30 +388,32 @@
 									>
 									fujisai6124de2
 									<div class="c-hover">
-										<div class="moveLeft shrink-0 flex justify-center items-center">
-											{#each { length: 4 } as _, i}
-												<div
-													class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
-												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														fill="none"
-														viewBox="0 0 24 24"
-														stroke-width="1.5"
-														stroke="currentColor"
-														class="w-6 h-6"
+										<a target="_blank" href="https://www.behance.net/fujisai6124de2">
+											<div class="moveLeft shrink-0 flex justify-center items-center">
+												{#each { length: 4 } as _, i}
+													<div
+														class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
 													>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-														/>
-													</svg>
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															fill="none"
+															viewBox="0 0 24 24"
+															stroke-width="1.5"
+															stroke="currentColor"
+															class="w-6 h-6"
+														>
+															<path
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+															/>
+														</svg>
 
-													Open in new tab
-												</div>
-											{/each}
-										</div>
+														Open in new tab
+													</div>
+												{/each}
+											</div>
+										</a>
 									</div>
 								</div>
 								<div class="c-button group">
@@ -437,30 +439,32 @@
 									>
 									@fjsaix612
 									<div class="c-hover">
-										<div class="moveLeft shrink-0 flex justify-center items-center">
-											{#each { length: 4 } as _, i}
-												<div
-													class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
-												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														fill="none"
-														viewBox="0 0 24 24"
-														stroke-width="1.5"
-														stroke="currentColor"
-														class="w-6 h-6"
+										<a target="_blank" href="https://www.instagram.com/fjsaix612/">
+											<div class="moveLeft shrink-0 flex justify-center items-center">
+												{#each { length: 4 } as _, i}
+													<div
+														class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
 													>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-														/>
-													</svg>
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															fill="none"
+															viewBox="0 0 24 24"
+															stroke-width="1.5"
+															stroke="currentColor"
+															class="w-6 h-6"
+														>
+															<path
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+															/>
+														</svg>
 
-													Open in new tab
-												</div>
-											{/each}
-										</div>
+														Open in new tab
+													</div>
+												{/each}
+											</div>
+										</a>
 									</div>
 								</div>
 							</div>
