@@ -216,6 +216,7 @@
 			>Contact</span
 		>
 		<button
+			id="Contact"
 			on:click={handleClick}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			aria-label="Contact"
