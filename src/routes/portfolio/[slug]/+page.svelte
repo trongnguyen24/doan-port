@@ -4,7 +4,6 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
-	import Button from '$lib/components/Button.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
@@ -105,7 +104,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex justify-center items-center gap-8 flex-col">
+		<div class="flex justify-center items-center gap-8 pb-20 flex-col">
 			<div class="max-w-[38rem] px-6 max-h-[46rem] portfolio flex justify-center items-center">
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">

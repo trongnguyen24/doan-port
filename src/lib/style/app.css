@@ -313,3 +313,41 @@ html.with-fancybox body.hide-scrollbar {
 .fancybox__backdrop {
 	background: rgb(255 255 255 / 100%) !important;
 }
+
+.fancybox__slide {
+	/* flex-direction: column-reverse; */
+	gap: 1rem;
+	padding-bottom: 1rem;
+}
+.fancybox__caption {
+	@apply text-slate-700 !important;
+	padding: 1rem 0 !important;
+	text-align: center !important;
+}
+
+.f-button {
+	background: none !important;
+}
+.f-button:hover:not([disabled]) {
+	background: none;
+}
+.f-button svg {
+	@apply text-slate-700 !important;
+}
+.is-idle .fancybox__toolbar {
+	pointer-events: all !important;
+	animation: none !important;
+}
+.fancybox__toolbar__column.is-middle {
+	padding-top: 1rem !important;
+}
+.fancybox__footer {
+	@apply py-8 sm:py-0;
+	background: none !important;
+}
+img.fancybox-image {
+	@apply rounded-2xl;
+}
+.reveal {
+	opacity: 1;
+}
