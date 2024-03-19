@@ -51,7 +51,7 @@
 			/>
 		</svg>
 	</span>
-	<span class="magic-text"> {text} </span>
+	<span class="magic-text text-balance"> {text} </span>
 </span>
 
 <style>
@@ -99,7 +99,7 @@
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		white-space: nowrap;
+		/* white-space: nowrap; */
 	}
 	@keyframes background-pan {
 		from {
