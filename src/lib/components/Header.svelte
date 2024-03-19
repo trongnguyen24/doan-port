@@ -188,7 +188,7 @@
 	<div class="relative group">
 		<span
 			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
-			>Cv</span
+			>CV</span
 		>
 		<a
 			aria-current={$page.url.pathname === '/cv'
