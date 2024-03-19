@@ -216,7 +216,6 @@
 			>Contact</span
 		>
 		<button
-			id="Contact"
 			on:click={handleClick}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			aria-label="Contact"
@@ -226,6 +225,7 @@
 					><div
 						class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 					>
+						<span class="hidden">Contact</span>
 						<Icon name="contact" />
 						<div class="size-12 shine absolute pointer-events-none"></div>
 					</div></Drawer.Trigger
