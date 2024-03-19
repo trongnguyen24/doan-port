@@ -335,7 +335,6 @@ html.with-fancybox body.hide-scrollbar {
 	@apply text-slate-700 !important;
 }
 .is-idle .fancybox__toolbar {
-	pointer-events: all !important;
 	animation: none !important;
 }
 .fancybox__toolbar__column.is-middle {

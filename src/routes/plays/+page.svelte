@@ -68,7 +68,7 @@
 	<div class="md:pt-16 reveal pt-12 py-16 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 xl:gap-10">
 		{#each data.plays.items as item}
 			<figure
-				class="aspect-square rounded opacity-0 transition-all delay-300 duration-700 lg:rounded-xl overflow-hidden"
+				class="aspect-square cursor-pointer rounded opacity-0 transition-all delay-300 duration-700 lg:rounded-xl overflow-hidden"
 				data-fancybox="gallery"
 				on:click={startFancy}
 				data-src={getImageURL(item.collectionId, item.id, item.image)}
