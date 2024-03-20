@@ -188,7 +188,7 @@
 	<div class="relative group">
 		<span
 			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
-			>Cv</span
+			>CV</span
 		>
 		<a
 			aria-current={$page.url.pathname === '/cv'
@@ -225,6 +225,7 @@
 					><div
 						class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 					>
+						<span class="hidden">Contact</span>
 						<Icon name="contact" />
 						<div class="size-12 shine absolute pointer-events-none"></div>
 					</div></Drawer.Trigger
