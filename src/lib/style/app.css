@@ -269,7 +269,7 @@ section.reveal .reveal-text {
 }
 
 #con img {
-	@apply rounded-md md:rounded-2xl;
+	@apply rounded-xl md:rounded-3xl mx-auto;
 }
 
 #con p {
@@ -346,7 +346,7 @@ html.with-fancybox body.hide-scrollbar {
 	background: none !important;
 }
 img.fancybox-image {
-	@apply rounded-2xl;
+	@apply rounded-xl md:rounded-3xl;
 }
 .reveal {
 	opacity: 1;

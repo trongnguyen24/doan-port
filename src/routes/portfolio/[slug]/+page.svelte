@@ -83,7 +83,7 @@
 		<MagicText text={data.post.title} />
 	</h1>
 
-	<div id="con" class="prose lg:prose-2xl container max-w-screen-xl">{@html data.post.content}</div>
+	<div id="con" class="prose lg:prose-xl container max-w-screen-xl">{@html data.post.content}</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
 		<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
@@ -107,7 +107,7 @@
 		<div class="flex justify-center items-center gap-8 pb-20 flex-col">
 			<div class="max-w-[38rem] px-6 max-h-[46rem] portfolio flex justify-center items-center">
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
-					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
+					<div class="reveal-img overflow-hidden rounded-xl md:rounded-3xl">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
 							<img
 								src={getImageURL(data.nextPost.collectionId, data.nextPost.id, data.nextPost.image)}
