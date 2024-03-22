@@ -10,7 +10,9 @@ export async function load({ fetch }) {
 
 	// Nếu store chưa có dữ liệu, fetch dữ liệu
 	if (plays === null) {
-		const response = await fetch('https://doan.nguyenle.de/api/collections/plays/records');
+		const response = await fetch(
+			'https://doan.nguyenle.de/api/collections/plays/records?sort=-created&filter=(published=true)'
+		);
 		plays = await response.json();
 		playsStore.set(plays); // Cập nhật store
 	}
