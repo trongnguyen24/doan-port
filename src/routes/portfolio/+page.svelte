@@ -43,7 +43,7 @@
 <Gsapsetup />
 <PageGsapRefresh />
 
-<section class="max-w-screen-xl container py-12 md:py-28">
+<section class="max-w-screen-xl container py-12 md:py-40">
 	<div class="">
 		<h1 class="title-1 font-medium fadein"><MagicText text="Portfolio" /></h1>
 		<p class="title-3 mt-6 fadein text-slate-500">The real work i have learning more</p>
