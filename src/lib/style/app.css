@@ -350,3 +350,34 @@ img.fancybox-image {
 .reveal {
 	opacity: 1;
 }
+
+.magic-title {
+	--purple: #a855f7;
+	--violet: #8b5cf6;
+	--pink: #f9a8d4;
+	animation: background-text-pan2 3s linear infinite;
+	background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
+	background-size: 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	white-space: nowrap;
+}
+@keyframes background-text-pan2 {
+	from {
+		background-position: 0% center;
+	}
+
+	to {
+		background-position: -200% center;
+	}
+}
+@keyframes background-pan2 {
+	from {
+		background-position: 0% 0%;
+	}
+
+	to {
+		background-position: -200% -200%;
+	}
+}

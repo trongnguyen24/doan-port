@@ -1,17 +1,40 @@
-<script>
-	import Cat from '$lib/icon/cat.svelte';
-</script>
-
-<section>
-	<h3>Education</h3>
-	<div class="title 3">
-		<p>I am Doan (Đoan) - a Graphic Designer based in Saigon, Vietnam.</p>
-		<p>
-			I enjoy playing around with layouts and typography, and I have a certain amount of fondness
-			for photography. In terms of illustration, I tend to stylise everything geometrically and fill
-			them with vibrant colours. I am a rookie in the 3D field, but I am more than willing to learn,
-			and do it without cease.
-		</p>
+<section class="">
+	<div class=" bg-white sticky top-0">
+		<div class="text-lg font-medium magic-title py-4">Education</div>
 	</div>
-	<!-- <div class="w-24 absolute top-0 -translate-y-full"><Cat /></div> -->
+	<div class="flex flex-col md:grid md:grid-cols-2 text-slate-600 gap-6 md:gap-8">
+		<article>
+			<small>2017 - 2020</small>
+			<p class="font-semibold text-slate-900">University of Architecture HCMC</p>
+			<p>Graphic Design</p>
+		</article>
+		<article>
+			<small>2021</small>
+			<p class="font-semibold text-slate-900">Narc Studio</p>
+			<p>Lighting & Retouching</p>
+		</article>
+		<article>
+			<small>2022</small>
+			<p class="font-semibold text-slate-900">Darchviz Studio</p>
+			<p>Hard-surface 3D Modelling</p>
+		</article>
+		<article>
+			<small>2023 - Now</small>
+			<p class="font-semibold text-slate-900">Interactiv Studio (Online)</p>
+			<p>Master Product Visualisation</p>
+		</article>
+	</div>
 </section>
+
+<style>
+	li {
+		@apply ml-8 list-disc;
+	}
+	p,
+	li {
+		@apply py-1;
+	}
+	article {
+		@apply flex flex-col gap-0;
+	}
+</style>

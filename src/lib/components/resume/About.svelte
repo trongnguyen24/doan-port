@@ -123,7 +123,7 @@
 <Gsapsetup />
 <PageGsapRefresh />
 
-<section>
+<section class="py-4">
 	<div class="flex flex-row gap-4 md:gap-8">
 		<div class="bg-avatar size-32 md:size-44 aspect-square rounded-2xl md:rounded-3xl">
 			<div id="pointer" class="pointer">
@@ -437,15 +437,17 @@
 		</div>
 		<div class="font-medium flex flex-col justify-center text-[1.35rem] md:text-3xl text-slate-600">
 			<p>Howdy!</p>
-			<p>I am <span class="magic-text">Doan</span>,</p>
-			<p>a <span class="magic-text">Graphic Designer</span></p>
+			<p>I am <span class="magic-title">Doan</span>,</p>
+			<p>a <span class="magic-title">Graphic Designer</span></p>
 		</div>
 	</div>
-	<div class="py-8 title-4">
-		I enjoy playing around with layouts and typography, and I have a certain amount of fondness for
-		photography. In terms of illustration, I tend to stylise everything geometrically and fill them
-		with vibrant colours. I am a rookie in the 3D field, but I am more than willing to learn, and do
-		it without cease.
+	<div class="pt-8 title-4 text-slate-600 leading-relaxed">
+		With a keen eye for design and 2 years of hands-on experience, I specialise in using Adobe
+		Creative Suite to create visually compelling content. My expertise spans across merchandise
+		concepts, editorial design, POSM, and comprehensive branding to packaging. I pride myself on my
+		ability to transform concepts into simplified 2D vector or 3D illustrations, typography,
+		engaging social media graphics, and realistic 3D product visualisations, contributing to
+		cohesive brand identities and storytelling.
 	</div>
 </section>
 
@@ -463,36 +465,5 @@
 			var(--pink),
 			var(--purple)
 		);
-	}
-
-	.magic-text {
-		--purple: #a855f7;
-		--violet: #8b5cf6;
-		--pink: #f9a8d4;
-		animation: background-text-pan 3s linear infinite;
-		background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
-		background-size: 200%;
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		white-space: nowrap;
-	}
-	@keyframes background-text-pan {
-		from {
-			background-position: 0% center;
-		}
-
-		to {
-			background-position: -200% center;
-		}
-	}
-	@keyframes background-pan {
-		from {
-			background-position: 0% 0%;
-		}
-
-		to {
-			background-position: -200% -200%;
-		}
 	}
 </style>

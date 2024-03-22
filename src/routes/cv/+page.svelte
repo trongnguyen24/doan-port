@@ -92,12 +92,12 @@
 
 <Gsapsetup />
 <PageGsapRefresh />
-<section class="col-span-1 pt-12 md:py-28 col-start-1 min-h-screen">
+<section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg container">
 		<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
-		<div class="flex items-start flex-col md:flex-row gap-10 pt-10">
+		<div class="grid md:grid-cols-[14rem_auto] relative items-start md:flex-row gap-10 pt-10">
 			<div
-				class="resume-nav title-3 w-full shrink-0 md:w-60 grid grid-cols-2 md:grid-cols-1 gap-3 relative text-gray-900 font-medium"
+				class="resume-nav md:sticky md:top-6 title-3 grid grid-cols-2 md:grid-cols-1 gap-3 text-gray-900 font-medium"
 			>
 				<div class="">
 					<button
@@ -110,7 +110,7 @@
 						About</button
 					>
 				</div>
-				<div class=" ">
+				<div class="">
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Experience')}
@@ -130,7 +130,7 @@
 						Education</button
 					>
 				</div>
-				<div class=" ">
+				<div>
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('Skills')}
@@ -140,7 +140,7 @@
 						Skills</button
 					>
 				</div>
-				<div class=" ">
+				<div>
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
 						on:click={() => switchPage('References')}
