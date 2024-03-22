@@ -93,11 +93,11 @@
 <Gsapsetup />
 <PageGsapRefresh />
 <section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
-	<div class=" max-w-screen-lg container">
+	<div class=" max-w-screen-lg fadein container">
 		<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
 		<div class="grid md:grid-cols-[14rem_auto] relative items-start md:flex-row gap-10 pt-10">
 			<div
-				class="resume-nav md:sticky md:top-6 title-3 grid grid-cols-2 md:grid-cols-1 gap-3 text-gray-900 font-medium"
+				class="resume-nav py-4 md:sticky md:top-6 title-3 grid grid-cols-2 md:grid-cols-1 gap-3 text-gray-900 font-medium"
 			>
 				<div class="">
 					<button

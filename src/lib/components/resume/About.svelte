@@ -441,13 +441,28 @@
 			<p>a <span class="magic-title">Graphic Designer</span></p>
 		</div>
 	</div>
-	<div class="pt-8 title-4 text-slate-600 leading-relaxed">
+	<div class="grid grid-cols-1 my-8 md:grid-cols-3 gap-4">
+		<div class="">
+			<div><small>Full name</small></div>
+			<p class="font-medium">Nguyễn Phạm Khánh Đoan</p>
+		</div>
+
+		<div>
+			<div><small>Email</small></div>
+			<a class="font-medium" href="email:npkhanhdoan@gmail.com">npkhanhdoan@gmail.com</a>
+		</div>
+		<div>
+			<div><small>Phone</small></div>
+			<a class="font-medium" href="tel:0939004133">0939 004 133</a>
+		</div>
+	</div>
+	<div class="title-4 text-slate-600 leading-relaxed">
 		With a keen eye for design and 2 years of hands-on experience, I specialise in using Adobe
 		Creative Suite to create visually compelling content. My expertise spans across merchandise
-		concepts, editorial design, POSM, and comprehensive branding to packaging. I pride myself on my
-		ability to transform concepts into simplified 2D vector or 3D illustrations, typography,
-		engaging social media graphics, and realistic 3D product visualisations, contributing to
-		cohesive brand identities and storytelling.
+		concepts, editorial design, POSM, and comprehensive branding to packaging.<br /> <br />I pride
+		myself on my ability to transform concepts into simplified 2D vector or 3D illustrations,
+		typography, engaging social media graphics, and realistic 3D product visualisations,
+		contributing to cohesive brand identities and storytelling.
 	</div>
 </section>
 

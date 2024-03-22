@@ -1,8 +1,8 @@
-<section class="">
+<section>
 	<div class=" bg-white sticky top-0">
 		<div class="text-lg font-medium magic-title py-4">Education</div>
 	</div>
-	<div class="flex flex-col md:grid md:grid-cols-2 text-slate-600 gap-6 md:gap-8">
+	<div class="grid md:grid-cols-2 text-slate-600 gap-6 md:gap-8">
 		<article>
 			<small>2017 - 2020</small>
 			<p class="font-semibold text-slate-900">University of Architecture HCMC</p>

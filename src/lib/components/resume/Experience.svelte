@@ -4,7 +4,9 @@
 	</div>
 	<div class="flex flex-col text-slate-600 gap-6 md:gap-8">
 		<article>
-			<p class="font-semibold text-slate-900">Ru9 - The Sleep Company</p>
+			<p class="font-semibold flex flex-col text-slate-900">
+				<small class="font-normal text-slate-600">2021 - 2022</small>Ru9 - The Sleep Company
+			</p>
 			<p>Key Responsibilities:</p>
 			<ul>
 				<li>
@@ -19,7 +21,9 @@
 			</ul>
 		</article>
 		<article>
-			<p class="font-semibold text-slate-900">TPF Group</p>
+			<p class="font-semibold flex flex-col text-slate-900">
+				<small class="font-normal text-slate-600">2022 - 2024</small>TPF Group
+			</p>
 			<p>Key Responsibilities:</p>
 			<ul>
 				<li>Designed presentations, infographics, business documents, etc.</li>

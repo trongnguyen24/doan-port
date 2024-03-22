@@ -1,12 +1,30 @@
-<section>
-	<h3>References</h3>
-	<div class="title 3">
-		<p>I am Doan (Đoan) - a Graphic Designer based in Saigon, Vietnam.</p>
-		<p>
-			I enjoy playing around with layouts and typography, and I have a certain amount of fondness
-			for photography. In terms of illustration, I tend to stylise everything geometrically and fill
-			them with vibrant colours. I am a rookie in the 3D field, but I am more than willing to learn,
-			and do it without cease.
-		</p>
+<section class="">
+	<div class=" bg-white sticky top-0">
+		<div class="text-lg font-medium magic-title py-4">References</div>
+	</div>
+	<div class="grid md:grid-cols-2 text-slate-600 gap-6 md:gap-8">
+		<article>
+			<small>Team leader · TPF Vietnam</small>
+			<p class="font-semibold text-slate-900">Vân Phạm</p>
+			<p><a href="tel:09142245900">Phone: 0914 2245 900</a></p>
+		</article>
+		<article>
+			<small>Manager · TPF Vietnam</small>
+			<p class="font-semibold text-slate-900">Nhân Đồng</p>
+			<p><a href="tel:0908567834">Phone: 0908 567 834</a></p>
+		</article>
 	</div>
 </section>
+
+<style>
+	li {
+		@apply ml-8 list-disc;
+	}
+	p,
+	li {
+		@apply py-1;
+	}
+	article {
+		@apply flex flex-col gap-0;
+	}
+</style>
