@@ -441,7 +441,7 @@
 			<p>a <span class="magic-title">Graphic Designer</span></p>
 		</div>
 	</div>
-	<div class="grid grid-cols-1 my-8 md:grid-cols-3 gap-4">
+	<div class="grid grid-cols-1 my-8 lg:grid-cols-3 gap-4">
 		<div class="">
 			<div><small>Full name</small></div>
 			<p class="font-medium">Nguyễn Phạm Khánh Đoan</p>

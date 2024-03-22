@@ -19,6 +19,8 @@
 	import IconExperience from '$lib/icon/iconExperience.svelte';
 	import IconReferences from '$lib/icon/iconReferences.svelte';
 	import IconSkills from '$lib/icon/iconSkills.svelte';
+	import IconDownload from '$lib/icon/iconDownload.svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	function fadeScale(node, { delay = 0, duration = 200, easing = (x) => x, baseScale = 0.95 }) {
 		const o = +getComputedStyle(node).opacity;
@@ -94,7 +96,11 @@
 <PageGsapRefresh />
 <section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg fadein container">
-		<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
+		<div class="flex items-center justify-between">
+			<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
+			<Button link="" text="Download CV"></Button>
+		</div>
+
 		<div class="grid md:grid-cols-[14rem_auto] relative items-start md:flex-row gap-10 pt-10">
 			<div
 				class="resume-nav py-4 md:sticky md:top-6 title-3 grid grid-cols-2 md:grid-cols-1 gap-3 text-gray-900 font-medium"
@@ -150,6 +156,7 @@
 						References</button
 					>
 				</div>
+
 				<span
 					style="width: {$coords.activeBtWidth}px; left: {$coords.activeBtXPos}px; top: {$coords.activeBtYPos}px"
 					class="absolute -z-10 active-bt h-8 md:h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"

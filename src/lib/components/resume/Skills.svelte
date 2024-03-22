@@ -17,7 +17,7 @@
 		</article>
 		<article>
 			<div><img src="/blender.svg" alt="" /></div>
-			<p>Bledner</p>
+			<p>Blender</p>
 		</article>
 		<article>
 			<div><img src="/c4d.svg" alt="" /></div>
