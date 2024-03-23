@@ -6,12 +6,40 @@
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
+	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import { getImageURL } from '$lib/js/utils.js';
 
 	export let data;
 
+	const startFancy = () =>
+		Fancybox.bind('[data-fancybox="gallery"]', {
+			Thumbs: false,
+			showClass: false,
+			Carousel: {
+				Navigation: false
+			},
+			Toolbar: {
+				display: {
+					left: [],
+					middle: ['close'],
+					right: []
+				}
+			}
+		});
+
 	onMount(() => {
+		const cmsContent = document.querySelector('#con');
+
+		if (cmsContent) {
+			const images = cmsContent.querySelectorAll('img');
+			images.forEach((img) => {
+				// Thêm thuộc tính data-fancybox để kích hoạt Fancybox cho mỗi hình ảnh
+				img.setAttribute('data-fancybox', 'gallery');
+				img.addEventListener('click', startFancy);
+			});
+		}
+
 		setTimeout(() => {
 			document.querySelectorAll('#con p').forEach((element) => {
 				let page2 = gsap.fromTo(
@@ -29,6 +57,21 @@
 			});
 			document.querySelectorAll('#con p img').forEach((element) => {
 				let page = gsap.fromTo(
+					element,
+					{},
+					{
+						scrollTrigger: {
+							trigger: element,
+							start: 'top 100%-=80px', // when the top of the trigger hits the top of the viewport
+							onEnter: () => element.classList.add('reveal'),
+							markers: false
+						}
+					}
+				);
+			});
+
+			document.querySelectorAll('td img').forEach((element) => {
+				let page3 = gsap.fromTo(
 					element,
 					{},
 					{
@@ -107,7 +150,7 @@
 		<div class="flex justify-center items-center gap-8 pb-20 flex-col">
 			<div class="max-w-[38rem] px-6 max-h-[46rem] portfolio flex justify-center items-center">
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
-					<div class="reveal-img overflow-hidden rounded-xl md:rounded-3xl">
+					<div class="reveal-img overflow-hidden rounded">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
 							<img
 								src={getImageURL(data.nextPost.collectionId, data.nextPost.id, data.nextPost.image)}
@@ -137,9 +180,6 @@
 </div>
 
 <style>
-	img {
-		border-radius: 1rem;
-	}
 	.horizontalFade {
 		@apply absolute inset-y-0 w-24 z-10;
 		-webkit-backdrop-filter: blur(2px);

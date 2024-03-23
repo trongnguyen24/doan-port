@@ -20,7 +20,7 @@
 	import IconReferences from '$lib/icon/iconReferences.svelte';
 	import IconSkills from '$lib/icon/iconSkills.svelte';
 	import IconDownload from '$lib/icon/iconDownload.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import Buttonsm from '$lib/components/Buttonsm.svelte';
 
 	function fadeScale(node, { delay = 0, duration = 200, easing = (x) => x, baseScale = 0.95 }) {
 		const o = +getComputedStyle(node).opacity;
@@ -98,7 +98,7 @@
 	<div class=" max-w-screen-lg fadein container">
 		<div class="flex items-center justify-between">
 			<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
-			<Button link="" text="Download CV"></Button>
+			<Buttonsm link="" text="Download CV"></Buttonsm>
 		</div>
 
 		<div class="grid md:grid-cols-[14rem_auto] relative items-start md:flex-row gap-10 pt-10">

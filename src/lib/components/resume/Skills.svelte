@@ -35,7 +35,7 @@
 		@apply flex flex-row items-center gap-2;
 	}
 	article div {
-		@apply p-1 bg-gradient-to-b from-slate-200/70 to-slate-50 border border-slate-200 rounded-lg shadow-lg shadow-violet-50 backdrop-blur;
+		@apply p-1 bg-gradient-to-b from-slate-200/70 to-slate-50 border border-slate-200 rounded shadow-lg shadow-violet-50 backdrop-blur;
 	}
 	img {
 		@apply size-8;

@@ -125,7 +125,7 @@
 
 <section class="py-4">
 	<div class="flex flex-row gap-4 md:gap-8">
-		<div class="bg-avatar size-32 md:size-44 aspect-square rounded-2xl md:rounded-3xl">
+		<div class="bg-avatar size-32 md:size-44 aspect-square rounded">
 			<div id="pointer" class="pointer">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 185 204">
 					<g id="aaaaa">

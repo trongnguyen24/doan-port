@@ -269,11 +269,11 @@ section.reveal .reveal-text {
 }
 
 #con img {
-	@apply rounded-xl md:rounded-3xl mx-auto;
+	@apply rounded mx-auto;
 }
 
 #con p {
-	margin: 3rem auto;
+	@apply my-6 md:my-12;
 }
 
 #con p:not(:has(> img)) {
@@ -284,6 +284,7 @@ section.reveal .reveal-text {
 	-webkit-clip-path: inset(0 0 100% 0);
 	clip-path: inset(0 0 100% 0);
 	opacity: 0;
+
 	transition:
 		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
 		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
@@ -292,6 +293,24 @@ section.reveal .reveal-text {
 }
 
 #con > p img.reveal {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	@apply rounded mx-auto;
+	opacity: 1;
+}
+
+td img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+	transition:
+		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+	will-change: -webkit-clip-path, clip-path, opacity;
+}
+
+td img.reveal {
 	-webkit-clip-path: inset(0 0 0 0);
 	clip-path: inset(0 0 0 0);
 	opacity: 1;
@@ -345,7 +364,7 @@ html.with-fancybox body.hide-scrollbar {
 	background: none !important;
 }
 img.fancybox-image {
-	@apply rounded-xl md:rounded-3xl;
+	@apply rounded;
 }
 .reveal {
 	opacity: 1;
@@ -380,4 +399,17 @@ img.fancybox-image {
 	to {
 		background-position: -200% -200%;
 	}
+}
+td > img {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+td {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.fancybox__footer {
+	padding: 1.5rem;
+	text-wrap: balance;
 }
