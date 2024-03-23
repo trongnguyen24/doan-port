@@ -29,17 +29,6 @@
 		});
 
 	onMount(() => {
-		const cmsContent = document.querySelector('#con');
-
-		if (cmsContent) {
-			const images = cmsContent.querySelectorAll('img');
-			images.forEach((img) => {
-				// Thêm thuộc tính data-fancybox để kích hoạt Fancybox cho mỗi hình ảnh
-				img.setAttribute('data-fancybox', 'gallery');
-				img.addEventListener('click', startFancy);
-			});
-		}
-
 		setTimeout(() => {
 			document.querySelectorAll('#con p').forEach((element) => {
 				let page2 = gsap.fromTo(
@@ -84,6 +73,17 @@
 					}
 				);
 			});
+
+			const cmsContent = document.querySelector('#con');
+
+			if (cmsContent) {
+				const images = cmsContent.querySelectorAll('img');
+				images.forEach((img) => {
+					// Thêm thuộc tính data-fancybox để kích hoạt Fancybox cho mỗi hình ảnh
+					img.setAttribute('data-fancybox', 'gallery');
+					img.addEventListener('click', startFancy);
+				});
+			}
 
 			scroll();
 
