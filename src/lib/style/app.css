@@ -273,7 +273,7 @@ section.reveal .reveal-text {
 }
 
 #con p {
-	@apply my-6 md:my-12;
+	@apply my-6 md:my-12 mx-auto;
 }
 
 #con p:not(:has(> img)) {
