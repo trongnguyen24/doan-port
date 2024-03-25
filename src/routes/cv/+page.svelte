@@ -212,6 +212,6 @@
 
 <style>
 	.item-nav[active='true'] {
-		@apply hover:text-violet-500 text-violet-500;
+		color: #8b5cf6;
 	}
 </style>
