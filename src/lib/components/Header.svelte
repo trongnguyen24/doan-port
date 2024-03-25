@@ -577,7 +577,7 @@
 		background: radial-gradient(
 			2rem circle at var(--mouse-x) var(--mouse-y),
 			rgba(255, 255, 255, 0.9),
-			pi/posts transparent 90%
+			transparent 90%
 		);
 		z-index: 3;
 	}
