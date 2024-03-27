@@ -66,7 +66,7 @@ const config = {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [require('@tailwindcss/typography'), require('@thoughtbot/tailwindcss-aria-attributes')]
 };
 
 export default config;

@@ -60,9 +60,7 @@
 <section class="max-w-screen-xl container py-12 md:py-28">
 	<div class="">
 		<h1 class="title-1 font-medium fadein"><MagicText text="Plays" /></h1>
-		<p class="title-3 mt-6 fadein text-slate-500">
-			I enjoy playing around with layouts, 3D and typography.
-		</p>
+		<p class="title-3 mt-6 fadein text-slate-500">A collection of my personal artwork.</p>
 	</div>
 
 	<div class="md:pt-16 reveal pt-12 py-16 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 xl:gap-10">

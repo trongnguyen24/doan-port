@@ -54,11 +54,11 @@
 
 	function handleClick(event) {
 		document.querySelectorAll('.item-nav').forEach((button) => {
-			button.removeAttribute('active');
+			button.removeAttribute('aria-current');
 		});
 
 		const button = event.target;
-		button.setAttribute('active', 'true');
+		button.setAttribute('aria-current', 'true');
 
 		coords.set({
 			activeBtXPos: button.offsetLeft,
@@ -66,9 +66,12 @@
 			activeBtWidth: button.offsetWidth
 		});
 	}
-
+	function handleResize() {
+		const activeButton = document.querySelector('.item-nav[aria-current="true"]');
+		updateCoords(activeButton);
+	}
 	onMount(() => {
-		const firstButton = document.querySelector('.item-nav[active="true"]');
+		const firstButton = document.querySelector('.item-nav[aria-current="true"]');
 		updateCoords(firstButton);
 
 		function updateCoords(button) {
@@ -79,11 +82,6 @@
 					activeBtWidth: button.offsetWidth
 				});
 			}
-		}
-
-		function handleResize() {
-			const activeButton = document.querySelector('.item-nav[active="true"]');
-			updateCoords(activeButton);
 		}
 
 		window.addEventListener('resize', handleResize);
@@ -98,7 +96,7 @@
 	<div class=" max-w-screen-lg fadein container">
 		<div class="flex items-center justify-between">
 			<h1 class="title-1 font-medium fadein"><MagicText text="My CV" /></h1>
-			<Buttonsm link="" text="Download CV"></Buttonsm>
+			<Buttonsm link="/DoanNguyen_CV_GraphicDesigner.pdf" text="Download CV"></Buttonsm>
 		</div>
 
 		<div class="grid md:grid-cols-[14rem_auto] relative items-start md:flex-row gap-10 pt-10">
@@ -107,8 +105,8 @@
 			>
 				<div class="">
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
-						active="true"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
+						aria-current="true"
 						on:click={() => switchPage('About')}
 						on:click={handleClick}
 					>
@@ -118,7 +116,7 @@
 				</div>
 				<div class="">
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
 						on:click={() => switchPage('Experience')}
 						on:click={handleClick}
 					>
@@ -128,7 +126,7 @@
 				</div>
 				<div class=" ">
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
 						on:click={() => switchPage('Education')}
 						on:click={handleClick}
 					>
@@ -138,7 +136,7 @@
 				</div>
 				<div>
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
 						on:click={() => switchPage('Skills')}
 						on:click={handleClick}
 					>
@@ -148,7 +146,7 @@
 				</div>
 				<div>
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
 						on:click={() => switchPage('References')}
 						on:click={handleClick}
 					>
@@ -209,9 +207,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.item-nav[active='true'] {
-		color: #8b5cf6;
-	}
-</style>

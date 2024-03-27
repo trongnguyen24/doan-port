@@ -3,7 +3,7 @@
 	export let link = '';
 </script>
 
-<a href={link}>
+<a download href={link}>
 	<button
 		class="shim_button font-medium bg-violet-400 hover:shadow-xl hover:shadow-violet-200 transition-all duration-500 text-base md:text-md relative group overflow-hidden rounded-full"
 	>
@@ -12,7 +12,7 @@
 		</div>
 		<div class="backdrop bg-white absolute inset-0.5 rounded-full">
 			<div
-				class="absolute inset-[-0.05rem] flex justify-center items-center transition-all text-violet-50 bg-violet-400 translate-y-[-105%] scale-110 group-hover:rounded-[24px] group-hover:scale-100 group-hover:translate-y-0 duration-500 rounded-bl-[50%] rounded-br-[50%]"
+				class="absolute inset-[-0.05rem] flex justify-center items-center transition-all text-violet-50 bg-violet-400 translate-y-[-107%] scale-110 group-hover:rounded-[24px] group-hover:scale-100 group-hover:translate-y-0 duration-500 rounded-bl-[50%] rounded-br-[50%]"
 			>
 				{text}
 			</div>

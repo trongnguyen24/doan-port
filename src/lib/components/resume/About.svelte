@@ -449,7 +449,7 @@
 
 		<div>
 			<div><small>Email</small></div>
-			<a class="font-medium" href="email:npkhanhdoan@gmail.com">npkhanhdoan@gmail.com</a>
+			<a class="font-medium" href="mailto:npkhanhdoan@gmail.com">npkhanhdoan@gmail.com</a>
 		</div>
 		<div>
 			<div><small>Phone</small></div>
