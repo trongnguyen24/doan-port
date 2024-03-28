@@ -4,7 +4,7 @@
 	</div>
 	<div class="grid md:grid-cols-2 text-slate-600 gap-6 md:gap-8">
 		<article>
-			<small>2017 - 2020</small>
+			<small>2017 - 2021</small>
 			<p class="font-semibold text-slate-900">University of Architecture HCMC</p>
 			<p>Graphic Design</p>
 		</article>
