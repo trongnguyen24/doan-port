@@ -24,7 +24,6 @@
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={$page.url.origin + '/og-image.jpg'} />
-
+</svelte:head>
 		<script async src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa1952e9aa8448dbb26267130d0937d9"}'></script><!-- End Cloudflare Web Analytics -->
 
-</svelte:head>
