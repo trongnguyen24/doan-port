@@ -7,6 +7,7 @@
 	export let siteName = 'Portfolio của Doan';
 	export let locale = 'vi_VN';
 	export let twitterCard = "Doan's Portfolio";
+
 </script>
 
 <svelte:head>
@@ -23,5 +24,7 @@
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={$page.url.origin + '/og-image.jpg'} />
-	<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa1952e9aa8448dbb26267130d0937d9"}'></script><!-- End Cloudflare Web Analytics -->
+
+		<script async src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa1952e9aa8448dbb26267130d0937d9"}'></script><!-- End Cloudflare Web Analytics -->
+
 </svelte:head>
