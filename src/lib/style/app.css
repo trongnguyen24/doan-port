@@ -2,6 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 224 71.4% 4.1%;
+
+		--muted: 220 14.3% 95.9%;
+		--muted-foreground: 220 8.9% 46.1%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 224 71.4% 4.1%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 224 71.4% 4.1%;
+
+		--border: 220 13% 91%;
+		--input: 220 13% 91%;
+
+		--primary: 220.9 39.3% 11%;
+		--primary-foreground: 210 20% 98%;
+
+		--secondary: 220 14.3% 95.9%;
+		--secondary-foreground: 220.9 39.3% 11%;
+
+		--accent: 220 14.3% 95.9%;
+		--accent-foreground: 220.9 39.3% 11%;
+
+		--destructive: 0 72.2% 50.6%;
+		--destructive-foreground: 210 20% 98%;
+
+		--ring: 224 71.4% 4.1%;
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 224 71.4% 4.1%;
+		--foreground: 210 20% 98%;
+
+		--muted: 215 27.9% 16.9%;
+		--muted-foreground: 217.9 10.6% 64.9%;
+
+		--popover: 224 71.4% 4.1%;
+		--popover-foreground: 210 20% 98%;
+
+		--card: 224 71.4% 4.1%;
+		--card-foreground: 210 20% 98%;
+
+		--border: 215 27.9% 16.9%;
+		--input: 215 27.9% 16.9%;
+
+		--primary: 210 20% 98%;
+		--primary-foreground: 220.9 39.3% 11%;
+
+		--secondary: 215 27.9% 16.9%;
+		--secondary-foreground: 210 20% 98%;
+
+		--accent: 215 27.9% 16.9%;
+		--accent-foreground: 210 20% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 20% 98%;
+
+		--ring: 216 12.2% 83.9%;
+	}
+}
+
+@layer base {
+	html {
+		font-family: 'Quicksand', sans-serif;
+	}
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+		padding-right: 0 !important;
+	}
+}
+
 @font-face {
 	font-family: 'Quicksand';
 	src:
@@ -45,12 +124,6 @@
 	--step-2: clamp(2.25rem, 2.1066rem + 0.5884vw, 2.695rem);
 }
 
-@layer base {
-	html {
-		font-family: 'Quicksand', sans-serif;
-	}
-}
-
 .title-1 {
 	font-size: var(--step-2);
 }
@@ -90,25 +163,23 @@ html.lenis {
 
 ::-webkit-scrollbar-track {
 	background: transparent;
-	border-radius: 4px;
+	border-left: 1px solid #a9b4bc2b;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #a9b4bc80;
+	background-color: #a9b4bc48;
 	border-radius: 15px;
-	border: 1px solid transparent;
-	background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-	background-color: #a9b4bc48;
+	background-color: #a9b4bc70 !important;
 }
 
 html {
-	scrollbar-color: rgba(169, 180, 188, 0.11) transparent;
+	scrollbar-color: auto !important;
 	scrollbar-width: auto;
-	overflow-y: scroll;
+	overflow-y: scroll !important;
 }
 
 .animate-bounce-nav {
@@ -175,9 +246,9 @@ section[scroll='reveal'] .reveal-img {
 	clip-path: inset(0 0 100% 0);
 	opacity: 0;
 	transition:
-		-webkit-clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s,
-		clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s,
-		opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+		-webkit-clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
 	will-change: -webkit-clip-path, clip-path, opacity;
 }
 
@@ -189,10 +260,156 @@ section.reveal .reveal-img {
 
 section[scroll='reveal'] .reveal-text {
 	opacity: 0;
-	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.4s;
 	will-change: opacity;
 }
 
 section.reveal .reveal-text {
 	opacity: 1;
+}
+
+#con img {
+	@apply rounded mx-auto;
+}
+
+#con p {
+	@apply my-6 md:my-12 mx-auto;
+}
+
+#con p:not(:has(> img)) {
+	max-width: 65ch;
+}
+
+#con > p img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+
+	transition:
+		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+	will-change: -webkit-clip-path, clip-path, opacity;
+}
+
+#con > p img.reveal {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	@apply rounded mx-auto;
+	opacity: 1;
+}
+
+td img {
+	-webkit-clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 100% 0);
+	opacity: 0;
+	transition:
+		-webkit-clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		clip-path 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+		opacity 1s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+	will-change: -webkit-clip-path, clip-path, opacity;
+}
+
+td img.reveal {
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	opacity: 1;
+}
+
+#con p:not(:has(> img)) {
+	opacity: 0;
+	transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+	will-change: opacity;
+}
+
+#con p:not(:has(> img)).reveal {
+	opacity: 1;
+}
+
+html.with-fancybox body.hide-scrollbar {
+	margin-right: 0 !important;
+}
+.fancybox__backdrop {
+	background: rgb(255 255 255 / 100%) !important;
+}
+
+.fancybox__slide {
+	/* flex-direction: column-reverse; */
+	gap: 1rem;
+	padding-bottom: 1rem;
+}
+.fancybox__caption {
+	@apply text-slate-700 !important;
+	padding: 1rem 0 !important;
+	text-align: center !important;
+}
+
+.f-button {
+	background: none !important;
+}
+.f-button:hover:not([disabled]) {
+	background: none;
+}
+.f-button svg {
+	@apply text-slate-700 !important;
+}
+.is-idle .fancybox__toolbar {
+	animation: none !important;
+}
+.fancybox__toolbar__column.is-middle {
+	padding-top: 1rem !important;
+}
+.fancybox__footer {
+	@apply py-8 sm:py-0;
+	background: none !important;
+}
+img.fancybox-image {
+	@apply rounded;
+}
+.reveal {
+	opacity: 1;
+}
+
+.magic-title {
+	--purple: #a855f7;
+	--violet: #8b5cf6;
+	--pink: #f9a8d4;
+	animation: background-text-pan2 3s linear infinite;
+	background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
+	background-size: 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	white-space: nowrap;
+}
+@keyframes background-text-pan2 {
+	from {
+		background-position: 0% center;
+	}
+
+	to {
+		background-position: -200% center;
+	}
+}
+@keyframes background-pan2 {
+	from {
+		background-position: 0% 0%;
+	}
+
+	to {
+		background-position: -200% -200%;
+	}
+}
+td > img {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+td {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.fancybox__footer {
+	padding: 1.5rem;
+	text-wrap: balance;
 }

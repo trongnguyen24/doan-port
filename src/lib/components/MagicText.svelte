@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	export let text = 'Magic Text';
+	export let color = '';
 	import { onMount } from 'svelte';
 	let index = 0,
 		interval = 1000;
 
-	const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+	const rand = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 	onMount(() => {
-		const animate = (star) => {
+		const animate = (star: any) => {
 			star.style.setProperty('--star-left', `${rand(-10, 100)}%`);
 			star.style.setProperty('--star-top', `${rand(-20, 80)}%`);
 
@@ -28,7 +29,7 @@
 	});
 </script>
 
-<span class="magic">
+<span class="magic {color}">
 	<span class="magic-star">
 		<svg viewBox="0 0 512 512">
 			<path
@@ -50,7 +51,7 @@
 			/>
 		</svg>
 	</span>
-	<span class="magic-text"> {text} </span>
+	<span class="magic-text text-balance"> {text} </span>
 </span>
 
 <style>
@@ -60,6 +61,14 @@
 		--purple: #a855f7;
 		--violet: #8b5cf6;
 		--pink: #f9a8d4;
+	}
+
+	.magic2 {
+		display: inline-block;
+		position: relative;
+		--purple: #ffffff;
+		--violet: #fcd7ff;
+		--pink: #ffffff;
 	}
 
 	.magic > .magic-star {
@@ -88,8 +97,9 @@
 		background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
 		background-size: 200%;
 		-webkit-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		white-space: nowrap;
+		/* white-space: nowrap; */
 	}
 	@keyframes background-pan {
 		from {

@@ -7,7 +7,7 @@ async function getPosts() {
 	let posts = [];
 
 	// Sử dụng import.meta.glob để lấy các file bài viết
-	const paths = import.meta.glob('/src/posts/*.svelte', { eager: true });
+	const paths = import.meta.glob('$lib/posts/*.svelte', { eager: true });
 
 	for (const path in paths) {
 		const file = paths[path];

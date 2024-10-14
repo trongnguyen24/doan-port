@@ -3,11 +3,13 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<script src="%sveltekit.assets%/fancybox.umd.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script async src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa1952e9aa8448dbb26267130d0937d9"}'></script>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
+	<body class="antialiased" id="body" data-sveltekit-preload-data="hover">
+		<div>%sveltekit.body%</div>
 	</body>
 	<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa1952e9aa8448dbb26267130d0937d9"}'></script><!-- End Cloudflare Web Analytics -->
 </html>
