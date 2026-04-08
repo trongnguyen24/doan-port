@@ -7,7 +7,6 @@
 	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import { previewImages } from '$lib/posts';
 
 	export let data;
@@ -40,7 +39,6 @@
 </script>
 
 <OpenGraph title="Doan's Portfolio" />
-<Gsapsetup />
 <PageGsapRefresh />
 
 <section class="max-w-screen-xl container py-12 md:py-40">

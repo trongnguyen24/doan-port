@@ -2,11 +2,15 @@
 	export let text = 'Magic Text';
 	export let color = '';
 	import { onMount } from 'svelte';
-	let index = 0,
-		interval = 1000;
+	let container: HTMLSpanElement;
+	const interval = 1000;
 
 	const rand = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 	onMount(() => {
+		const stars = Array.from(container.querySelectorAll<HTMLElement>('.magic-star'));
+		const timeouts: number[] = [];
+		const intervals: number[] = [];
+
 		const animate = (star: any) => {
 			star.style.setProperty('--star-left', `${rand(-10, 100)}%`);
 			star.style.setProperty('--star-top', `${rand(-20, 80)}%`);
@@ -16,20 +20,27 @@
 			star.style.animation = '';
 		};
 
-		for (const star of document.getElementsByClassName('magic-star')) {
-			setTimeout(
+		stars.forEach((star, index) => {
+			const timeout = window.setTimeout(
 				() => {
 					animate(star);
 
-					setInterval(() => animate(star), 1600);
+					const animationInterval = window.setInterval(() => animate(star), 1600);
+					intervals.push(animationInterval);
 				},
-				index++ * (interval / 3)
+				index * (interval / 3)
 			);
-		}
+			timeouts.push(timeout);
+		});
+
+		return () => {
+			timeouts.forEach((timeout) => clearTimeout(timeout));
+			intervals.forEach((animationInterval) => clearInterval(animationInterval));
+		};
 	});
 </script>
 
-<span class="magic {color}">
+<span bind:this={container} class="magic {color}">
 	<span class="magic-star">
 		<svg viewBox="0 0 512 512">
 			<path

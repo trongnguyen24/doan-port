@@ -1,13 +1,10 @@
 <script>
 	// @ts-nocheck
 
-	import { onMount, onDestroy } from 'svelte';
-	import { gsap } from 'gsap';
-	import Icon from '$lib/icon/index.svelte';
+	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import About from '$lib/components/resume/About.svelte';
 	import Education from '$lib/components/resume/Education.svelte';
@@ -40,6 +37,16 @@
 
 	let pagecur = 'About';
 
+	const updateCoords = (button) => {
+		if (button) {
+			coords.set({
+				activeBtXPos: button.offsetLeft,
+				activeBtYPos: button.offsetTop,
+				activeBtWidth: button.offsetWidth
+			});
+		}
+	};
+
 	function switchPage(componentName) {
 		pagecur = componentName;
 	}
@@ -57,40 +64,30 @@
 			button.removeAttribute('aria-current');
 		});
 
-		const button = event.target;
+		const button = event.currentTarget;
 		button.setAttribute('aria-current', 'true');
-
-		coords.set({
-			activeBtXPos: button.offsetLeft,
-			activeBtYPos: button.offsetTop, // Assuming you need the Y position
-			activeBtWidth: button.offsetWidth
-		});
+		updateCoords(button);
 	}
+
 	function handleResize() {
 		const activeButton = document.querySelector('.item-nav[aria-current="true"]');
 		updateCoords(activeButton);
 	}
+
 	onMount(() => {
 		const firstButton = document.querySelector('.item-nav[aria-current="true"]');
 		updateCoords(firstButton);
 
-		function updateCoords(button) {
-			if (button) {
-				coords.set({
-					activeBtXPos: button.offsetLeft,
-					activeBtYPos: button.offsetTop,
-					activeBtWidth: button.offsetWidth
-				});
-			}
-		}
-
 		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	});
 </script>
 
 <OpenGraph title="My CV" />
 
-<Gsapsetup />
 <PageGsapRefresh />
 <section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg fadein container">

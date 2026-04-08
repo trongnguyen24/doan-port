@@ -4,6 +4,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import PageTransition from '$lib/components/PageTransition.svelte';
 	import Header from '$lib/components/Header.svelte';
+	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '$lib/style/app.css';
 	export let data;
 
@@ -14,6 +15,7 @@
 	});
 </script>
 
+<Gsapsetup />
 <Header />
 {#key data.pathname}
 	{#if firstload > 1}

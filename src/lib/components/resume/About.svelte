@@ -1,127 +1,152 @@
 <script>
 	// @ts-nocheck
 
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
-	import { page } from '$app/stores';
-	import MagicText from '../MagicText.svelte';
-	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
+	import { rafThrottle } from '$lib/utils/rafThrottle';
 
 	onMount(() => {
-		(function () {
-			let xPercent, yPercent;
-			let clientX = 1,
-				clientY = 1;
-			let xPointer, yPointer;
-			let windowHeight = window.innerHeight,
-				windowWidth = window.innerWidth;
-			let handPointer = document.querySelector('.pointer');
-			let rect = handPointer.getBoundingClientRect();
+		let clientX = 1;
+		let clientY = 1;
+		let windowHeight = window.innerHeight;
+		let windowWidth = window.innerWidth;
+		const handPointer = document.querySelector('.pointer');
 
-			const dom = {
-				face: document.querySelector('#face'),
-				eye: document.querySelectorAll('#eye'),
-				innerFace: document.querySelector('#inner-face'),
-				hairFront: document.querySelector('#hair-front'),
-				eyeLightL: document.querySelector('#eyeLight_L'),
-				eyeLightR: document.querySelector('#eyeLight_R'),
-				hairBack: document.querySelector('#hair-back'),
-				ear: document.querySelectorAll('#ear'),
-				eyebrowLeft: document.querySelector('#eyebrow_L'),
-				eyebrowRight: document.querySelector('#eyebrow_R')
-			};
+		if (!handPointer) {
+			return;
+		}
 
-			// update mousemove
-			document.addEventListener('mousemove', updateMouseCoords);
+		const dom = {
+			face: document.querySelector('#face'),
+			eye: document.querySelectorAll('#eye'),
+			innerFace: document.querySelector('#inner-face'),
+			hairFront: document.querySelector('#hair-front'),
+			eyeLightL: document.querySelector('#eyeLight_L'),
+			eyeLightR: document.querySelector('#eyeLight_R'),
+			hairBack: document.querySelector('#hair-back'),
+			ear: document.querySelectorAll('#ear'),
+			eyebrowLeft: document.querySelector('#eyebrow_L'),
+			eyebrowRight: document.querySelector('#eyebrow_R')
+		};
 
-			function updateMouseCoords(e) {
-				clientX = e.clientX;
-				clientY = e.clientY;
+		const animatedTargets = [
+			dom.face,
+			dom.eye,
+			dom.innerFace,
+			dom.hairFront,
+			dom.eyeLightL,
+			dom.eyeLightR,
+			dom.hairBack,
+			dom.ear,
+			dom.eyebrowLeft,
+			dom.eyebrowRight
+		].flat();
+
+		const movePointer = rafThrottle(() => {
+			const element = document.getElementById('pointer');
+
+			if (!element) {
+				return;
 			}
 
-			// update if browser resizes
-			function updateWindowSize() {
-				windowHeight = window.innerHeight;
-				windowWidth = window.innerWidth;
+			const rect = handPointer.getBoundingClientRect();
+			const xPointer = rect.x + rect.width / 2;
+			const yPointer = rect.y + rect.height / 2;
+			const xPercent = gsap.utils.mapRange(
+				0,
+				windowWidth,
+				(xPointer / windowWidth) * -1,
+				1 - xPointer / windowWidth,
+				clientX
+			);
+			const yPercent = gsap.utils.mapRange(
+				0,
+				windowHeight,
+				(xPointer / windowHeight) * -1,
+				1 - yPointer / windowHeight,
+				clientY
+			);
+			const x = xPercent * 80;
+			const y = yPercent * 80;
+			const tweenDefaults = { duration: 0.2, overwrite: 'auto' };
+
+			gsap.to(dom.face, {
+				...tweenDefaults,
+				yPercent: y / 50,
+				xPercent: x / 50
+			});
+			gsap.to(dom.eye, {
+				...tweenDefaults,
+				yPercent: y / 10,
+				xPercent: x / 18
+			});
+			gsap.to(dom.innerFace, {
+				...tweenDefaults,
+				yPercent: y / 8.5,
+				xPercent: x / 8.5
+			});
+			gsap.to(dom.hairFront, {
+				...tweenDefaults,
+				yPercent: y / 15,
+				xPercent: x / 22
+			});
+			gsap.to(dom.hairBack, {
+				...tweenDefaults,
+				yPercent: (y / 20) * -1,
+				xPercent: (x / 20) * -1
+			});
+			gsap.to(dom.ear, {
+				...tweenDefaults,
+				yPercent: (y / 10) * -1,
+				xPercent: (x / 50) * -1
+			});
+			gsap.to([dom.eyebrowLeft, dom.eyebrowRight], {
+				...tweenDefaults,
+				yPercent: y / 10
+			});
+			gsap.to([dom.eyeLightL, dom.eyeLightR], {
+				...tweenDefaults,
+				yPercent: (y / 3) * -1,
+				xPercent: (x / 2) * -1
+			});
+		});
+
+		const updateWindowSize = () => {
+			windowHeight = window.innerHeight;
+			windowWidth = window.innerWidth;
+		};
+
+		const updateMouseCoords = (event) => {
+			clientX = event.clientX;
+			clientY = event.clientY;
+			movePointer();
+		};
+
+		const updateTouchCoords = (event) => {
+			const touch = event.touches?.[0];
+
+			if (!touch) {
+				return;
 			}
-			window.addEventListener('resize', updateWindowSize);
-			updateWindowSize();
 
-			function movePointer() {
-				let element = document.getElementById('pointer');
-				if (!element) {
-					document.removeEventListener('mousemove', movePointer);
-					document.removeEventListener('touchmove', movePointer);
-					return;
-				}
-				rect = handPointer.getBoundingClientRect();
-				// console.log('running');
-				xPointer = rect.x + rect.width / 2;
-				yPointer = rect.y + rect.height / 2;
-				xPercent = gsap.utils.mapRange(
-					0,
-					windowWidth,
-					(xPointer / windowWidth) * -1,
-					1 - xPointer / windowWidth,
-					clientX
-				);
-				yPercent = gsap.utils.mapRange(
-					0,
-					windowHeight,
-					(xPointer / windowHeight) * -1,
-					1 - yPointer / windowHeight,
-					clientY
-				);
-				let x = xPercent * 80;
-				let y = yPercent * 80;
+			clientX = touch.clientX;
+			clientY = touch.clientY;
+			movePointer();
+		};
 
-				gsap.to(dom.face, {
-					yPercent: y / 50,
-					xPercent: x / 50
-				});
-				gsap.to(dom.eye, {
-					yPercent: y / 10,
-					xPercent: x / 18
-				});
-				gsap.to(dom.innerFace, {
-					yPercent: y / 8.5,
-					xPercent: x / 8.5
-				});
-				gsap.to(dom.hairFront, {
-					yPercent: y / 15,
-					xPercent: x / 22
-				});
-				gsap.to(dom.hairBack, {
-					yPercent: (y / 20) * -1,
-					xPercent: (x / 20) * -1
-				});
-				gsap.to(dom.ear, {
-					yPercent: (y / 10) * -1,
-					xPercent: (x / 50) * -1
-				});
-				gsap.to([dom.eyebrowLeft, dom.eyebrowRight], {
-					yPercent: y / 10
-				});
-				gsap.to([dom.eyeLightL, dom.eyeLightR], {
-					yPercent: (y / 3) * -1,
-					xPercent: (x / 2) * -1
-				});
-			}
+		window.addEventListener('resize', updateWindowSize);
+		document.addEventListener('mousemove', updateMouseCoords);
+		document.addEventListener('touchmove', updateTouchCoords, { passive: true });
 
-			// Nếu phần tử tồn tại, gắn sự kiện
-			document.addEventListener('mousemove', movePointer);
-			document.addEventListener('touchmove', movePointer);
-			// Gọi hàm khi trang tải xong
-
-			// gsap.ticker.add(movePointer);
-			// gsap.ticker.remove(movePointer);
-		})();
+		return () => {
+			window.removeEventListener('resize', updateWindowSize);
+			document.removeEventListener('mousemove', updateMouseCoords);
+			document.removeEventListener('touchmove', updateTouchCoords);
+			movePointer.cancel();
+			gsap.killTweensOf(animatedTargets.filter(Boolean));
+		};
 	});
 </script>
-
-<Gsapsetup />
-<PageGsapRefresh />
 
 <section class="py-4">
 	<div class="flex flex-row gap-4 md:gap-8">

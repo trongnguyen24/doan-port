@@ -1,11 +1,22 @@
 <script>
+	// @ts-nocheck
+
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
+	import { rafThrottle } from '$lib/utils/rafThrottle';
 
 	onMount(() => {
-		document.querySelector('.catTrigger').addEventListener('mousemove', function (e) {
+		const trigger = document.querySelector('.catTrigger');
+
+		if (!trigger) {
+			return;
+		}
+
+		const handleMouseMove = rafThrottle((e) => {
 			moveIris(e, 'heads', 'cat', 'iris', 'iris_2');
 		});
+
+		trigger.addEventListener('mousemove', handleMouseMove);
 
 		function moveIris(e, heads, eyeId, irisId, irisId2) {
 			const eye = document.getElementById(eyeId);
@@ -35,20 +46,31 @@
 
 			// Update iris position
 			gsap.to(iris, {
+				duration: 0.2,
+				overwrite: 'auto',
 				x: irisX - eyeCenterX,
 				y: irisY - eyeCenterY
 			});
 			gsap.to(iris2, {
+				duration: 0.2,
+				overwrite: 'auto',
 				x: irisX - eyeCenterX,
 				y: irisY - eyeCenterY
 			});
 
 			// Update head tilt
 			gsap.to(face, {
+				duration: 0.2,
+				overwrite: 'auto',
 				rotation: -headTilt,
 				transformOrigin: 'center bottom' // Adjust as needed to change the pivot point
 			});
 		}
+
+		return () => {
+			trigger.removeEventListener('mousemove', handleMouseMove);
+			handleMouseMove.cancel();
+		};
 	});
 </script>
 

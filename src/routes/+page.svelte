@@ -1,7 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { gsap } from 'gsap';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Hello from '$lib/components/Hello.svelte';
 	import Jumbo from '$lib/components/jumbo.svelte';
@@ -10,7 +7,6 @@
 
 <OpenGraph />
 
-<Gsapsetup />
 <PageGsapRefresh />
 <Hello />
 

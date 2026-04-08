@@ -8,9 +8,11 @@
 	import { page } from '$app/stores';
 	import Cat from '$lib/icon/cat.svelte';
 	import { Drawer } from '$lib/components/ui/vaul-svelte/dist';
+	import { rafThrottle } from '$lib/utils/rafThrottle';
 	import MagicText from './MagicText.svelte';
 
 	let dialogOpen = false;
+	let cardsElement;
 
 	let coords = spring(
 		{ x: 32 },
@@ -48,9 +50,9 @@
 	}
 
 	onMount(() => {
-		let isMobile = window.matchMedia('(pointer:coarse)').matches;
-		document.getElementById('cards').onmousemove = (e) => {
-			for (const card of document.getElementsByClassName('card')) {
+		const isMobile = window.matchMedia('(pointer:coarse)').matches;
+		const handlePointerMove = rafThrottle((e) => {
+			for (const card of cardsElement.getElementsByClassName('card')) {
 				const rect = card.getBoundingClientRect(),
 					x = e.clientX - rect.left,
 					y = e.clientY - rect.top;
@@ -59,7 +61,7 @@
 					card.style.setProperty('--mouse-y', `${y}px`);
 				}
 			}
-		};
+		});
 		if (isMobile) {
 			coords = spring(
 				{ x: 32 },
@@ -70,7 +72,9 @@
 			);
 		}
 
-		let cards = document.getElementById('cards');
+		cardsElement.addEventListener('mousemove', handlePointerMove);
+
+		let cards = cardsElement;
 		let card = gsap.utils.toArray('.card');
 		let dotnav = document.getElementsByClassName('nav-dot');
 		let menutl = gsap.timeline({});
@@ -89,7 +93,7 @@
 			duration: 0.8
 		});
 		menutl.to(cards, {
-			width: '18.15rem',
+			width: '14.75rem',
 			duration: 1
 		});
 		menutl.to(card, {
@@ -103,11 +107,18 @@
 			opacity: 1,
 			duration: 0.3
 		});
+
+		return () => {
+			cardsElement.removeEventListener('mousemove', handlePointerMove);
+			handlePointerMove.cancel();
+			menutl.kill();
+		};
 	});
 </script>
 
 <div
 	id="cards"
+	bind:this={cardsElement}
 	class="z-50 flex gap-2 p-2 fixed bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 bg-[rgb(251,251,253)] bg-opacity-90 backdrop-blur-xl rounded-full border border-solid border-[#EEEEF1] shadow-2xl"
 >
 	<div class="relative group">
