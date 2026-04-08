@@ -69,9 +69,9 @@
 	.magic {
 		display: inline-block;
 		position: relative;
-		--purple: #a855f7;
-		--violet: #8b5cf6;
-		--pink: #f9a8d4;
+		--purple: #3a64fd;
+		--violet: #35b8ff;
+		--pink: #bc8cff;
 	}
 
 	.magic2 {

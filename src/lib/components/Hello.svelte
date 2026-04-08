@@ -11,7 +11,7 @@
 	<div class="flex gap-6 flex-col">
 		<div class="grid grid-cols-[1fr] max-w-lg w-full mx-auto">
 			{#each Array(10) as _, i}
-				<svg class="hello__svg row-start-1 col-start-1 stroke-violet-400" viewBox="0 0 482 167">
+				<svg class="hello__svg row-start-1 col-start-1 stroke-blue-500" viewBox="0 0 482 167">
 					<path
 						class="path-1"
 						style="stroke-width:{1 + i * 0.5}; animation-delay:{1.1 + i * 0.01}s"
@@ -44,8 +44,8 @@
 				<MagicText text="UI/UX designer" />
 			</h1>
 			<h2 class="textfadein text-center title-3 text-gray-500 text-balance">
-				specializing in software and app products, crafting intelligent UX with meticulous attention
-				to detail.
+				turn ideas into real, polished products - from first sketch to shipped app. AI helps me move
+				fast - craft keeps it worth using.
 			</h2>
 		</div>
 	</div>

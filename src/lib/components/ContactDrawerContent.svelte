@@ -27,9 +27,9 @@
 			/>
 		</svg>
 
-		npkhanhdoan@gmail.com
+		trongnguyen24@gmail.com
 
-		<button data-copy="npkhanhdoan@gmail.com" on:click={handleCopy} class="c-hover">
+		<button data-copy="trongnguyen24@gmail.com" on:click={handleCopy} class="c-hover">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
 				{#each { length: 4 } as _, i}
 					<div
@@ -74,9 +74,9 @@
 			/>
 		</svg>
 
-		(+84) 939 004 133
+		(+84) 0379 573 674
 
-		<button data-copy="0939004133" on:click={handleCopy} class="c-hover c-copy">
+		<button data-copy="0379573674" on:click={handleCopy} class="c-hover c-copy">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
 				{#each { length: 4 } as _, i}
 					<div
@@ -112,71 +112,18 @@
 			height="24"
 			viewBox="0 0 24 24"
 		>
-			<g
+			<path
 				fill="none"
 				stroke="currentColor"
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				stroke-width="1.5"
-			>
-				<path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5" />
-				<path
-					d="M9.099 11.826c2.535 0 2.535 4.174 0 4.174H6v-4.174m3.099 0H6m3.099 0c2.535 0 2.535-3.826 0-3.826H6v3.826M15.5 11a2.5 2.5 0 0 0-2.5 2.5h5a2.5 2.5 0 0 0-2.5-2.5M13 13.5a2.5 2.5 0 0 0 2.5 2.5c.928 0 1.49-.322 1.813-.62M17 8.5h-3"
-				/>
-			</g>
+				d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+			/>
 		</svg>
-		fujisai6124de2
+		trongnguyen24
 		<div class="c-hover">
-			<a target="_blank" href="https://www.behance.net/fujisai6124de2" rel="noreferrer">
-				<div class="moveLeft shrink-0 flex justify-center items-center">
-					{#each { length: 4 } as _, i}
-						<div
-							class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								class="w-6 h-6"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-								/>
-							</svg>
-
-							Open in new tab
-						</div>
-					{/each}
-				</div>
-			</a>
-		</div>
-	</div>
-
-	<div class="c-button group">
-		<svg
-			class="shrink-0"
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-		>
-			<g fill="none" stroke="currentColor" stroke-width="1.5">
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"
-				/>
-				<path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
-				<path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011" />
-			</g>
-		</svg>
-		@fjsaix612
-		<div class="c-hover">
-			<a target="_blank" href="https://www.instagram.com/fjsaix612/" rel="noreferrer">
+			<a target="_blank" href="https://github.com/trongnguyen24" rel="noreferrer">
 				<div class="moveLeft shrink-0 flex justify-center items-center">
 					{#each { length: 4 } as _, i}
 						<div
@@ -214,7 +161,8 @@
 	}
 
 	.c-noti {
-		@apply inset-0 bg-violet-500 absolute text-white flex justify-center items-center z-10 -translate-y-[110%] transition-all scale-110 duration-500 rounded-bl-[50%] rounded-br-[50%];
+		@apply inset-0 bg-violet-500 absolute text-white flex justify-center items-center z-10 -translate-y-[110%] scale-110 rounded-bl-[50%] rounded-br-[50%];
+		transition: transform 500ms ease, border-radius 500ms ease;
 	}
 
 	.c-copied {
@@ -223,7 +171,13 @@
 	}
 
 	.c-hover {
-		@apply inset-x-0 inset-y-1/2 group-hover:inset-y-0 transform transition-all duration-500 overflow-hidden absolute flex items-center font-medium text-violet-300 bg-gray-950;
+		@apply inset-0 overflow-hidden absolute flex items-center font-medium text-violet-300 bg-gray-950;
+		clip-path: inset(50% 0);
+		transition: clip-path 500ms ease;
+	}
+
+	.group:hover .c-hover {
+		clip-path: inset(0 0);
 	}
 
 	.c-coping {
@@ -232,6 +186,11 @@
 
 	.moveLeft {
 		animation: moveLeft 6s linear infinite;
+		animation-play-state: paused;
+	}
+
+	.group:hover .moveLeft {
+		animation-play-state: running;
 	}
 
 	@keyframes moveLeft {

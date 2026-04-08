@@ -102,7 +102,7 @@
 			>
 				<div class="">
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-blue-600 aria-current:text-blue-600 duration-300 transition-colors"
 						aria-current="true"
 						on:click={() => switchPage('About')}
 						on:click={handleClick}
@@ -113,7 +113,7 @@
 				</div>
 				<div class="">
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-blue-600 aria-current:text-blue-600 duration-300 transition-colors"
 						on:click={() => switchPage('Experience')}
 						on:click={handleClick}
 					>
@@ -123,7 +123,7 @@
 				</div>
 				<div class=" ">
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-blue-600 aria-current:text-blue-600 duration-300 transition-colors"
 						on:click={() => switchPage('Education')}
 						on:click={handleClick}
 					>
@@ -133,7 +133,7 @@
 				</div>
 				<div>
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-blue-600 aria-current:text-blue-600 duration-300 transition-colors"
 						on:click={() => switchPage('Skills')}
 						on:click={handleClick}
 					>
@@ -143,7 +143,7 @@
 				</div>
 				<div>
 					<button
-						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
+						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-blue-600 aria-current:text-blue-600 duration-300 transition-colors"
 						on:click={() => switchPage('References')}
 						on:click={handleClick}
 					>
@@ -154,7 +154,7 @@
 
 				<span
 					style="width: {$coords.activeBtWidth}px; left: {$coords.activeBtXPos}px; top: {$coords.activeBtYPos}px"
-					class="absolute -z-10 active-bt h-8 md:h-9 w-16 rounded-full pointer-events-none border border-violet-100 bg-violet-50"
+					class="absolute -z-10 active-bt h-8 md:h-9 w-16 rounded-full pointer-events-none border border-blue-100 bg-blue-50"
 				></span>
 			</div>
 
