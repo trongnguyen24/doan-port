@@ -8,7 +8,7 @@
 	import MagicText from '$lib/components/MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import { getImageURL } from '$lib/js/utils.js';
+	import { previewImages } from '$lib/posts';
 
 	export let data;
 
@@ -52,12 +52,16 @@
 	</div>
 
 	<div class="md:pt-32 pt-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-y-32">
-		{#each data.posts.items as item}
+		{#each data.posts as item}
 			<div scroll="reveal" class="md:even:translate-y-24 md:odd:-translate-y-16">
 				<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<img src={getImageURL(item.collectionId, item.id, item.image)} alt={item.title} />
+							<enhanced:img
+								src={previewImages[item.image]}
+								alt={item.title}
+								sizes="min(540px, 100vw)"
+							/>
 						</div>
 					</div>
 					<div class="reveal-text pt-6">

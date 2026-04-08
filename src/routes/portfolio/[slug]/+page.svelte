@@ -6,32 +6,17 @@
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
-	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
-	import { getImageURL } from '$lib/js/utils.js';
+	import { getPostComponent, previewImages } from '$lib/posts';
 
 	export let data;
 
-	const startFancy = () =>
-		Fancybox.bind('[data-fancybox="gallery"]', {
-			Thumbs: false,
-			showClass: false,
-			Carousel: {
-				Navigation: false
-			},
-			Toolbar: {
-				display: {
-					left: [],
-					middle: ['close'],
-					right: []
-				}
-			}
-		});
+	$: PostContent = getPostComponent(data.post.slug);
 
 	onMount(() => {
 		setTimeout(() => {
-			document.querySelectorAll('#con p').forEach((element) => {
-				let page2 = gsap.fromTo(
+			document.querySelectorAll('[scroll="reveal"]').forEach((element) => {
+				gsap.fromTo(
 					element,
 					{},
 					{
@@ -44,73 +29,8 @@
 					}
 				);
 			});
-			document.querySelectorAll('#con p img').forEach((element) => {
-				let page = gsap.fromTo(
-					element,
-					{},
-					{
-						scrollTrigger: {
-							trigger: element,
-							start: 'top 100%-=80px', // when the top of the trigger hits the top of the viewport
-							onEnter: () => element.classList.add('reveal'),
-							markers: false
-						}
-					}
-				);
-			});
-
-			document.querySelectorAll('td img').forEach((element) => {
-				let page3 = gsap.fromTo(
-					element,
-					{},
-					{
-						scrollTrigger: {
-							trigger: element,
-							start: 'top 100%-=80px', // when the top of the trigger hits the top of the viewport
-							onEnter: () => element.classList.add('reveal'),
-							markers: false
-						}
-					}
-				);
-			});
-
-			const cmsContent = document.querySelector('#con');
-
-			if (cmsContent) {
-				const images = cmsContent.querySelectorAll('img');
-				images.forEach((img) => {
-					// Thêm thuộc tính data-fancybox để kích hoạt Fancybox cho mỗi hình ảnh
-					img.setAttribute('data-fancybox', 'gallery');
-					img.addEventListener('click', startFancy);
-				});
-			}
-
-			scroll();
-
-			// let portfolio = gsap.utils.toArray('.portfolio');
-			// let maxWidth = 0;
-			// portfolio.forEach((item) => {
-			// 	maxWidth += item.offsetWidth;
-			// });
-
-			// let tl = gsap
-			// 	.timeline({
-			// 		scrollTrigger: {
-			// 			pin: '#portfolios',
-			// 			end: () => `+=${maxWidth}`,
-			// 			scrub: 1,
-			// 			markers: false
-			// 		}
-			// 	})
-			// 	.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
 		}, 1050);
 	});
-	// afterNavigate(() => {
-	// 	disableScrollHandling;
-	// 	setTimeout(() => {
-	// 		scrollTo({ top: 0, behavior: 'instant' });
-	// 	}, 100);
-	// });
 </script>
 
 <OpenGraph title={data.post.title} description={data.post.description} />
@@ -120,13 +40,9 @@
 <PageGsapRefresh />
 
 <div class="py-10 md:py-28">
-	<h1
-		class="title-1 opacity-0 fadein container pb-8 text-center text-balance reveal-text text-gray-900"
-	>
-		<MagicText text={data.post.title} />
-	</h1>
-
-	<div id="con" class="prose lg:prose-xl container max-w-screen-xl">{@html data.post.content}</div>
+	<div class="fadein">
+		<svelte:component this={PostContent} />
+	</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
 		<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
@@ -150,11 +66,12 @@
 		<div class="flex justify-center items-center gap-8 pb-20 flex-col">
 			<div class="max-w-[38rem] px-6 max-h-[46rem] portfolio flex justify-center items-center">
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
-					<div class="reveal-img overflow-hidden rounded">
+					<div class="reveal-img overflow-hidden rounded-3xl md:rounded-[3rem]">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<img
-								src={getImageURL(data.nextPost.collectionId, data.nextPost.id, data.nextPost.image)}
+							<enhanced:img
+								src={previewImages[data.nextPost.image]}
 								alt={data.nextPost.title}
+								sizes="min(540px, 100vw)"
 							/>
 						</div>
 					</div>
