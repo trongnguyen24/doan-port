@@ -17,8 +17,13 @@
 
 	onMount(() => {
 		if (!isMobile && ref) {
-			tween = gsap.to(ref, { width: 44, duration: 0.2, ease: 'power1.out' });
-			gsap.set(ref, { top: 0 });
+			tween = gsap.to(ref, {
+				width: 44,
+				'--icon-scale': 1,
+				duration: 0.2,
+				ease: 'power1.out'
+			});
+			gsap.set(ref, { top: 0, '--icon-scale': 1 });
 		}
 
 		return () => {
@@ -27,8 +32,13 @@
 	});
 
 	$: if (!isMobile && ref && !tween) {
-		tween = gsap.to(ref, { width: 44, duration: 0.2, ease: 'power1.out' });
-		gsap.set(ref, { top: 0 });
+		tween = gsap.to(ref, {
+			width: 44,
+			'--icon-scale': 1,
+			duration: 0.2,
+			ease: 'power1.out'
+		});
+		gsap.set(ref, { top: 0, '--icon-scale': 1 });
 	}
 
 	$: if (!isMobile && ref && tween && mouseX !== Infinity) {
@@ -37,18 +47,21 @@
 		const impactDistance = 100;
 		const normalizedDistance = Math.abs(distance) / impactDistance;
 		const targetWidth = normalizedDistance > 1 ? 44 : 44 + 40 * (1 - normalizedDistance);
+		const iconScale = targetWidth / 44;
 
 		tween.vars.width = targetWidth;
+		tween.vars['--icon-scale'] = iconScale;
 		tween.invalidate().restart();
 	} else if (ref && tween) {
 		tween.vars.width = 44;
+		tween.vars['--icon-scale'] = 1;
 		tween.invalidate().restart();
 	}
 
 	$: if (isMobile && ref) {
 		tween?.kill();
 		tween = undefined;
-		gsap.set(ref, { width: 44, top: 0 });
+		gsap.set(ref, { width: 44, top: 0, '--icon-scale': 1 });
 	}
 
 	function handleMouseUp() {
@@ -91,7 +104,9 @@
 			data-sveltekit-noscroll
 			on:click={handleActivate}
 		>
-			<slot />
+			<span class="dock-icon-content">
+				<slot />
+			</span>
 		</a>
 	{:else}
 		<button
@@ -100,7 +115,9 @@
 			aria-label={ariaLabel}
 			on:click={handleActivate}
 		>
-			<slot />
+			<span class="dock-icon-content">
+				<slot />
+			</span>
 		</button>
 	{/if}
 
@@ -155,6 +172,14 @@
 		opacity: 0;
 		transition: opacity 0.3s ease-out;
 		transition-delay: var(--delay-tooltip);
+	}
+
+	.dock-icon-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: scale(var(--icon-scale, 1));
+		transform-origin: center;
 	}
 
 	.dock-icon:hover .tooltip {
