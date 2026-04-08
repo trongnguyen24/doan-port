@@ -39,13 +39,13 @@
 			<h1
 				class="textfadein font-medium text-center title-1 leading-tight text-gray-700 text-balance"
 			>
-				I'm Doan, a
+				I'm Nguyen, a
 
-				<MagicText text="graphic designer" />
+				<MagicText text="UI/UX designer" />
 			</h1>
 			<h2 class="textfadein text-center title-3 text-gray-500 text-balance">
-				who believes that creativity should always be fun even though you have to mix it with
-				caffein every morning (and night).
+				specializing in software and app products, crafting intelligent UX with meticulous attention
+				to detail.
 			</h2>
 		</div>
 	</div>
