@@ -28,7 +28,7 @@
 	<Block>
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/1.jpg?format=webp&quality=90&w=900;1440"
+				src="$lib/images/01/ta-1.png?format=webp&quality=90&w=900;1440"
 				alt={metadata.title}
 			/>
 		</Image>

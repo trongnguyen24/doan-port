@@ -43,7 +43,7 @@
 
 <section class="max-w-screen-xl container py-12 md:py-40">
 	<div class="">
-		<h1 class="title-1 font-medium fadein"><MagicText text="Portfolio" /></h1>
+		<h1 class="title-1 font-serif font-medium fadein"><MagicText text="Portfolio" /></h1>
 		<p class="title-3 mt-6 fadein text-slate-500">
 			A collection of some projects that I have completed.
 		</p>
@@ -58,7 +58,7 @@
 							<enhanced:img
 								src={previewImages[item.image]}
 								alt={item.title}
-								sizes="min(540px, 100vw)"
+								sizes="(min-width: 1024px) 38rem, (min-width: 768px) 50vw, 100vw"
 							/>
 						</div>
 					</div>

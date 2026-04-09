@@ -37,7 +37,7 @@
 		</div>
 		<div class="max-w-2xl flex flex-col gap-4 mx-auto">
 			<h1
-				class="textfadein font-medium text-center title-1 leading-tight text-gray-700 text-balance"
+				class="textfadein font-serif font-blod text-center title-1 leading-tight text-gray-700 text-balance"
 			>
 				I'm Nguyen, a
 

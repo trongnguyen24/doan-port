@@ -68,7 +68,7 @@
 							<enhanced:img
 								src={previewImages[data.nextPost.image]}
 								alt={data.nextPost.title}
-								sizes="min(540px, 100vw)"
+								sizes="(min-width: 1024px) 38rem, (min-width: 768px) 50vw, 100vw"
 							/>
 						</div>
 					</div>

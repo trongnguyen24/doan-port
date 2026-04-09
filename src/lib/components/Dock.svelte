@@ -103,7 +103,7 @@
 		</DockAppIcon>
 
 		<Drawer.Portal class="catTrigger relative inset-0 z-50 overflow-y-auto">
-			<Drawer.Overlay class="fixed inset-0 bg-white/90" />
+			<Drawer.Overlay class="fixed inset-0 bg-slate-200/95" />
 			<Drawer.Content
 				class="fixed bottom-6 inset-x-6 mx-auto mt-24 flex flex-col sm:left-1/2 sm:w-[28rem] sm:-ml-[14rem]"
 			>
