@@ -1,9 +1,9 @@
 <script context="module">
 	export const metadata = {
-		title: 'Eco-friendly Workspace',
-		description: 'Sustainable office design.',
-		date: '2023-09-05',
-		image: 'eco',
+		title: 'Summarizerrrr',
+		description: 'Browser extension for summarizing web pages, youtube videos, Udemy, Coursera.',
+		date: '2023-10-12',
+		image: 'summarizer',
 		published: true
 	};
 </script>

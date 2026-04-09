@@ -1,8 +1,8 @@
 // @ts-nocheck
-import eco from '$lib/posts/eco.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
-import futuristic from '$lib/posts/futuristic.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
+import newsdigest from '$lib/posts/newsdigest.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
+import tamanh from '$lib/posts/tam-anh.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
 import minimalist from '$lib/posts/minimalist.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
-import retro from '$lib/posts/retro.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
+import summarizer from '$lib/posts/summarizer.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
 import urban from '$lib/posts/urban.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
 
 import type { Post } from '$lib/types';
@@ -13,10 +13,10 @@ type PostModule = {
 };
 
 const previewImages = {
-	eco,
-	futuristic,
+	newsdigest,
+	'tam-anh': tamanh,
 	minimalist,
-	retro,
+	summarizer,
 	urban
 } as const;
 

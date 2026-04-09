@@ -1,19 +1,19 @@
 export const images = [
 	{
-		name: 'eco',
-		url: '../../../posts/eco.png?format=webp&quality=70&w=560;1024'
+		name: 'newsdigest',
+		url: '../../../posts/newsdigest.png?format=webp&quality=70&w=560;1024'
 	},
 	{
-		name: 'futuristic',
-		url: '../../../posts/futuristic.png?format=webp&quality=70&w=560;1024'
+		name: 'tam-anh',
+		url: '../../../posts/tam-anh.png?format=webp&quality=70&w=560;1024'
 	},
 	{
 		name: 'minimalist',
 		url: '../../../posts/minimalist.png?format=webp&quality=70&w=560;1024'
 	},
 	{
-		name: 'retro',
-		url: '../../../posts/retro.png?format=webp&quality=70&w=560;1024'
+		name: 'summarizer',
+		url: '../../../posts/summarizer.png?format=webp&quality=70&w=560;1024'
 	},
 	{
 		name: 'urban',

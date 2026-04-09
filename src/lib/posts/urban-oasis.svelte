@@ -1,5 +1,5 @@
 <script context="module">
-	import Ferrumpipe from './eco-friendly-workspace.svelte';
+	import Ferrumpipe from './newsdigest.svelte';
 
 	export const metadata = {
 		title: 'Urban Oasis',

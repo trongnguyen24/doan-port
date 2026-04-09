@@ -1,9 +1,9 @@
 <script context="module">
 	export const metadata = {
-		title: 'Futuristic Exhibition Space',
-		description: 'Innovative, futuristic exhibition design.',
+		title: 'Tam Anh Hospital',
+		description: 'Internal systems, digital interfaces, and healthcare UX improvements.',
 		date: '2023-12-01',
-		image: 'futuristic',
+		image: 'tam-anh',
 		published: true
 	};
 </script>
@@ -38,8 +38,8 @@
 <Section>
 	<Block size="2" position="2" mobile="4">
 		<Text
-			>Tendril was invited to create a launch film and flexible visual system to highlight and
-			envision Microsoft’s new Windows 365 Cloud PC platform and its possibilities.
+			>At Tam Anh General Hospital, I was involved in the design and development of digital
+			interface systems to support internal operations and enhance the patient experience.
 		</Text>
 	</Block>
 </Section>
@@ -80,11 +80,9 @@
 <Section>
 	<Block size="2" mobile="4">
 		<Text
-			>The film takes us on a journey of discovering this new platform, the features and
-			possibilities of the Cloud and the familiar Windows experience available at the user’s
-			fingertips. Imagine the possibilities of having access to a totally configurable and powerful
-			PC that can be streamed effortlessly to any device, anywhere. Ease, fluidity, security, and
-			power were all characteristics that needed to be expressed through our designs.
+			>The work included building appointment management interfaces, patient information display
+			systems, and tools to streamline the examination and treatment process. The goal was to create
+			smooth, user-friendly digital experiences for both medical staff and patients.
 		</Text>
 	</Block>
 </Section>
@@ -128,11 +126,9 @@
 <Section>
 	<Block size="2" position="3" mobile="4">
 		<Text
-			>We sought to make a clear, informative film that expressed these new features while
-			maintaining an abstract, beautiful world. We wanted to avoid obvious visual metaphors but
-			still convey some sense of cloud-like qualities. The end result is a visualization of the
-			experience of using Windows Cloud PC in a way that feels exciting and fresh but also familiar
-			and not too abstract.
+			>The design focused on clarity, professionalism, and healthcare-appropriate aesthetics —
+			ensuring visual quality while prioritizing functionality and performance. The result was a
+			suite of digital products that helped optimize hospital workflows.
 		</Text>
 	</Block>
 </Section>

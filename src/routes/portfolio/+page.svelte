@@ -53,7 +53,7 @@
 		{#each data.posts as item}
 			<div scroll="reveal" class="md:even:translate-y-24 md:odd:-translate-y-16">
 				<a href="/portfolio/{item.slug}" data-sveltekit-noscroll>
-					<div class="reveal-img overflow-hidden rounded">
+					<div class="reveal-img overflow-hidden rounded-2xl">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
 							<enhanced:img
 								src={previewImages[item.image]}
