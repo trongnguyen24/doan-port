@@ -92,7 +92,7 @@
 <section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg fadein container">
 		<div class="flex items-center justify-between">
-			<h1 class="title-1 font-serif fadein"><MagicText text="My CV" /></h1>
+			<h1 class="title-1 fadein"><MagicText text="My CV" /></h1>
 			<Buttonsm link="/DoanNguyen_CV_GraphicDesigner.pdf" text="Download CV"></Buttonsm>
 		</div>
 

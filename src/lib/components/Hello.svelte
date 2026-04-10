@@ -36,9 +36,7 @@
 			{/each}
 		</div>
 		<div class="max-w-2xl flex flex-col gap-4 mx-auto">
-			<h1
-				class="textfadein font-serif font-blod text-center title-1 leading-tight text-gray-700 text-balance"
-			>
+			<h1 class="textfadein font-blod text-center title-1 leading-tight text-gray-700 text-balance">
 				I'm Nguyen, a
 
 				<MagicText text="UI/UX designer" />
