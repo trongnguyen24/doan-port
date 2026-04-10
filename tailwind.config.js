@@ -15,7 +15,7 @@ const config = {
 				lg: '3rem'
 			},
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1440px'
 			}
 		},
 

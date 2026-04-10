@@ -28,12 +28,12 @@
 	<Block>
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/ta-1.png?format=webp&quality=98&w=720;1400"
+				src="$lib/posts/tam-anh-hospital/ta-1.png?format=webp&quality=98&w=720;1400"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/ta-1.png?format=webp&quality=98&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/ta-1.png?format=webp&quality=98&w=900;1920"
 					alt={metadata.title}
 				/>
 			</div>
@@ -54,13 +54,13 @@
 	<Block size="3" position="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/2.jpg?format=webp&quality=80&w=360;720"
-				sizes="min(720px, 70vw)"
+				src="$lib/posts/tam-anh-hospital/1.jpg?format=webp&quality=95&w=1036;1600"
+				sizes="min(800px, 70vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/2.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/1.jpg?format=webp&quality=98&w=900;1920"
 					alt={metadata.title}
 				/>
 			</div>
@@ -69,31 +69,34 @@
 </Section>
 
 <Section>
-	<Block size="2" mobile="31">
+	<Block size="3" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/3-a.jpg?format=webp&quality=80&w=360;720"
+				src="$lib/posts/tam-anh-hospital/2.jpg?format=webp&quality=95&w=1036;1600"
 				sizes="min(400px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/3-a.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/2.jpg?format=webp&quality=95&w=900;1920"
 					alt={metadata.title}
 				/>
 			</div>
 		</Image>
 	</Block>
-	<Block size="2" mobile="32">
+</Section>
+
+<Section>
+	<Block size="4" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/3b.jpg?format=webp&quality=80&w=360;720"
+				src="$lib/posts/tam-anh-hospital/3.jpg?format=webp&quality=95&w=1392;1600"
 				sizes="min(400px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/3b.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/3.jpg?format=webp&quality=95&w=900;1920"
 					alt={metadata.title}
 				/>
 			</div>
