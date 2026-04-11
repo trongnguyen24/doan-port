@@ -28,12 +28,13 @@
 	<Block>
 		<Image>
 			<enhanced:img
-				src="$lib/posts/tam-anh-hospital/ta-1.png?format=webp&quality=98&w=720;1400"
+				src="$lib/posts/tam-anh-hospital/ta-1.png?format=webp&quality=98"
+				sizes="min(1392px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/posts/tam-anh-hospital/ta-1.png?format=webp&quality=98&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/ta-1.png?format=webp&quality=98"
 					alt={metadata.title}
 				/>
 			</div>
@@ -55,12 +56,12 @@
 		<Image>
 			<enhanced:img
 				src="$lib/posts/tam-anh-hospital/1.jpg?format=webp&quality=95&w=1036;1600"
-				sizes="min(800px, 70vw)"
+				sizes="min(1036px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/posts/tam-anh-hospital/1.jpg?format=webp&quality=98&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/1.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -73,12 +74,12 @@
 		<Image>
 			<enhanced:img
 				src="$lib/posts/tam-anh-hospital/2.jpg?format=webp&quality=95&w=1036;1600"
-				sizes="min(400px, 100vw)"
+				sizes="min(1036px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/posts/tam-anh-hospital/2.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/2.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -90,13 +91,13 @@
 	<Block size="4" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/posts/tam-anh-hospital/3.jpg?format=webp&quality=95&w=1392;1600"
-				sizes="min(400px, 100vw)"
+				src="$lib/posts/tam-anh-hospital/3.jpg?format=webp&quality=95&w=1392;1800"
+				sizes="min(1392px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/posts/tam-anh-hospital/3.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/3.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -115,16 +116,31 @@
 </Section>
 
 <Section>
-	<Block>
+	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/4.jpg?format=webp&quality=80&w=360;720"
-				sizes="min(1440px, 100vw)"
+				src="$lib/posts/tam-anh-hospital/4.jpg?format=webp&quality=95&w=680;1360"
+				sizes="min(680px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/4.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/4.jpg?format=webp&quality=95"
+					alt={metadata.title}
+				/>
+			</div>
+		</Image>
+	</Block>
+	<Block size="2" mobile="4">
+		<Image>
+			<enhanced:img
+				src="$lib/posts/tam-anh-hospital/5.jpg?format=webp&quality=95&w=680;1360"
+				sizes="min(680px, 100vw)"
+				alt={metadata.title}
+			/>
+			<div slot="fullres">
+				<enhanced:img
+					src="$lib/posts/tam-anh-hospital/5.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -133,16 +149,16 @@
 </Section>
 
 <Section>
-	<Block size="3" mobile="4">
+	<Block size="4" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/5.jpg?format=webp&quality=80&w=360;720"
-				sizes="min(720px, 50vw)"
+				src="$lib/posts/tam-anh-hospital/6.jpg?format=webp&quality=95&w=1392;1800"
+				sizes="min(1392px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/5.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/6.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -154,13 +170,13 @@
 	<Block size="3" position="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/6.jpg?format=webp&quality=80&w=360;720"
-				sizes="min(720px, 50vw)"
+				src="$lib/posts/tam-anh-hospital/7.jpg?format=webp&quality=95&w=1036;1600"
+				sizes="min(1036px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/6.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/7.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -182,13 +198,13 @@
 	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/7.jpg?format=webp&quality=80&w=360;720"
-				sizes="min(400px, 50vw)"
+				src="$lib/posts/tam-anh-hospital/8.jpg?format=webp&quality=95&w=680;1360"
+				sizes="min(680px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/7.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/8.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -197,13 +213,13 @@
 	<Block size="2" mobile="4">
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/8-a.jpg?format=webp&quality=80&w=360;720"
-				sizes="min(400px, 50vw)"
+				src="$lib/posts/tam-anh-hospital/9.jpg?format=webp&quality=95&w=680;1360"
+				sizes="min(680px, 100vw)"
 				alt={metadata.title}
 			/>
 			<div slot="fullres">
 				<enhanced:img
-					src="$lib/images/01/8-a.jpg?format=webp&quality=95&w=900;1920"
+					src="$lib/posts/tam-anh-hospital/9.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
