@@ -30,34 +30,19 @@
 </Section>
 
 <Section>
-	<Block size="3" position="2" mobile="4">
+	<Block>
 		<Image>
 			<enhanced:img
-				src="$lib/images/01/2.jpg?format=webp&quality=90&w=900;1440"
-				sizes="min(720px, 70vw)"
+				src="$lib/posts/summarizer/00.jpg?format=webp&quality=98"
+				sizes="min(1392px, 100vw)"
 				alt={metadata.title}
 			/>
-		</Image>
-	</Block>
-</Section>
-
-<Section>
-	<Block size="2" mobile="31">
-		<Image>
-			<enhanced:img
-				src="$lib/images/01/3-a.jpg?format=webp&quality=90&w=900;1440"
-				sizes="min(400px, 100vw)"
-				alt={metadata.title}
-			/>
-		</Image>
-	</Block>
-	<Block size="2" mobile="32">
-		<Image>
-			<enhanced:img
-				src="$lib/images/01/3b.jpg?format=webp&quality=90&w=900;1440"
-				sizes="min(400px, 100vw)"
-				alt={metadata.title}
-			/>
+			<div slot="fullres">
+				<enhanced:img
+					src="$lib/posts/summarizer/00.jpg?format=webp&quality=98"
+					alt={metadata.title}
+				/>
+			</div>
 		</Image>
 	</Block>
 </Section>
