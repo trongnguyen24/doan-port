@@ -43,6 +43,7 @@
 		"clsx": "^2.1.0",
 		"gsap": "^3.12.4",
 		"lucide-svelte": "^0.314.0",
+		"svelte-i18n": "^4.0.1",
 		"tailwind-merge": "^2.2.1",
 		"tailwind-variants": "^0.1.20",
 		"vaul-svelte": "^0.1.1"

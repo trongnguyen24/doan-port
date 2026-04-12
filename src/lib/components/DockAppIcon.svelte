@@ -154,6 +154,7 @@
 	/* --- Tooltip: light mode (default) --- */
 	.arrow_box {
 		position: relative;
+		white-space: nowrap;
 		border-color: rgba(226, 228, 233, 0.95);
 		background-color: #f7f8fb;
 		color: #6b6b70;

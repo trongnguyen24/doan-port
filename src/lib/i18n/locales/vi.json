@@ -1,0 +1,107 @@
+{
+	"nav": {
+		"home": "Trang chủ",
+		"portfolio": "Tác phẩm",
+		"cv": "CV",
+		"contact": "Liên hệ",
+		"lang_switch": "English"
+	},
+	"home": {
+		"intro": "Tôi là Nguyên, một",
+		"role": "UI/UX Designer",
+		"subtitle": "biến ý tưởng thành sản phẩm hoàn chỉnh - từ bản phác thảo đầu tiên đến ứng dụng thực tế. AI giúp tôi làm nhanh - tay nghề giữ cho nó đáng dùng.",
+		"btn_portfolio": "XEM TÁC PHẨM",
+		"btn_cv": "XEM CV"
+	},
+	"portfolio": {
+		"title": "Tác phẩm",
+		"subtitle": "Một số dự án mà tôi đã hoàn thành.",
+		"next_project": "Dự án tiếp theo"
+	},
+	"cv": {
+		"title": "CV của tôi",
+		"download": "Tải CV"
+	},
+	"cv_nav": {
+		"about": "Giới thiệu",
+		"experience": "Kinh nghiệm",
+		"education": "Học vấn",
+		"skills": "Kỹ năng",
+		"references": "Người tham chiếu"
+	},
+	"contact": {
+		"title": "Liên hệ",
+		"copy_email": "Nhấn để sao chép email",
+		"copy_phone": "Nhấn để sao chép SĐT",
+		"copied": "Đã sao chép",
+		"open_tab": "Mở tab mới"
+	},
+	"about": {
+		"greeting": "Xin chào!",
+		"name": "Tôi là {name}",
+		"roles_designer": "Product Designer",
+		"roles_3d": "3D Visualizer",
+		"roles_dev": "Developer",
+		"bio1": "Tôi là một product designer và lập trình viên front-end tại TP. Hồ Chí Minh, chuyên xây dựng sản phẩm số từ đầu đến cuối - từ nghiên cứu người dùng, thiết kế UI/UX đến phát triển ứng dụng hoàn chỉnh.",
+		"bio2": "Tôi cũng tận dụng <strong class=\"text-slate-800\">AI vibe coding</strong> để xây dựng extension trình duyệt và công cụ năng suất giúp tối ưu quy trình làm việc hàng ngày. Điều này giúp tôi biến ý tưởng thành giải pháp thực tế một cách nhanh chóng, kết nối giữa tư duy thiết kế và thực thi kỹ thuật.",
+		"bio3": "Nếu bạn đang tìm kiếm một designer tài năng để nâng tầm thương hiệu và thúc đẩy tăng trưởng kinh doanh, tôi rất vui được hợp tác cùng bạn. Hãy kết nối và cùng nhau đạt được mục tiêu của bạn.",
+		"label_fullname": "Họ tên",
+		"label_email": "Email",
+		"label_phone": "Điện thoại"
+	},
+	"experience": {
+		"title": "Kinh nghiệm",
+		"job1_period": "2023 - 2026",
+		"job1_title": "Chuyên viên Phát triển Phần mềm - Bệnh viện Tâm Anh",
+		"job1_desc": "Thiết kế UI/UX cho các hệ thống phần mềm nội bộ bao gồm nền tảng điều phối, quản lý hồ sơ bệnh án và hệ thống quản lý hồ sơ bệnh nhân. Xây dựng và triển khai giải pháp RAG Flow để hỗ trợ quy trình bệnh viện và nâng cao hiệu quả vận hành.",
+		"job2_period": "2022 - 2023",
+		"job2_title": "Nhà thiết kế UI/UX - TPF Vietnam",
+		"job2_desc": "Phần lớn công việc tại đây xoay quanh việc thiết kế chiến dịch marketing website, phát triển mockup 3D và xây dựng các ứng dụng CRUD nhỏ bằng SvelteKit.",
+		"job3_period": "2021 - 2022",
+		"job3_title": "Designer & Developer - Coconut Group",
+		"job3_desc": "Cung cấp giải pháp hiệu quả và định hướng phong cách cho thương hiệu startup, sản xuất nội dung mạng xã hội và xây dựng website trên nền WordPress và Haravan.",
+		"job4_period": "2013 - 2021",
+		"job4_title": "Graphic Designer - TPF Vietnam",
+		"job4_desc": "Đảm nhận vai trò graphic designer, retoucher cao cấp, 3D visualizer và web designer, đồng thời hỗ trợ giải quyết các vấn đề tự động hóa để cải thiện hiệu suất.",
+		"job5_period": "2012 - 2013",
+		"job5_title": "UI/UX - SGVN",
+		"job5_desc": "Xây dựng website và ứng dụng bằng Photoshop trong thời điểm UI/UX còn rất mới tại Việt Nam, đồng thời trau dồi kỹ năng HTML và CSS.",
+		"job6_period": "2012",
+		"job6_title": "Graphic Designer - Golden ACE Viet Nam",
+		"job6_desc": "Tích lũy kinh nghiệm thực tế về quy trình thiết kế liên quan đến CNC và thiết kế truyền thông cho các nền tảng mạng xã hội."
+	},
+	"education": {
+		"title": "Học vấn"
+	},
+	"references": {
+		"title": "Người tham chiếu"
+	},
+	"posts": {
+		"newsdigest": {
+			"title": "NewsDigest",
+			"description": "Tổng hợp tin công nghệ hàng ngày bằng AI với khả năng tóm tắt của Gemini AI.",
+			"text1": "Một dự án cá nhân được xây dựng hoàn toàn trên hạ tầng miễn phí - Cloudflare Workers, Pages, KV và API Gemini của Google. Hệ thống tự động thu thập bài viết từ RSS, Reddit, YouTube, Hacker News và GitHub Trending theo lịch cron, sau đó tóm tắt và chấm điểm từng bài bằng Gemini AI thông qua Cloudflare AI Gateway.",
+			"text2": "Thiết kế cố ý theo hướng thực dụng - không rườm rà, không chrome thừa. Mọi yếu tố đều phục vụ một mục tiêu duy nhất: hấp thụ thông tin nhanh nhất có thể. Trên di động, chi tiết tin tức mở rộng và thu gọn bằng cử chỉ vuốt tự nhiên, giữ dòng đọc liên tục và trực quan.",
+			"visit": "Xem Website"
+		},
+		"summarizer": {
+			"title": "Summarizerrrr",
+			"description": "Extension trình duyệt tóm tắt trang web, video YouTube, Udemy, Coursera.",
+			"text1": "Summarizerrrr không chỉ là một wrapper thông thường - đây là công cụ năng suất mã nguồn mở và miễn phí được xây dựng với tư duy quyền sở hữu dữ liệu. Người dùng có toàn quyền kiểm soát thông tin: chọn bất kỳ nhà cung cấp API nào bạn tin tưởng, hoặc chạy LLM cục bộ để bảo mật hoàn toàn. Dù bạn đang nghiên cứu, học kỹ năng mới hay chỉ muốn nắm ý chính của video dài, Summarizerrrr đều đáp ứng. Giao diện được thiết kế để đọc thoải mái và dễ dàng điều hướng qua nội dung dài.",
+			"text2": "Extension được thiết kế để hoạt động liền mạch trên nhiều nền tảng - từ iOS và Android đến trình duyệt desktop hỗ trợ side panel, cũng như những trình duyệt không hỗ trợ như Arc và Safari. Mỗi môi trường đều có trải nghiệm được tùy chỉnh, cảm giác bản địa chứ không bị thỏa hiệp.",
+			"visit": "Xem Website"
+		},
+		"tam_anh": {
+			"title": "Bệnh viện Tâm Anh",
+			"description": "Hệ thống nội bộ, giao diện số và cải tiến UX y tế.",
+			"text1": "Tại Bệnh viện Đa khoa Tâm Anh, tôi thiết kế và phát triển hệ thống giao diện số hỗ trợ vận hành nội bộ và nâng cao trải nghiệm bệnh nhân. Tùy thuộc vào tech stack của từng đội phát triển, tôi thích ứng với ngôn ngữ và thư viện phù hợp - tận dụng template và hệ thống component có sẵn để đẩy nhanh tiến độ và duy trì tính nhất quán giữa các dự án.",
+			"text2": "Ngôn ngữ hình ảnh sáng, sạch và mang tính y khoa - mọi yếu tố đều được kết hợp với nhãn rõ ràng và icon trực quan để hướng dẫn người dùng dễ dàng. Bố cục được thiết kế để tối đa hóa không gian màn hình, đảm bảo mọi thông tin quan trọng đều hiển thị ngay lập tức mà không cần cuộn thừa.",
+			"text3": "Với màn hình QMS (Hệ thống Quản lý Hàng đợi), tôi không dừng ở thiết kế tĩnh - phối hợp với đội dev triển khai animation vòng lặp liên tục bằng CSS thuần thay vì JavaScript, đảm bảo chuyển động mượt mà, không gián đoạn với hiệu suất rendering tối ưu."
+		},
+		"minimalist": {
+			"title": "Nhà Tối Giản",
+			"description": "Thiết kế nội thất đơn giản, tinh tế.",
+			"text1": "Tendril được mời tạo phim ra mắt và hệ thống hình ảnh linh hoạt để nêu bật và hình dung nền tảng Microsoft Windows 365 Cloud PC mới cùng các khả năng của nó."
+		}
+	}
+}

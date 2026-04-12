@@ -17,6 +17,7 @@
 	import Text from '$lib/mdstyle/Text.svelte';
 	import Image from '$lib/mdstyle/Image.svelte';
 	import Video from '$lib/mdstyle/Video.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <Title>
@@ -26,11 +27,7 @@
 <Section>
 	<Block size="3" mobile="4">
 		<Text
-			>Summarizerrrr isn't just another wrapper -it's a free and open-source productivity tool built
-			with data ownership in mind. Users have full control over their information: choose any API
-			provider you trust, or run a local LLM for complete privacy. Whether you're researching,
-			learning a new skill, or just trying to get the gist of a long video, Summarizerrrr has you
-			covered. The UI is designed for comfortable reading and easy navigation through long content.
+			>{$_('posts.summarizer.text1')}
 		</Text>
 		<a
 			href="https://summarizerrrr.com/"
@@ -38,7 +35,7 @@
 			rel="noopener noreferrer"
 			class="visit-btn"
 		>
-			Visit Website
+			{$_('posts.summarizer.visit')}
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -149,9 +146,7 @@
 <Section>
 	<Block size="2" position="2" mobile="4">
 		<Text
-			>The extension is designed to work seamlessly across platforms -from iOS and Android to
-			desktop browsers that support side panels, as well as those that don't, like Arc and Safari.
-			Each environment gets a tailored experience that feels native, not compromised.
+			>{$_('posts.summarizer.text2')}
 		</Text>
 	</Block>
 </Section>

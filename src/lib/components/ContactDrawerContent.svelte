@@ -1,6 +1,7 @@
 <script>
 	// @ts-nocheck
 
+	import { _ } from 'svelte-i18n';
 	export let handleCopy;
 </script>
 
@@ -31,7 +32,7 @@
 
 		<button data-copy="trongnguyen24@gmail.com" on:click={handleCopy} class="c-hover">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
-				{#each { length: 4 } as _, i}
+				{#each { length: 4 } as __, i}
 					<div
 						class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
 					>
@@ -49,12 +50,12 @@
 								d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
 							/>
 						</svg>
-						Click to copy email
+						{$_('contact.copy_email')}
 					</div>
 				{/each}
 			</div>
 		</button>
-		<div class="c-noti">Copied</div>
+		<div class="c-noti">{$_('contact.copied')}</div>
 	</div>
 
 	<div class="c-button group">
@@ -78,7 +79,7 @@
 
 		<button data-copy="0379573674" on:click={handleCopy} class="c-hover c-copy">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
-				{#each { length: 4 } as _, i}
+				{#each { length: 4 } as __, i}
 					<div
 						class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
 					>
@@ -96,12 +97,12 @@
 								d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
 							/>
 						</svg>
-						Click to copy phone
+						{$_('contact.copy_phone')}
 					</div>
 				{/each}
 			</div>
 		</button>
-		<div class="c-noti">Copied</div>
+		<div class="c-noti">{$_('contact.copied')}</div>
 	</div>
 
 	<div class="c-button group">
@@ -125,7 +126,7 @@
 		<div class="c-hover">
 			<a target="_blank" href="https://github.com/trongnguyen24" rel="noreferrer">
 				<div class="moveLeft shrink-0 flex justify-center items-center">
-					{#each { length: 4 } as _, i}
+					{#each { length: 4 } as __, i}
 						<div
 							class="text-content transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex gap-8 shrink-0 px-4"
 						>
@@ -144,7 +145,7 @@
 								/>
 							</svg>
 
-							Open in new tab
+							{$_('contact.open_tab')}
 						</div>
 					{/each}
 				</div>

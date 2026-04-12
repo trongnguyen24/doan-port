@@ -1,0 +1,107 @@
+{
+	"nav": {
+		"home": "Home",
+		"portfolio": "Portfolio",
+		"cv": "CV",
+		"contact": "Contact",
+		"lang_switch": "Tiếng Việt"
+	},
+	"home": {
+		"intro": "I'm Nguyen, a",
+		"role": "UI/UX designer",
+		"subtitle": "turn ideas into real, polished products - from first sketch to shipped app. AI helps me move fast - craft keeps it worth using.",
+		"btn_portfolio": "MY PORTFOLIO",
+		"btn_cv": "MY CV"
+	},
+	"portfolio": {
+		"title": "Portfolio",
+		"subtitle": "A collection of some projects that I have completed.",
+		"next_project": "Next project"
+	},
+	"cv": {
+		"title": "My CV",
+		"download": "Download CV"
+	},
+	"cv_nav": {
+		"about": "About",
+		"experience": "Experience",
+		"education": "Education",
+		"skills": "Skills",
+		"references": "References"
+	},
+	"contact": {
+		"title": "Contact",
+		"copy_email": "Click to copy email",
+		"copy_phone": "Click to copy phone",
+		"copied": "Copied",
+		"open_tab": "Open in new tab"
+	},
+	"about": {
+		"greeting": "Hi!",
+		"name": "I'm {name}",
+		"roles_designer": "Product Designer",
+		"roles_3d": "3D Visualizer",
+		"roles_dev": "Developer",
+		"bio1": "I am a product designer and FE developer based in Ho Chi Minh City, specializing in crafting end-to-end digital products - from user research and UI/UX design to building fully functional.",
+		"bio2": "I also leverage <strong class=\"text-slate-800\">AI-powered vibe coding</strong> to build browser extensions and productivity tools that streamline my daily workflow. This allows me to turn ideas into working solutions at speed, bridging the gap between design thinking and engineering execution.",
+		"bio3": "If you are seeking a talented designer to elevate your brand and drive business growth, I would be thrilled to join forces with you. Let's connect and work together to achieve your goals.",
+		"label_fullname": "Full name",
+		"label_email": "Email",
+		"label_phone": "Phone"
+	},
+	"experience": {
+		"title": "Experience",
+		"job1_period": "2023 - 2026",
+		"job1_title": "Software Development Specialist - Tam Anh Hospital",
+		"job1_desc": "Designed UI/UX for internal software systems including coordination platforms, medical records management, and patient file systems. Built and implemented RAG Flow solutions to support hospital workflows and enhance operational efficiency.",
+		"job2_period": "2022 - 2023",
+		"job2_title": "UI/UX Designer - TPF Vietnam",
+		"job2_desc": "A significant portion of my work here revolves around crafting website marketing campaigns, developing 3D mockups, and building small CRUD apps using SvelteKit.",
+		"job3_period": "2021 - 2022",
+		"job3_title": "Designer & Developer - Coconut Group",
+		"job3_desc": "Provided effective solutions and defined the style orientation for a startup brand, produced social media assets, and built websites based on WordPress and Haravan.",
+		"job4_period": "2013 - 2021",
+		"job4_title": "Graphic Designer - TPF Vietnam",
+		"job4_desc": "Handled roles as graphic designer, high-end retoucher, 3D visualizer, and web designer while also helping resolve automation issues to improve efficiency.",
+		"job5_period": "2012 - 2013",
+		"job5_title": "UI/UX - SGVN",
+		"job5_desc": "Built websites and apps using Photoshop at a time when UI/UX was still very new in Vietnam, while deepening HTML and CSS skills.",
+		"job6_period": "2012",
+		"job6_title": "Graphic Designer - Golden ACE Viet Nam",
+		"job6_desc": "Gained hands-on experience in CNC-related design workflows and communication design for social media platforms."
+	},
+	"education": {
+		"title": "Education"
+	},
+	"references": {
+		"title": "References"
+	},
+	"posts": {
+		"newsdigest": {
+			"title": "NewsDigest",
+			"description": "AI-powered daily tech news aggregator with Gemini AI summarization.",
+			"text1": "A personal project built entirely on free-tier infrastructure -Cloudflare Workers, Pages, KV, and Google's Gemini API. It automatically scrapes articles from RSS, Reddit, YouTube, Hacker News, and GitHub Trending on a cron schedule, then summarizes and scores each piece using Gemini AI via Cloudflare AI Gateway.",
+			"text2": "The design is deliberately utilitarian -no visual clutter, no unnecessary chrome. Every element serves the single goal of absorbing information as fast as possible. On mobile, news details expand and collapse with a natural swipe gesture, keeping the reading flow uninterrupted and intuitive.",
+			"visit": "Visit Website"
+		},
+		"summarizer": {
+			"title": "Summarizerrrr",
+			"description": "Browser extension for summarizing web pages, youtube videos, Udemy, Coursera.",
+			"text1": "Summarizerrrr isn't just another wrapper -it's a free and open-source productivity tool built with data ownership in mind. Users have full control over their information: choose any API provider you trust, or run a local LLM for complete privacy. Whether you're researching, learning a new skill, or just trying to get the gist of a long video, Summarizerrrr has you covered. The UI is designed for comfortable reading and easy navigation through long content.",
+			"text2": "The extension is designed to work seamlessly across platforms -from iOS and Android to desktop browsers that support side panels, as well as those that don't, like Arc and Safari. Each environment gets a tailored experience that feels native, not compromised.",
+			"visit": "Visit Website"
+		},
+		"tam_anh": {
+			"title": "Tam Anh Hospital",
+			"description": "Internal systems, digital interfaces, and healthcare UX improvements.",
+			"text1": "At Tam Anh General Hospital, I designed and developed digital interface systems that support internal operations and elevate the patient experience. Depending on each development team's tech stack, I adapted to the appropriate languages and libraries -leveraging existing templates and component systems to accelerate delivery and maintain consistency across projects.",
+			"text2": "The visual language is bright, clean, and clinical -every element is paired with clear labeling and intuitive icons to guide users effortlessly. Layouts are designed to maximize screen real estate, ensuring all critical information is visible at a glance without unnecessary scrolling.",
+			"text3": "For the QMS (Queue Management System) displays, I went beyond static design -collaborating with the dev team to implement continuous-loop animations using pure CSS instead of JavaScript, ensuring smooth, uninterrupted motion with optimal rendering performance."
+		},
+		"minimalist": {
+			"title": "Minimalist Home",
+			"description": "Simple, elegant interior design.",
+			"text1": "Tendril was invited to create a launch film and flexible visual system to highlight and envision Microsoft's new Windows 365 Cloud PC platform and its possibilities."
+		}
+	}
+}

@@ -14,6 +14,7 @@
 	import Title from '$lib/mdstyle/Title.svelte';
 	import Text from '$lib/mdstyle/Text.svelte';
 	import Image from '$lib/mdstyle/Image.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <Title>
@@ -23,8 +24,7 @@
 <Section>
 	<Block size="2" position="2" mobile="4">
 		<Text
-			>Tendril was invited to create a launch film and flexible visual system to highlight and
-			envision Microsoft’s new Windows 365 Cloud PC platform and its possibilities.
+			>{$_('posts.minimalist.text1')}
 		</Text>
 	</Block>
 </Section>

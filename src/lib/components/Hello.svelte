@@ -3,6 +3,7 @@
 
 	import MagicText from '$lib/components/MagicText.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <div
@@ -35,20 +36,22 @@
 				</svg>
 			{/each}
 		</div>
-		<div class="max-w-2xl flex flex-col gap-4 mx-auto">
+		<div class="max-w-3xl flex flex-col gap-4 mx-auto">
 			<h1 class="textfadein font-blod text-center title-1 leading-tight text-gray-700 text-balance">
-				I'm Nguyen, a
+				{$_('home.intro')}
 
-				<MagicText text="UI/UX designer" />
+				<MagicText text={$_('home.role')} />
 			</h1>
 			<h2 class="textfadein text-center title-3 text-gray-500 text-balance">
-				turn ideas into real, polished products - from first sketch to shipped app. AI helps me move
-				fast - craft keeps it worth using.
+				{$_('home.subtitle')}
 			</h2>
 		</div>
 	</div>
 	<div class="textfadein text-center flex gap-6">
-		<Button text="MY PORTFOLIO" link="/portfolio" /><Button text="MY CV" link="/cv" />
+		<Button text={$_('home.btn_portfolio')} link="/portfolio" /><Button
+			text={$_('home.btn_cv')}
+			link="/cv"
+		/>
 	</div>
 </div>
 

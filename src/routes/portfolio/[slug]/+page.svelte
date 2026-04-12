@@ -9,12 +9,21 @@
 	import MagicText from '$lib/components/MagicText.svelte';
 	import { getPostComponent, previewImages } from '$lib/posts';
 	import { isDarkMode } from '$lib/stores/darkMode';
+	import { _ } from 'svelte-i18n';
 
 	export let data;
+
+	const slugToI18nKey = {
+		'newsdigest': 'newsdigest',
+		'summarizer': 'summarizer',
+		'tam-anh-hospital': 'tam_anh',
+		'minimalist-home': 'minimalist'
+	};
 
 	$: PostContent = getPostComponent(data.post.slug);
 	$: isDark = data.post.darkMode === true;
 	$: bgColor = data.post.backgroundColor || '';
+	$: nextI18nKey = slugToI18nKey[data.nextPost?.slug] || data.nextPost?.slug;
 
 	let bgTimer;
 
@@ -75,16 +84,16 @@
 		<div class="marquee-container overflow-hidden fadein container flex my-8 max-w-96 relative">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
 				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-					<MagicText text="Next project" />
+					<MagicText text={$_('portfolio.next_project')} />
 				</div>
 				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-					<MagicText text="Next project" />
+					<MagicText text={$_('portfolio.next_project')} />
 				</div>
 				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-					<MagicText text="Next project" />
+					<MagicText text={$_('portfolio.next_project')} />
 				</div>
 				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
-					<MagicText text="Next project" />
+					<MagicText text={$_('portfolio.next_project')} />
 				</div>
 			</div>
 		</div>
@@ -101,9 +110,9 @@
 						</div>
 					</div>
 					<div class="reveal-text pt-6">
-						<h2 class="title-2 next-title">{data.nextPost.title}</h2>
-						<p class="title-3 next-desc">{data.nextPost.description}</p>
-					</div>
+						<h2 class="title-2 next-title">{$_(`posts.${nextI18nKey}.title`)}</h2>
+						<p class="title-3 next-desc">{$_(`posts.${nextI18nKey}.description`)}</p>
+						</div>
 				</a>
 			</div>
 

@@ -1,6 +1,10 @@
+<script>
+	import { _ } from 'svelte-i18n';
+</script>
+
 <section>
 	<div class="bg-white sticky top-0">
-		<div class="text-lg font-medium magic-title py-4">Education</div>
+		<div class="text-lg font-medium magic-title py-4">{$_('education.title')}</div>
 	</div>
 	<div class="grid md:grid-cols-2 text-slate-600 gap-6 md:gap-8">
 		<article>

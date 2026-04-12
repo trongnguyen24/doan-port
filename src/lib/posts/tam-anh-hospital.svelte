@@ -16,6 +16,7 @@
 	import Title from '$lib/mdstyle/Title.svelte';
 	import Text from '$lib/mdstyle/Text.svelte';
 	import Image from '$lib/mdstyle/Image.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <Section>
@@ -47,11 +48,7 @@
 <Section>
 	<Block size="2" position="2" mobile="4">
 		<Text
-			>At Tam Anh General Hospital, I designed and developed digital interface systems that support
-			internal operations and elevate the patient experience. Depending on each development team's
-			tech stack, I adapted to the appropriate languages and libraries -leveraging existing
-			templates and component systems to accelerate delivery and maintain consistency across
-			projects.
+			>{$_('posts.tam_anh.text1')}
 		</Text>
 	</Block>
 </Section>
@@ -113,10 +110,7 @@
 <Section>
 	<Block size="2" mobile="4">
 		<Text
-			>The visual language is bright, clean, and clinical -every element is paired with clear
-			labeling and intuitive icons to guide users effortlessly. Layouts are designed to maximize
-			screen real estate, ensuring all critical information is visible at a glance without
-			unnecessary scrolling.
+			>{$_('posts.tam_anh.text2')}
 		</Text>
 	</Block>
 </Section>
@@ -193,9 +187,7 @@
 <Section>
 	<Block size="2" position="3" mobile="4">
 		<Text
-			>For the QMS (Queue Management System) displays, I went beyond static design -collaborating
-			with the dev team to implement continuous-loop animations using pure CSS instead of
-			JavaScript, ensuring smooth, uninterrupted motion with optimal rendering performance.
+			>{$_('posts.tam_anh.text3')}
 		</Text>
 	</Block>
 </Section>

@@ -16,6 +16,7 @@
 	import Title from '$lib/mdstyle/Title.svelte';
 	import Text from '$lib/mdstyle/Text.svelte';
 	import Image from '$lib/mdstyle/Image.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <Section>
@@ -47,17 +48,11 @@
 <Section>
 	<Block size="2" position="2" mobile="4">
 		<Text
-			>A personal project built entirely on free-tier infrastructure -Cloudflare Workers, Pages, KV,
-			and Google's Gemini API. It automatically scrapes articles from RSS, Reddit, YouTube, Hacker
-			News, and GitHub Trending on a cron schedule, then summarizes and scores each piece using
-			Gemini AI via Cloudflare AI Gateway.
+			>{$_('posts.newsdigest.text1')}
 		</Text>
 		<br />
 		<Text
-			>The design is deliberately utilitarian -no visual clutter, no unnecessary chrome. Every
-			element serves the single goal of absorbing information as fast as possible. On mobile, news
-			details expand and collapse with a natural swipe gesture, keeping the reading flow
-			uninterrupted and intuitive.
+			>{$_('posts.newsdigest.text2')}
 			<br />
 			<a
 				href="https://newsdigest.pages.dev/"
@@ -65,7 +60,7 @@
 				rel="noopener noreferrer"
 				class="visit-btn"
 			>
-				Visit Website
+				{$_('posts.newsdigest.visit')}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"

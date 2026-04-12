@@ -5,6 +5,8 @@
 	import Dock from '$lib/components/Dock.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '$lib/style/app.css';
+	import '$lib/i18n';
+	import { isLoading } from 'svelte-i18n';
 	export let data;
 
 	let firstload: number = 0;
@@ -15,6 +17,7 @@
 </script>
 
 <Gsapsetup />
+{#if !$isLoading}
 <Dock />
 {#key data.pathname}
 	{#if firstload > 1}
@@ -35,3 +38,5 @@
 		{/key}
 	</main>
 </div>
+{/if}
+

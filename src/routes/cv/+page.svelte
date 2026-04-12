@@ -12,6 +12,7 @@
 	import References from '$lib/components/resume/References.svelte';
 	import Skills from '$lib/components/resume/Skills.svelte';
 	import IconAbout from '$lib/icon/iconAbout.svelte';
+	import { _ } from 'svelte-i18n';
 	import IconEducation from '$lib/icon/iconEducation.svelte';
 	import IconExperience from '$lib/icon/iconExperience.svelte';
 	import IconReferences from '$lib/icon/iconReferences.svelte';
@@ -92,8 +93,8 @@
 <section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg fadein container">
 		<div class="flex items-center justify-between">
-			<h1 class="title-1 fadein"><MagicText text="My CV" /></h1>
-			<Buttonsm link="/DoanNguyen_CV_GraphicDesigner.pdf" text="Download CV"></Buttonsm>
+			<h1 class="title-1 fadein"><MagicText text={$_('cv.title')} /></h1>
+			<Buttonsm link="/DoanNguyen_CV_GraphicDesigner.pdf" text={$_('cv.download')}></Buttonsm>
 		</div>
 
 		<div class="grid md:grid-cols-[14rem_auto] relative items-start md:flex-row gap-10 pt-10">
@@ -108,7 +109,7 @@
 						on:click={handleClick}
 					>
 						<IconAbout />
-						About</button
+						{$_('cv_nav.about')}</button
 					>
 				</div>
 				<div class="">
@@ -118,7 +119,7 @@
 						on:click={handleClick}
 					>
 						<IconExperience />
-						Experience</button
+						{$_('cv_nav.experience')}</button
 					>
 				</div>
 				<div class=" ">
@@ -128,7 +129,7 @@
 						on:click={handleClick}
 					>
 						<IconEducation />
-						Education</button
+						{$_('cv_nav.education')}</button
 					>
 				</div>
 				<div>
@@ -138,7 +139,7 @@
 						on:click={handleClick}
 					>
 						<IconSkills />
-						Skills</button
+						{$_('cv_nav.skills')}</button
 					>
 				</div>
 				<div>
@@ -148,7 +149,7 @@
 						on:click={handleClick}
 					>
 						<IconReferences />
-						References</button
+						{$_('cv_nav.references')}</button
 					>
 				</div>
 
