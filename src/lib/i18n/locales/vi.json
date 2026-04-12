@@ -1,7 +1,7 @@
 {
 	"nav": {
 		"home": "Trang chủ",
-		"portfolio": "Tác phẩm",
+		"portfolio": "Portfolio",
 		"cv": "CV",
 		"contact": "Liên hệ",
 		"lang_switch": "English"
@@ -9,25 +9,25 @@
 	"home": {
 		"intro": "Tôi là Nguyên, một",
 		"role": "UI/UX Designer",
-		"subtitle": "biến ý tưởng thành sản phẩm hoàn chỉnh - từ bản phác thảo đầu tiên đến ứng dụng thực tế. AI giúp tôi làm nhanh - tay nghề giữ cho nó đáng dùng.",
-		"btn_portfolio": "XEM TÁC PHẨM",
+		"subtitle": "biến ý tưởng thành sản phẩm hoàn chỉnh - từ bản phác thảo đầu tiên đến ứng dụng thực tế. AI và kinh nghiệm giúp sản phẩm trở nên hoàn thiện hơn.",
+		"btn_portfolio": "XEM PORTFOLIO",
 		"btn_cv": "XEM CV"
 	},
 	"portfolio": {
-		"title": "Tác phẩm",
+		"title": "Portfolio",
 		"subtitle": "Một số dự án mà tôi đã hoàn thành.",
 		"next_project": "Dự án tiếp theo"
 	},
 	"cv": {
 		"title": "CV của tôi",
-		"download": "Tải CV"
+		"download": "Tải xuống CV"
 	},
 	"cv_nav": {
 		"about": "Giới thiệu",
 		"experience": "Kinh nghiệm",
 		"education": "Học vấn",
 		"skills": "Kỹ năng",
-		"references": "Người tham chiếu"
+		"references": "Tham vấn"
 	},
 	"contact": {
 		"title": "Liên hệ",
@@ -37,14 +37,13 @@
 		"open_tab": "Mở tab mới"
 	},
 	"about": {
-		"greeting": "Xin chào!",
+		"greeting": "Hi!",
 		"name": "Tôi là {name}",
 		"roles_designer": "Product Designer",
 		"roles_3d": "3D Visualizer",
 		"roles_dev": "Developer",
 		"bio1": "Tôi là một product designer và lập trình viên front-end tại TP. Hồ Chí Minh, chuyên xây dựng sản phẩm số từ đầu đến cuối - từ nghiên cứu người dùng, thiết kế UI/UX đến phát triển ứng dụng hoàn chỉnh.",
 		"bio2": "Tôi cũng tận dụng <strong class=\"text-slate-800\">AI vibe coding</strong> để xây dựng extension trình duyệt và công cụ năng suất giúp tối ưu quy trình làm việc hàng ngày. Điều này giúp tôi biến ý tưởng thành giải pháp thực tế một cách nhanh chóng, kết nối giữa tư duy thiết kế và thực thi kỹ thuật.",
-		"bio3": "Nếu bạn đang tìm kiếm một designer tài năng để nâng tầm thương hiệu và thúc đẩy tăng trưởng kinh doanh, tôi rất vui được hợp tác cùng bạn. Hãy kết nối và cùng nhau đạt được mục tiêu của bạn.",
 		"label_fullname": "Họ tên",
 		"label_email": "Email",
 		"label_phone": "Điện thoại"

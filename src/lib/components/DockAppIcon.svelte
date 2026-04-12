@@ -84,7 +84,7 @@
 
 <div
 	bind:this={ref}
-	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border active:translate-y-1.5 transition-all duration-100 ease-in"
+	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border active:translate-y-0.5 transition-all duration-100 ease-in"
 	class:icon-dark={dark}
 >
 	<div

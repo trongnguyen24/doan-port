@@ -30,13 +30,15 @@
 			>
 				<div class="carousels1 flex w-max">
 					<span class="flex items-center font-mono text-white gap-3 shrink-0 job min-w-max">
-						<span>{$_('about.roles_designer')}</span> · <span>{$_('about.roles_3d')}</span> · <span>{$_('about.roles_dev')}</span> ·
+						<span>{$_('about.roles_designer')}</span> · <span>{$_('about.roles_3d')}</span> ·
+						<span>{$_('about.roles_dev')}</span> ·
 					</span>
 					<span
 						class="flex items-center font-mono text-white gap-3 shrink-0 job min-w-max"
 						aria-hidden="true"
 					>
-						<span>{$_('about.roles_designer')}</span> · <span>{$_('about.roles_3d')}</span> · <span>{$_('about.roles_dev')}</span> ·
+						<span>{$_('about.roles_designer')}</span> · <span>{$_('about.roles_3d')}</span> ·
+						<span>{$_('about.roles_dev')}</span> ·
 					</span>
 				</div>
 			</div>
@@ -46,8 +48,7 @@
 	<div class="title-4 my-8 text-slate-600 leading-relaxed">
 		{$_('about.bio1')}
 		<br /><br />
-		{@html $_('about.bio2')}<br /><br />
-		{$_('about.bio3')}
+		{@html $_('about.bio2')}
 	</div>
 
 	<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
