@@ -16,6 +16,7 @@
 	import Title from '$lib/mdstyle/Title.svelte';
 	import Text from '$lib/mdstyle/Text.svelte';
 	import Image from '$lib/mdstyle/Image.svelte';
+	import Video from '$lib/mdstyle/Video.svelte';
 	import { get } from 'svelte/store';
 	import { isDarkMode } from '$lib/stores/darkMode';
 
@@ -160,6 +161,33 @@
 				/>
 			</div>
 		</Image>
+	</Block>
+</Section>
+
+<Section>
+	<Block size="4" mobile="4">
+		<Video
+			thumb="/posts/summarizer/mp4/chrome.webm"
+			src="/posts/summarizer/mp4/Google Chrome.mp4"
+			alt="Chrome Extension Demo"
+		/>
+	</Block>
+</Section>
+
+<Section>
+	<Block size="2" mobile="4">
+		<Video
+			thumb="/posts/summarizer/mp4/dia.webm"
+			src="/posts/summarizer/mp4/Dia.mp4"
+			alt="Dia Demo"
+		/>
+	</Block>
+	<Block size="2" mobile="4">
+		<Video
+			thumb="/posts/summarizer/mp4/ios2.webm"
+			src="/posts/summarizer/mp4/ios2.mp4"
+			alt="iOS Demo"
+		/>
 	</Block>
 </Section>
 
