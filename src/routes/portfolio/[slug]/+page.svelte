@@ -72,9 +72,7 @@
 	</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
-		<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
-			<div side="left" class="horizontalFade"></div>
-			<div side="right" class="horizontalFade"></div>
+		<div class="marquee-container overflow-hidden fadein container flex my-8 max-w-96 relative">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
 				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
 					<MagicText text="Next project" />
@@ -124,31 +122,10 @@
 </div>
 
 <style>
-	/* --- Horizontal fade (default: light) --- */
-	.horizontalFade {
-		@apply absolute inset-y-0 w-24 z-10;
-		-webkit-backdrop-filter: blur(2px);
-		backdrop-filter: blur(2px);
-	}
-	.horizontalFade[side='left'] {
-		background: linear-gradient(to right, white 10%, transparent);
-		left: 0;
-		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
-		mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
-	}
-	.horizontalFade[side='right'] {
-		background: linear-gradient(to left, white 10%, transparent);
-		right: 0;
-		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
-		mask-image: linear-gradient(to left, #fcfcfc 25%, transparent);
-	}
-
-	/* --- Dark mode: fade uses post background color --- */
-	.dark-mode .horizontalFade[side='left'] {
-		background: linear-gradient(to right, var(--post-bg, #111) 10%, transparent);
-	}
-	.dark-mode .horizontalFade[side='right'] {
-		background: linear-gradient(to left, var(--post-bg, #111) 10%, transparent);
+	/* --- Marquee container: mask edges to transparent --- */
+	.marquee-container {
+		-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+		mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 	}
 
 	/* --- Next project text colors --- */

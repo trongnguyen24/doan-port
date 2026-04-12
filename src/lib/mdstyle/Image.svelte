@@ -2,6 +2,8 @@
 	// @ts-nocheck
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import { tick } from 'svelte';
+	import { get } from 'svelte/store';
+	import { isDarkMode } from '$lib/stores/darkMode';
 
 	let thumbContainer: HTMLDivElement;
 	let fullresContainer: HTMLDivElement;
@@ -43,7 +45,9 @@
 		const src = getLargestSrc(img);
 
 		// 4. Open Fancybox (global from fancybox.umd.js in app.html)
+		const dark = get(isDarkMode);
 		Fancybox.show([{ src, type: 'image' }], {
+			mainClass: dark ? 'fancybox-dark' : '',
 			Thumbs: false,
 			Carousel: {
 				Navigation: false

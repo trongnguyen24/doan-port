@@ -5,7 +5,7 @@
 		date: '2023-10-12',
 		image: 'summarizer',
 		published: true,
-		backgroundColor: '#0f172a',
+		backgroundColor: '#11111A',
 		darkMode: true
 	};
 </script>
@@ -42,6 +42,42 @@
 			<div slot="fullres">
 				<enhanced:img
 					src="$lib/posts/summarizer/00.jpg?format=webp&quality=98"
+					alt={metadata.title}
+				/>
+			</div>
+		</Image>
+	</Block>
+</Section>
+
+<Section>
+	<Block size="3" position="2" mobile="4">
+		<Image>
+			<enhanced:img
+				src="$lib/posts/summarizer/1.jpg?format=webp&quality=95&w=1036;1600"
+				sizes="min(1036px, 100vw)"
+				alt={metadata.title}
+			/>
+			<div slot="fullres">
+				<enhanced:img
+					src="$lib/posts/summarizer/1.jpg?format=webp&quality=95"
+					alt={metadata.title}
+				/>
+			</div>
+		</Image>
+	</Block>
+</Section>
+
+<Section>
+	<Block size="3" mobile="4">
+		<Image>
+			<enhanced:img
+				src="$lib/posts/summarizer/2.jpg?format=webp&quality=95&w=1036;1600"
+				sizes="min(1036px, 100vw)"
+				alt={metadata.title}
+			/>
+			<div slot="fullres">
+				<enhanced:img
+					src="$lib/posts/summarizer/2.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>

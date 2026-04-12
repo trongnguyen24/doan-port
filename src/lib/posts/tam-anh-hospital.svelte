@@ -4,7 +4,9 @@
 		description: 'Internal systems, digital interfaces, and healthcare UX improvements.',
 		date: '2023-12-01',
 		image: 'tam-anh',
-		published: true
+		published: true,
+		backgroundColor: '#E6F1FF',
+		darkMode: false
 	};
 </script>
 
