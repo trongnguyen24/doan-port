@@ -31,7 +31,7 @@
 		showFullres = true;
 		await tick();
 
-		// 2. Find img element — prefer fullres, fallback to thumbnail
+		// 2. Find img element -prefer fullres, fallback to thumbnail
 		const fullresImg = fullresContainer?.querySelector('img');
 		const thumbImg = thumbContainer?.querySelector('img');
 		const img = fullresImg || thumbImg;
@@ -61,7 +61,7 @@
 			}
 		});
 
-		// 5. Unmount fullres slot — no longer needed
+		// 5. Unmount fullres slot -no longer needed
 		showFullres = false;
 	}
 </script>

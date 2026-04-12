@@ -8,6 +8,8 @@
 	export let src: string;
 	/** URL of the thumbnail video (lightweight webm) shown inline */
 	export let thumb: string = '';
+	/** URL of a static image to use as poster/thumbnail instead of video */
+	export let poster: string = '';
 	/** Alt / caption text */
 	export let alt: string = '';
 
@@ -22,7 +24,9 @@
 					html5video: {
 						autoplay: true,
 						muted: false
-					}
+					},
+					width: 1920,
+					height: 1080
 				}
 			],
 			{
@@ -51,24 +55,19 @@
 	role="button"
 	tabindex="0"
 >
-	<!-- Thumbnail video (autoplay, muted, loop) -->
-	<!-- svelte-ignore a11y-media-has-caption -->
-	<video
-		src={thumb || src}
-		autoplay
-		loop
-		muted
-		playsinline
-		{alt}
-	></video>
-
-	<!-- Play overlay icon -->
-	<div class="play-overlay">
-		<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.45)" />
-			<polygon points="32,24 32,56 58,40" fill="#fff" />
-		</svg>
-	</div>
+	{#if poster}
+		<img src={poster} {alt} />
+		<div class="play-overlay">
+			<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)" />
+				<polygon points="32,24 32,56 58,40" fill="#fff" />
+			</svg>
+		</div>
+	{:else}
+		<!-- Thumbnail video (autoplay, muted, loop) -->
+		<!-- svelte-ignore a11y-media-has-caption -->
+		<video src={thumb || src} autoplay loop muted playsinline {alt}></video>
+	{/if}
 </div>
 
 <style>
@@ -77,14 +76,16 @@
 		overflow: hidden;
 	}
 
-	.video-container video {
+	.video-container video,
+	.video-container img {
 		width: 100%;
 		height: auto;
 		display: block;
 		transition: transform 0.4s ease;
 	}
 
-	.video-container:hover video {
+	.video-container:hover video,
+	.video-container:hover img {
 		transform: scale(1.03);
 	}
 

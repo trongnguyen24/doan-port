@@ -17,32 +17,6 @@
 	import Text from '$lib/mdstyle/Text.svelte';
 	import Image from '$lib/mdstyle/Image.svelte';
 	import Video from '$lib/mdstyle/Video.svelte';
-	import { get } from 'svelte/store';
-	import { isDarkMode } from '$lib/stores/darkMode';
-
-	function openVideo() {
-		const dark = get(isDarkMode);
-		Fancybox.show(
-			[
-				{
-					src: 'https://www.youtube.com/watch?v=pRZvPWjbJ4c',
-					type: 'iframe'
-				}
-			],
-			{
-				mainClass: dark ? 'fancybox-dark' : '',
-				Thumbs: false,
-				Carousel: { Navigation: false },
-				Toolbar: {
-					display: {
-						left: [],
-						middle: ['close'],
-						right: []
-					}
-				}
-			}
-		);
-	}
 </script>
 
 <Title>
@@ -50,45 +24,61 @@
 </Title>
 
 <Section>
-	<Block size="2" mobile="4">
+	<Block size="3" mobile="4">
 		<Text
-			>Summarizerrrr is a browser extension for summarizing web pages, youtube videos, Udemy,
-			Coursera.
+			>Summarizerrrr isn't just another wrapper -it's a free and open-source productivity tool built
+			with data ownership in mind. Users have full control over their information: choose any API
+			provider you trust, or run a local LLM for complete privacy. Whether you're researching,
+			learning a new skill, or just trying to get the gist of a long video, Summarizerrrr has you
+			covered. The UI is designed for comfortable reading and easy navigation through long content.
 		</Text>
+		<a
+			href="https://summarizerrrr.com/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="visit-btn"
+		>
+			Visit Website
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg
+			>
+		</a>
+		<a
+			href="https://github.com/trongnguyen24/Summarizerrrr"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="visit-btn"
+		>
+			GitHub
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				><path
+					d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+				/></svg
+			>
+		</a>
 	</Block>
 </Section>
 
 <Section>
 	<Block>
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div
-			class="video-thumb"
-			on:click={openVideo}
-			on:keydown={(e) => e.key === 'Enter' && openVideo()}
-			role="button"
-			tabindex="0"
-		>
-			<enhanced:img
-				src="$lib/posts/summarizer/00.jpg?format=webp&quality=98"
-				sizes="min(1392px, 100vw)"
-				alt={metadata.title}
-			/>
-			<div class="play-overlay">
-				<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)" />
-					<polygon points="32,24 32,56 58,40" fill="#fff" />
-				</svg>
-			</div>
-		</div>
-	</Block>
-</Section>
-
-<Section>
-	<Block size="2" position="2" mobile="4">
-		<Text
-			>Tendril was invited to create a launch film and flexible visual system to highlight and
-			envision Microsoft's new Windows 365 Cloud PC platform and its possibilities.
-		</Text>
+		<Video
+			poster="/posts/summarizer/00.jpg"
+			src="/posts/summarizer/mp4/summarizer.webm"
+			alt="Summarizerrrr Demo"
+		/>
 	</Block>
 </Section>
 
@@ -149,14 +139,33 @@
 <Section>
 	<Block size="3" mobile="4">
 		<Image>
-			<img
-				src="/posts/summarizer/4.webp"
+			<img src="/posts/summarizer/4.webp" alt={metadata.title} style="width:100%;height:auto;" />
+			<div slot="fullres">
+				<img src="/posts/summarizer/4.webp" alt={metadata.title} />
+			</div>
+		</Image>
+	</Block>
+</Section>
+<Section>
+	<Block size="2" position="2" mobile="4">
+		<Text
+			>The extension is designed to work seamlessly across platforms -from iOS and Android to
+			desktop browsers that support side panels, as well as those that don't, like Arc and Safari.
+			Each environment gets a tailored experience that feels native, not compromised.
+		</Text>
+	</Block>
+</Section>
+<Section>
+	<Block size="4" mobile="4">
+		<Image>
+			<enhanced:img
+				src="$lib/posts/summarizer/5.jpg?format=webp&quality=95&w=1392;1800"
+				sizes="min(1392px, 100vw)"
 				alt={metadata.title}
-				style="width:100%;height:auto;"
 			/>
 			<div slot="fullres">
-				<img
-					src="/posts/summarizer/4.webp"
+				<enhanced:img
+					src="$lib/posts/summarizer/5.jpg?format=webp&quality=95"
 					alt={metadata.title}
 				/>
 			</div>
@@ -167,9 +176,9 @@
 <Section>
 	<Block size="4" mobile="4">
 		<Video
-			thumb="/posts/summarizer/mp4/chrome.webm"
-			src="/posts/summarizer/mp4/Google Chrome.mp4"
-			alt="Chrome Extension Demo"
+			thumb="/posts/summarizer/mp4/ios2-thumb.webm"
+			src="/posts/summarizer/mp4/ios2.webm"
+			alt="iOS Demo"
 		/>
 	</Block>
 </Section>
@@ -177,63 +186,49 @@
 <Section>
 	<Block size="2" mobile="4">
 		<Video
-			thumb="/posts/summarizer/mp4/dia.webm"
-			src="/posts/summarizer/mp4/Dia.mp4"
+			thumb="/posts/summarizer/mp4/dia-thumb.webm"
+			src="/posts/summarizer/mp4/Dia.webm"
 			alt="Dia Demo"
 		/>
 	</Block>
 	<Block size="2" mobile="4">
 		<Video
-			thumb="/posts/summarizer/mp4/ios2.webm"
-			src="/posts/summarizer/mp4/ios2.mp4"
-			alt="iOS Demo"
+			thumb="/posts/summarizer/mp4/GoogleChrome-thumb.webm"
+			src="/posts/summarizer/mp4/GoogleChrome.webm"
+			alt="Chrome Extension Demo"
 		/>
 	</Block>
 </Section>
 
 <style>
-	.video-thumb {
-		position: relative;
-		overflow: hidden;
-		border-radius: 0.75rem;
-		cursor: pointer;
-	}
-
-	@media (min-width: 768px) {
-		.video-thumb {
-			border-radius: 1.5rem;
-		}
-	}
-
-	.video-thumb :global(img) {
-		width: 100%;
-		height: auto;
-		display: block;
-		transition: transform 0.4s ease;
-	}
-
-	.video-thumb:hover :global(img) {
-		transform: scale(1.03);
-	}
-
-	.play-overlay {
-		position: absolute;
-		inset: 0;
-		display: flex;
+	.visit-btn {
+		display: inline-flex;
 		align-items: center;
-		justify-content: center;
-		pointer-events: none;
-		transition: opacity 0.3s ease;
+		gap: 0.5rem;
+		margin-top: 1.25rem;
+		padding: 0.6rem 1.4rem;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 999px;
+		color: rgba(255, 255, 255, 0.85);
+		font-size: 0.875rem;
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.25s ease;
+		backdrop-filter: blur(4px);
+		background: rgba(255, 255, 255, 0.06);
 	}
 
-	.play-overlay svg {
-		width: 80px;
-		height: 80px;
-		filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
-		transition: transform 0.3s ease;
+	.visit-btn:hover {
+		background: rgba(255, 255, 255, 0.12);
+		border-color: rgba(255, 255, 255, 0.4);
+		color: #fff;
 	}
 
-	.video-thumb:hover .play-overlay svg {
-		transform: scale(1.15);
+	.visit-btn svg {
+		transition: transform 0.25s ease;
+	}
+
+	.visit-btn:hover svg {
+		transform: translate(2px, -2px);
 	}
 </style>

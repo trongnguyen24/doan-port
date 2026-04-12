@@ -3,7 +3,6 @@ import newsdigest from '$lib/posts/newsdigest.png?enhanced&format=webp&quality=9
 import tamanh from '$lib/posts/tam-anh.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
 import minimalist from '$lib/posts/minimalist.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
 import summarizer from '$lib/posts/summarizer.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
-import urban from '$lib/posts/urban.png?enhanced&format=webp&quality=95&w=640;960;1280;1600';
 
 import type { Post } from '$lib/types';
 
@@ -16,8 +15,7 @@ const previewImages = {
 	newsdigest,
 	'tam-anh': tamanh,
 	minimalist,
-	summarizer,
-	urban
+	summarizer
 } as const;
 
 const postModules = import.meta.glob('$lib/posts/*.svelte', {

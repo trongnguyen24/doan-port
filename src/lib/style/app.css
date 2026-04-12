@@ -427,3 +427,12 @@ td {
 .fancybox-dark .fancybox__footer {
 	background: none !important;
 }
+
+/* --- Fancybox video / iframe max size --- */
+.fancybox__slide.has-iframe .fancybox__content,
+.fancybox__slide.has-html5video .fancybox__content {
+	max-width: 1920px !important;
+	max-height: 1080px !important;
+	width: 90vw !important;
+	height: calc(90vw * 9 / 16) !important;
+}

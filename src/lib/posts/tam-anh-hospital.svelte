@@ -47,8 +47,11 @@
 <Section>
 	<Block size="2" position="2" mobile="4">
 		<Text
-			>At Tam Anh General Hospital, I was involved in the design and development of digital
-			interface systems to support internal operations and enhance the patient experience.
+			>At Tam Anh General Hospital, I designed and developed digital interface systems that support
+			internal operations and elevate the patient experience. Depending on each development team's
+			tech stack, I adapted to the appropriate languages and libraries -leveraging existing
+			templates and component systems to accelerate delivery and maintain consistency across
+			projects.
 		</Text>
 	</Block>
 </Section>
@@ -110,9 +113,10 @@
 <Section>
 	<Block size="2" mobile="4">
 		<Text
-			>The work included building appointment management interfaces, patient information display
-			systems, and tools to streamline the examination and treatment process. The goal was to create
-			smooth, user-friendly digital experiences for both medical staff and patients.
+			>The visual language is bright, clean, and clinical -every element is paired with clear
+			labeling and intuitive icons to guide users effortlessly. Layouts are designed to maximize
+			screen real estate, ensuring all critical information is visible at a glance without
+			unnecessary scrolling.
 		</Text>
 	</Block>
 </Section>
@@ -189,9 +193,9 @@
 <Section>
 	<Block size="2" position="3" mobile="4">
 		<Text
-			>The design focused on clarity, professionalism, and healthcare-appropriate aesthetics —
-			ensuring visual quality while prioritizing functionality and performance. The result was a
-			suite of digital products that helped optimize hospital workflows.
+			>For the QMS (Queue Management System) displays, I went beyond static design -collaborating
+			with the dev team to implement continuous-loop animations using pure CSS instead of
+			JavaScript, ensuring smooth, uninterrupted motion with optimal rendering performance.
 		</Text>
 	</Block>
 </Section>
