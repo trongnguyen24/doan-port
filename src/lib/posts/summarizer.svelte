@@ -4,7 +4,9 @@
 		description: 'Browser extension for summarizing web pages, youtube videos, Udemy, Coursera.',
 		date: '2023-10-12',
 		image: 'summarizer',
-		published: true
+		published: true,
+		backgroundColor: '#0f172a',
+		darkMode: true
 	};
 </script>
 

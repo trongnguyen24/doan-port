@@ -16,4 +16,6 @@ export type Post = {
 	image: string;
 	date: string;
 	published: boolean;
+	backgroundColor?: string;
+	darkMode?: boolean;
 };

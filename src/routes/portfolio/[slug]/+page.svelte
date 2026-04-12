@@ -2,6 +2,7 @@
 	// @ts-nocheck
 
 	import { onMount } from 'svelte';
+	import { beforeNavigate } from '$app/navigation';
 	import { gsap } from 'gsap';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
@@ -11,6 +12,31 @@
 	export let data;
 
 	$: PostContent = getPostComponent(data.post.slug);
+	$: isDark = data.post.darkMode === true;
+	$: bgColor = data.post.backgroundColor || '';
+
+	let bgTimer;
+
+	// Reactively apply background color to body when bgColor changes
+	// Delayed to sync with the page transition (old page out:fade = 800ms)
+	$: if (typeof document !== 'undefined') {
+		clearTimeout(bgTimer);
+		const newBg = bgColor || '';
+		bgTimer = setTimeout(() => {
+			document.body.style.transition = 'background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+			document.body.style.backgroundColor = newBg;
+		}, 800);
+	}
+
+	// Reset background when navigating AWAY from portfolio pages.
+	// For portfolio-to-portfolio navigation, the new page's reactive $: handles the update.
+	// Using beforeNavigate instead of onDestroy to avoid race conditions with {#key} transitions.
+	beforeNavigate(({ to }) => {
+		if (!to?.url.pathname.startsWith('/portfolio/')) {
+			document.body.style.transition = 'background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+			document.body.style.backgroundColor = '';
+		}
+	});
 
 	onMount(() => {
 		setTimeout(() => {
@@ -21,7 +47,7 @@
 					{
 						scrollTrigger: {
 							trigger: element,
-							start: 'top 100%-=80px', // when the top of the trigger hits the top of the viewport
+							start: 'top 100%-=80px',
 							onEnter: () => element.classList.add('reveal'),
 							markers: false
 						}
@@ -36,7 +62,7 @@
 
 <PageGsapRefresh />
 
-<div class="py-10 md:py-28">
+<div class="post-page py-10 md:py-28" class:dark-mode={isDark} style={bgColor ? `--post-bg: ${bgColor}` : ''}>
 	<div class="fadein">
 		<svelte:component this={PostContent} />
 	</div>
@@ -73,8 +99,8 @@
 						</div>
 					</div>
 					<div class="reveal-text pt-6">
-						<h2 class="title-2 text-slate-900">{data.nextPost.title}</h2>
-						<p class="title-3 text-slate-500">{data.nextPost.description}</p>
+						<h2 class="title-2 next-title">{data.nextPost.title}</h2>
+						<p class="title-3 next-desc">{data.nextPost.description}</p>
 					</div>
 				</a>
 			</div>
@@ -94,6 +120,7 @@
 </div>
 
 <style>
+	/* --- Horizontal fade (default: light) --- */
 	.horizontalFade {
 		@apply absolute inset-y-0 w-24 z-10;
 		-webkit-backdrop-filter: blur(2px);
@@ -111,6 +138,40 @@
 		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
 		mask-image: linear-gradient(to left, #fcfcfc 25%, transparent);
 	}
+
+	/* --- Dark mode: fade uses post background color --- */
+	.dark-mode .horizontalFade[side='left'] {
+		background: linear-gradient(to right, var(--post-bg, #111) 10%, transparent);
+	}
+	.dark-mode .horizontalFade[side='right'] {
+		background: linear-gradient(to left, var(--post-bg, #111) 10%, transparent);
+	}
+
+	/* --- Next project text colors --- */
+	.next-title {
+		@apply text-slate-900;
+		transition: color 0.4s ease;
+	}
+	.next-desc {
+		@apply text-slate-500;
+		transition: color 0.4s ease;
+	}
+	.dark-mode .next-title {
+		@apply text-slate-100;
+	}
+	.dark-mode .next-desc {
+		@apply text-slate-400;
+	}
+
+	/* --- Dark mode: override mdstyle text colors via global selectors --- */
+	.dark-mode :global(.reveal-text.title-3.text-gray-600) {
+		color: #d1d5db !important; /* gray-300 equivalent */
+	}
+	.dark-mode :global(.title-1.font-medium.text-gray-900) {
+		color: #f1f5f9 !important; /* slate-100 equivalent */
+	}
+
+	/* --- Animations --- */
 	.moveLeft {
 		animation: moveLeft 6s linear infinite;
 	}
