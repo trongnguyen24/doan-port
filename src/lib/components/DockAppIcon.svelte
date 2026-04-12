@@ -11,6 +11,7 @@
 	export let isActive = false;
 	export let isMobile = false;
 	export let ariaLabel = tooltip;
+	export let dark = false;
 
 	let ref;
 	let tween;
@@ -83,13 +84,15 @@
 
 <div
 	bind:this={ref}
-	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border border-[rgba(226,228,233,0.95)] bg-[#f1f2f5] text-[#6b6b70] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] active:translate-y-1.5 transition-transform duration-100 ease-in"
+	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border active:translate-y-1.5 transition-all duration-100 ease-in"
+	class:icon-dark={dark}
 >
 	<div
 		class="tooltip pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 -translate-y-1/2"
 	>
 		<span
-			class="tooltip-text arrow_box block rounded-full border border-[rgba(226,228,233,0.95)] bg-[#f7f8fb] px-1.5 py-0.5 text-xs text-[#6b6b70]"
+			class="tooltip-text arrow_box block rounded-full border px-1.5 py-0.5 text-xs"
+			class:tooltip-dark={dark}
 		>
 			{tooltip}
 		</span>
@@ -127,6 +130,46 @@
 </div>
 
 <style>
+	/* --- Icon: light mode (default) --- */
+	.dock-icon {
+		border-color: rgba(226, 228, 233, 0.95);
+		background-color: #f1f2f5;
+		color: #6b6b70;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+		transition:
+			background-color 0.5s ease,
+			border-color 0.5s ease,
+			color 0.5s ease,
+			box-shadow 0.5s ease;
+	}
+
+	/* --- Icon: dark mode --- */
+	.dock-icon.icon-dark {
+		border-color: rgb(39, 41, 45);
+		background-color: rgba(31, 41, 55, 1);
+		color: #d1d5db;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	}
+
+	/* --- Tooltip: light mode (default) --- */
+	.arrow_box {
+		position: relative;
+		border-color: rgba(226, 228, 233, 0.95);
+		background-color: #f7f8fb;
+		color: #6b6b70;
+		transition:
+			background-color 0.5s ease,
+			border-color 0.5s ease,
+			color 0.5s ease;
+	}
+
+	/* --- Tooltip: dark mode --- */
+	.arrow_box.tooltip-dark {
+		border-color: rgba(75, 85, 99, 0.6);
+		background-color: rgba(31, 41, 55, 0.95);
+		color: #e5e7eb;
+	}
+
 	.active-indicator {
 		height: 4px;
 		width: 4px;
@@ -136,10 +179,6 @@
 		bottom: -0.4rem;
 		left: 50%;
 		transform: translateX(-50%);
-	}
-
-	.arrow_box {
-		position: relative;
 	}
 
 	.arrow_box:after,
@@ -156,16 +195,22 @@
 
 	.arrow_box:after {
 		border-color: rgba(255, 255, 255, 0);
-		border-top-color: #f7f8fb;
+		border-top-color: var(--tooltip-bg, #f7f8fb);
 		border-width: 4px;
 		margin-left: -4px;
+	}
+	.arrow_box.tooltip-dark:after {
+		border-top-color: rgba(31, 41, 55, 0.95);
 	}
 
 	.arrow_box:before {
 		border-color: rgba(194, 225, 245, 0);
-		border-top-color: rgba(226, 228, 233, 0.95);
+		border-top-color: var(--tooltip-border, rgba(226, 228, 233, 0.95));
 		border-width: 5px;
 		margin-left: -5px;
+	}
+	.arrow_box.tooltip-dark:before {
+		border-top-color: rgba(75, 85, 99, 0.6);
 	}
 
 	.dock-icon .tooltip {

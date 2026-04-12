@@ -8,6 +8,7 @@
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import { getPostComponent, previewImages } from '$lib/posts';
+	import { isDarkMode } from '$lib/stores/darkMode';
 
 	export let data;
 
@@ -22,9 +23,11 @@
 	$: if (typeof document !== 'undefined') {
 		clearTimeout(bgTimer);
 		const newBg = bgColor || '';
+		const newDark = isDark;
 		bgTimer = setTimeout(() => {
 			document.body.style.transition = 'background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
 			document.body.style.backgroundColor = newBg;
+			isDarkMode.set(newDark);
 		}, 800);
 	}
 
@@ -35,6 +38,7 @@
 		if (!to?.url.pathname.startsWith('/portfolio/')) {
 			document.body.style.transition = 'background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
 			document.body.style.backgroundColor = '';
+			isDarkMode.set(false);
 		}
 	});
 

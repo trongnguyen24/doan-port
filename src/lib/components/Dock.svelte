@@ -8,6 +8,7 @@
 	import { Drawer } from '$lib/components/ui/vaul-svelte/dist';
 	import DockAppIcon from './DockAppIcon.svelte';
 	import ContactDrawerContent from './ContactDrawerContent.svelte';
+	import { isDarkMode } from '$lib/stores/darkMode';
 
 	let mouseX = Infinity;
 	let isMobile = false;
@@ -74,7 +75,8 @@
 <div
 	on:mousemove={handleMouseMove}
 	on:mouseleave={handleMouseLeave}
-	class="dock-shell fixed bottom-6 left-1/2 z-50 flex h-[3.75rem] w-auto -translate-x-1/2 items-end gap-1.5 rounded-full border border-[rgba(238,238,241,0.95)] bg-[rgba(251,251,253,0.9)] p-2 text-gray-400 shadow-2xl backdrop-blur-xl lg:bottom-8"
+	class="dock-shell fixed bottom-6 left-1/2 z-50 flex h-[3.75rem] w-auto -translate-x-1/2 items-end gap-1.5 rounded-full border p-2 shadow-2xl backdrop-blur-xl lg:bottom-8"
+	class:dock-dark={$isDarkMode}
 	role="toolbar"
 	aria-label="Primary"
 >
@@ -86,6 +88,7 @@
 			href={item.href}
 			isActive={item.match($page.url.pathname)}
 			ariaLabel={item.label}
+			dark={$isDarkMode}
 		>
 			<Icon name={item.icon} />
 		</DockAppIcon>
@@ -98,6 +101,7 @@
 			tooltip="Contact"
 			ariaLabel="Contact"
 			onclick={() => (dialogOpen = true)}
+			dark={$isDarkMode}
 		>
 			<Icon name="contact" />
 		</DockAppIcon>
@@ -152,6 +156,25 @@
 </div>
 
 <style>
+	/* --- Light mode (default) --- */
+	.dock-shell {
+		border-color: rgba(238, 238, 241, 0.95);
+		background-color: rgba(251, 251, 253, 0.9);
+		color: #9ca3af; /* text-gray-400 */
+		transition:
+			background-color 0.5s ease,
+			border-color 0.5s ease,
+			box-shadow 0.5s ease;
+	}
+
+	/* --- Dark mode --- */
+	.dock-shell.dock-dark {
+		border-color: rgba(33, 38, 46, 0.95);
+		background-color: rgba(17, 24, 39, 0.85);
+		color: #aeb4c0;
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+	}
+
 	.dock-shell:not(:hover) {
 		--delay-tooltip: 0.8s;
 	}
