@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	export const metadata = {
 		title: 'Eco-friendly Workspace',
 		description: 'Sustainable office design.',

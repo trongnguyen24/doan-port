@@ -5,10 +5,12 @@ export function getPosts() {
 	return posts;
 }
 
+/** @param {string} slug */
 export function getPostBySlug(slug) {
 	return posts.find((post) => post.slug === slug);
 }
 
+/** @param {string} slug */
 export function getNextPost(slug) {
 	const currentIndex = posts.findIndex((post) => post.slug === slug);
 

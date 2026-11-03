@@ -1,6 +1,12 @@
 <script>
-	export let name;
-	export let size = 'size-6';
+	/**
+	 * @typedef {Object} Props
+	 * @property {any} name
+	 * @property {string} [size]
+	 */
+
+	/** @type {Props} */
+	let { name, size = 'size-6' } = $props();
 
 	let icons = [
 		{
@@ -46,10 +52,13 @@
 		}
 	];
 
-	let displayIcon = icons.find((e) => e.name === name);
-	if (!displayIcon) {
-		throw Error(`Could not find icon with name ${name}`);
-	}
+	let displayIcon = $derived.by(() => {
+		const icon = icons.find((e) => e.name === name);
+		if (!icon) {
+			throw Error(`Could not find icon with name ${name}`);
+		}
+		return icon;
+	});
 </script>
 
 <svg class="{name} {size}" focusable="false" viewBox="0 0 {displayIcon.box}"

@@ -9,8 +9,13 @@
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 */
+
+	/** @type {Props} */
+	let { data } = $props();
 
 	const startFancy = () =>
 		Fancybox.bind('[data-fancybox="gallery"]', {
@@ -32,6 +37,7 @@
 		});
 
 	onMount(() => {
+		startFancy();
 		setTimeout(() => {
 			document.querySelectorAll('[data-fancybox="gallery"]').forEach((element) => {
 				gsap.fromTo(
@@ -66,14 +72,9 @@
 			<figure
 				class="aspect-square cursor-pointer opacity-0 transition-all delay-300 duration-700 rounded overflow-hidden"
 				data-fancybox="gallery"
-				on:click={startFancy}
 				data-src={item.image}
 			>
-				<img
-					class="h-full w-full object-cover"
-					src={item.thumb}
-					alt={item.name}
-				/>
+				<img class="h-full w-full object-cover" src={item.thumb} alt={item.name} />
 				<figurecaption>{item.name}</figurecaption>
 			</figure>
 		{/each}

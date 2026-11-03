@@ -9,7 +9,7 @@
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 
-	export let data;
+	let { data } = $props();
 
 	onMount(() => {
 		setTimeout(() => {

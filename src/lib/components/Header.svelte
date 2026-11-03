@@ -10,18 +10,25 @@
 	import { Drawer } from '$lib/components/ui/vaul-svelte/dist';
 	import MagicText from './MagicText.svelte';
 
-	let dialogOpen = false;
+	let dialogOpen = $state(false);
 
-	let coords = spring(
-		{ x: 32 },
-		{
-			stiffness: 0.03,
-			damping: 0.1991
-		}
+	let coords = $state.raw(
+		spring(
+			{ x: 32 },
+			{
+				stiffness: 0.03,
+				damping: 0.1991
+			}
+		)
 	);
 
+	let contactTrigger = $state();
+
 	function handleClick(event) {
-		const element = event.currentTarget;
+		bounce(event.currentTarget);
+	}
+
+	function bounce(element) {
 		element.classList.add('animate-bounce-nav');
 		setTimeout(() => {
 			element.classList.remove('animate-bounce-nav');
@@ -120,8 +127,10 @@
 				? (coords.set({ x: 32 + 0 * 56 }), 'page')
 				: undefined}
 			href="/"
-			on:click={(e) => coords.set({ x: 32 + 0 * 56 })}
-			on:click={handleClick}
+			onclick={(e) => {
+				coords.set({ x: 32 + 0 * 56 });
+				handleClick(e);
+			}}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll
 			aria-label="Home"
@@ -145,8 +154,10 @@
 				? (coords.set({ x: 32 + 1 * 56 }), 'page')
 				: undefined}
 			href="/portfolio"
-			on:click={(e) => coords.set({ x: 32 + 1 * 56 })}
-			on:click={handleClick}
+			onclick={(e) => {
+				coords.set({ x: 32 + 1 * 56 });
+				handleClick(e);
+			}}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll
 			aria-label="Portfolio"
@@ -170,8 +181,10 @@
 				? (coords.set({ x: 32 + 2 * 56 }), 'page')
 				: undefined}
 			href="/plays"
-			on:click={(e) => coords.set({ x: 32 + 2 * 56 })}
-			on:click={handleClick}
+			onclick={(e) => {
+				coords.set({ x: 32 + 2 * 56 });
+				handleClick(e);
+			}}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll
 			aria-label="Plays"
@@ -195,8 +208,10 @@
 				? (coords.set({ x: 32 + 3 * 56 }), 'page')
 				: undefined}
 			href="/cv"
-			on:click={(e) => coords.set({ x: 32 + 3 * 56 })}
-			on:click={handleClick}
+			onclick={(e) => {
+				coords.set({ x: 32 + 3 * 56 });
+				handleClick(e);
+			}}
 			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
 			data-sveltekit-noscroll
 			aria-label="Curriculum vitae"
@@ -215,13 +230,13 @@
 			class="title pointer-events-none absolute -top-9 text-xs left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 rounded-md bg-[rgb(251,251,253)] px-2 py-0.5 border border-gray-200"
 			>Contact</span
 		>
-		<button
-			on:click={handleClick}
-			class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
-			aria-label="Contact"
-		>
+		<div>
 			<Drawer.Root bind:open={dialogOpen}>
 				<Drawer.Trigger
+					bind:el={contactTrigger}
+					on:click={() => bounce(contactTrigger)}
+					class="card size-12 overflow-hidden bg-[#EEEEF1] rounded-full relative"
+					aria-label="Contact"
 					><div
 						class="text-[#6B6B70] bg-[#EFEFF2] rounded-full inset-px absolute flex justify-center items-center li"
 					>
@@ -236,32 +251,30 @@
 						class="flex flex-col mt-24 sm:left-1/2 fixed sm:w-[28rem] w- inset-x-6 sm:-ml-[14rem] bottom-6 mx-auto"
 					>
 						<Cat />
-						<Drawer.Close>
-							<button
-								class="absolute z-10 flex h-8 w-8 top-6 right-6 items-center justify-center rounded-full bg-gray-100 transition-transform focus:scale-95 focus-visible:shadow-focus-ring-button active:scale-75"
-								type="button"
-								><svg
-									width="12"
-									height="12"
-									viewBox="0 0 12 12"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									><path
-										d="M10.4854 1.99998L2.00007 10.4853"
-										stroke="#999999"
-										stroke-width="3"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									></path><path
-										d="M10.4854 10.4844L2.00007 1.99908"
-										stroke="#999999"
-										stroke-width="3"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									></path></svg
-								></button
-							>
-						</Drawer.Close>
+						<Drawer.Close
+							class="absolute z-10 flex h-8 w-8 top-6 right-6 items-center justify-center rounded-full bg-gray-100 transition-transform focus:scale-95 focus-visible:shadow-focus-ring-button active:scale-75"
+							aria-label="Close"
+							><svg
+								width="12"
+								height="12"
+								viewBox="0 0 12 12"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								><path
+									d="M10.4854 1.99998L2.00007 10.4853"
+									stroke="#999999"
+									stroke-width="3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path><path
+									d="M10.4854 10.4844L2.00007 1.99908"
+									stroke="#999999"
+									stroke-width="3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path></svg
+							></Drawer.Close
+						>
 
 						<div
 							class="bg-white shadow-2xl shadow-gray-200 border border-gray-100 rounded-3xl overflow-hidden flex-1"
@@ -294,7 +307,7 @@
 
 									npkhanhdoan@gmail.com
 
-									<button data-copy="npkhanhdoan@gmail.com" on:click={handleCopy} class="c-hover">
+									<button data-copy="npkhanhdoan@gmail.com" onclick={handleCopy} class="c-hover">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -340,7 +353,7 @@
 
 									(+84) 939 004 133
 
-									<button data-copy="0939004133" on:click={handleCopy} class="c-hover c-copy">
+									<button data-copy="0939004133" onclick={handleCopy} class="c-hover c-copy">
 										<div class="moveLeft shrink-0 flex justify-center items-center">
 											{#each { length: 4 } as _, i}
 												<div
@@ -473,9 +486,9 @@
 					</Drawer.Content>
 				</Drawer.Portal>
 			</Drawer.Root>
-		</button>
+		</div>
 	</div>
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<svg class="nav-dot absolute w-full h-full top-0 left-0 z-0 hidden opacity-0">
 		<circle cx={$coords.x} cy="60" r="2" fill="#a78bfa" />
 	</svg>

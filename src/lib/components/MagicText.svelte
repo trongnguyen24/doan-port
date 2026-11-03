@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let text = 'Magic Text';
-	export let color = '';
 	import { onMount } from 'svelte';
+	interface Props {
+		text?: string;
+		color?: string;
+	}
+
+	let { text = 'Magic Text', color = '' }: Props = $props();
 	let index = 0,
 		interval = 1000;
 

@@ -1,8 +1,13 @@
 <script lang="ts">
-	// Default values for span and offset
-	export let size: '1' | '2' | '3' | '4' | 'none' = '4';
-	export let position: '1' | '2' | '3' | '4' | 'none' = 'none';
-	export let mobile: '4' | '31' | '32' | 'none' = '4';
+	interface Props {
+		// Default values for span and offset
+		size?: '1' | '2' | '3' | '4' | 'none';
+		position?: '1' | '2' | '3' | '4' | 'none';
+		mobile?: '4' | '31' | '32' | 'none';
+		children?: import('svelte').Snippet;
+	}
+
+	let { size = '4', position = 'none', mobile = '4', children }: Props = $props();
 
 	// Define the mappings for spans and offsets
 	const spans = {
@@ -27,11 +32,11 @@
 		none: ''
 	};
 
-	$: span = spans[size];
-	$: start = starts[position];
-	$: md = mobiles[mobile];
+	let span = $derived(spans[size]);
+	let start = $derived(starts[position]);
+	let md = $derived(mobiles[mobile]);
 </script>
 
 <div class="{span} {start} {md}">
-	<slot />
+	{@render children?.()}
 </div>

@@ -38,7 +38,7 @@
 		};
 	}
 
-	let pagecur = 'About';
+	let pagecur = $state('About');
 
 	function switchPage(componentName) {
 		pagecur = componentName;
@@ -107,8 +107,10 @@
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
 						aria-current="true"
-						on:click={() => switchPage('About')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('About');
+							handleClick(e);
+						}}
 					>
 						<IconAbout />
 						About</button
@@ -117,8 +119,10 @@
 				<div class="">
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('Experience')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('Experience');
+							handleClick(e);
+						}}
 					>
 						<IconExperience />
 						Experience</button
@@ -127,8 +131,10 @@
 				<div class=" ">
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('Education')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('Education');
+							handleClick(e);
+						}}
 					>
 						<IconEducation />
 						Education</button
@@ -137,8 +143,10 @@
 				<div>
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('Skills')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('Skills');
+							handleClick(e);
+						}}
 					>
 						<IconSkills />
 						Skills</button
@@ -147,8 +155,10 @@
 				<div>
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('References')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('References');
+							handleClick(e);
+						}}
 					>
 						<IconReferences />
 						References</button

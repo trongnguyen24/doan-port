@@ -9,7 +9,7 @@
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
 
-	export let data;
+	let { data } = $props();
 
 	const startFancy = () =>
 		Fancybox.bind('[data-fancybox="gallery"]', {
@@ -151,10 +151,7 @@
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<img
-								src={data.nextPost.image}
-								alt={data.nextPost.title}
-							/>
+							<img src={data.nextPost.image} alt={data.nextPost.title} />
 						</div>
 					</div>
 					<div class="reveal-text pt-6">

@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	import Ferrumpipe from './eco-friendly-workspace.svelte';
 
 	export const metadata = {

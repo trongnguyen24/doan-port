@@ -10,4 +10,11 @@ declare global {
 	}
 }
 
+// Thuộc tính `scroll="reveal"` dùng làm trigger cho GSAP ScrollTrigger
+declare module 'svelte/elements' {
+	interface HTMLAttributes<T> {
+		scroll?: string;
+	}
+}
+
 export {};

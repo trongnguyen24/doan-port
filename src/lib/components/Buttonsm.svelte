@@ -1,6 +1,12 @@
 <script>
-	export let text = 'My Work';
-	export let link = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [text]
+	 * @property {string} [link]
+	 */
+
+	/** @type {Props} */
+	let { text = 'My Work', link = '' } = $props();
 </script>
 
 <a download href={link}>

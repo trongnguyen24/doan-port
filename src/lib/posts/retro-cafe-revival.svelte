@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	export const metadata = {
 		title: 'Retro Café Revival',
 		description: 'Blend of retro and modern café style.',
