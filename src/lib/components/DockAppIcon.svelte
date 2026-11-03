@@ -75,7 +75,7 @@
 
 <div
 	bind:this={ref}
-	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border active:translate-y-1.5 transition-all duration-100 ease-in"
+	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border active:translate-y-0.5 transition-all duration-100 ease-in"
 >
 	<div
 		class="tooltip pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -130,7 +130,6 @@
 			box-shadow 0.5s ease;
 	}
 
-
 	/* --- Tooltip --- */
 	.arrow_box {
 		position: relative;
@@ -142,7 +141,6 @@
 			border-color 0.5s ease,
 			color 0.5s ease;
 	}
-
 
 	.active-indicator {
 		height: 4px;

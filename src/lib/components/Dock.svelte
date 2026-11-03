@@ -12,6 +12,7 @@
 	let mouseX = $state(Infinity);
 	let isMobile = $state(false);
 	let dialogOpen = $state(false);
+	let ready = $state(false);
 
 	const items = [
 		{ href: '/', label: 'Home', icon: 'home', match: (pathname) => pathname === '/' },
@@ -69,6 +70,8 @@
 	onMount(() => {
 		updateViewportState();
 		window.addEventListener('resize', updateViewportState);
+		// Chỉ chạy animation vào trang sau khi đã hydrate
+		ready = true;
 
 		return () => {
 			window.removeEventListener('resize', updateViewportState);
@@ -80,33 +83,38 @@
 	onmousemove={handleMouseMove}
 	onmouseleave={handleMouseLeave}
 	class="dock-shell fixed bottom-6 left-1/2 z-50 flex h-[3.75rem] w-auto -translate-x-1/2 items-end gap-1.5 rounded-full border p-2 shadow-lg lg:shadow-2xl backdrop-blur"
+	class:dock-ready={ready}
 	role="toolbar"
 	tabindex="-1"
 	aria-label="Primary"
 >
-	{#each items as item}
-		<DockAppIcon
-			{mouseX}
-			{isMobile}
-			tooltip={item.label}
-			href={item.href}
-			isActive={item.match(page.url.pathname)}
-			ariaLabel={item.label}
-		>
-			<Icon name={item.icon} />
-		</DockAppIcon>
+	{#each items as item, i}
+		<div class="dock-item" style="--item-delay: {0.2 + i * 0.08}s">
+			<DockAppIcon
+				{mouseX}
+				{isMobile}
+				tooltip={item.label}
+				href={item.href}
+				isActive={item.match(page.url.pathname)}
+				ariaLabel={item.label}
+			>
+				<Icon name={item.icon} />
+			</DockAppIcon>
+		</div>
 	{/each}
 
 	<Drawer.Root bind:open={dialogOpen}>
-		<DockAppIcon
-			{mouseX}
-			{isMobile}
-			tooltip="Contact"
-			ariaLabel="Contact"
-			onclick={() => (dialogOpen = true)}
-		>
-			<Icon name="contact" />
-		</DockAppIcon>
+		<div class="dock-item" style="--item-delay: {0.2 + items.length * 0.08}s">
+			<DockAppIcon
+				{mouseX}
+				{isMobile}
+				tooltip="Contact"
+				ariaLabel="Contact"
+				onclick={() => (dialogOpen = true)}
+			>
+				<Icon name="contact" />
+			</DockAppIcon>
+		</div>
 
 		<Drawer.Portal class="catTrigger relative inset-0 z-50 overflow-y-auto">
 			<Drawer.Overlay class="fixed inset-0 bg-white/90" />
@@ -160,6 +168,51 @@
 		border-color: rgba(238, 238, 241, 0.95);
 		background-color: rgba(251, 251, 253, 0.9);
 		color: #9ca3af; /* text-gray-400 */
+		opacity: 0;
+		transform: translateX(-50%) translateY(1.5rem);
+	}
+
+	/* --- Animation khi mới vào trang --- */
+	.dock-shell.dock-ready {
+		animation: dock-slide-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+	}
+
+	@keyframes dock-slide-in {
+		from {
+			opacity: 0;
+			transform: translateX(-50%) translateY(1.5rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
+
+	.dock-item {
+		display: contents;
+	}
+
+	.dock-item :global(.dock-icon) {
+		opacity: 0;
+		scale: 0.6;
+		animation: dock-icon-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+		animation-delay: var(--item-delay, 0.2s);
+		animation-play-state: paused;
+	}
+
+	.dock-shell.dock-ready .dock-item :global(.dock-icon) {
+		animation-play-state: running;
+	}
+
+	@keyframes dock-icon-pop {
+		from {
+			opacity: 0;
+			scale: 0.6;
+		}
+		to {
+			opacity: 1;
+			scale: 1;
+		}
 	}
 
 	.dock-shell:not(:hover) {
