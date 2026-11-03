@@ -79,7 +79,7 @@
 <div
 	onmousemove={handleMouseMove}
 	onmouseleave={handleMouseLeave}
-	class="dock-shell fixed bottom-6 left-1/2 z-50 flex h-[3.75rem] w-auto -translate-x-1/2 items-end gap-1.5 rounded-full border p-2 shadow-2xl backdrop-blur-xl lg:bottom-8"
+	class="dock-shell fixed bottom-6 left-1/2 z-50 flex h-[3.75rem] w-auto -translate-x-1/2 items-end gap-1.5 rounded-full border p-2 shadow-lg lg:shadow-2xl backdrop-blur"
 	role="toolbar"
 	tabindex="-1"
 	aria-label="Primary"
