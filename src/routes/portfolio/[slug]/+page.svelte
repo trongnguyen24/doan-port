@@ -8,7 +8,6 @@
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
-	import { getImageURL } from '$lib/js/utils.js';
 
 	export let data;
 
@@ -153,7 +152,7 @@
 					<div class="reveal-img overflow-hidden rounded">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
 							<img
-								src={getImageURL(data.nextPost.collectionId, data.nextPost.id, data.nextPost.image)}
+								src={data.nextPost.image}
 								alt={data.nextPost.title}
 							/>
 						</div>

@@ -8,12 +8,10 @@
 	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
-	import { getImageURL } from '$lib/js/utils.js';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	console.log(data);
 	const startFancy = () =>
 		Fancybox.bind('[data-fancybox="gallery"]', {
 			caption: function (fancybox, slide) {
@@ -64,16 +62,16 @@
 	</div>
 
 	<div class="md:pt-16 reveal pt-12 py-16 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 xl:gap-10">
-		{#each data.plays.items as item}
+		{#each data.plays as item}
 			<figure
 				class="aspect-square cursor-pointer opacity-0 transition-all delay-300 duration-700 rounded overflow-hidden"
 				data-fancybox="gallery"
 				on:click={startFancy}
-				data-src={getImageURL(item.collectionId, item.id, item.image)}
+				data-src={item.image}
 			>
 				<img
 					class="h-full w-full object-cover"
-					src={getImageURL(item.collectionId, item.id, item.thumb)}
+					src={item.thumb}
 					alt={item.name}
 				/>
 				<figurecaption>{item.name}</figurecaption>
