@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Nutifood GrowPLUS+",
+		"slug": "nutifood-growplus",
+		"description": "Campaign key visual design.",
+		"image": "/posts/nutifood-growplus/thumbnail.webp",
+		"layout": "seamless",
+		"content": "<img src=\"/posts/nutifood-growplus/01.webp\" width=\"1920\" height=\"1299\" alt=\"GrowPLUS+ Tiêu Hoá campaign title: Sữa Tỷ Bifi Đô\">\n<img src=\"/posts/nutifood-growplus/02.webp\" width=\"1920\" height=\"1129\" alt=\"GrowPLUS+ can and carton with the 8 billion probiotics badge\" loading=\"lazy\">\n<img src=\"/posts/nutifood-growplus/03.webp\" width=\"1920\" height=\"1020\" alt=\"Bifido, the campaign mascot\" loading=\"lazy\">\n<img src=\"/posts/nutifood-growplus/04.webp\" width=\"1920\" height=\"1694\" alt=\"Music video storyboard\" loading=\"lazy\">\n<img src=\"/posts/nutifood-growplus/05.webp\" width=\"1920\" height=\"1081\" alt=\"Music video frame\" loading=\"lazy\">\n<img src=\"/posts/nutifood-growplus/06.webp\" width=\"1920\" height=\"1822\" alt=\"Music video stills\" loading=\"lazy\">\n<img src=\"/posts/nutifood-growplus/07.webp\" width=\"1920\" height=\"1361\" alt=\"GrowPLUS+ Tiêu Hoá key visual\" loading=\"lazy\">\n<img src=\"/posts/nutifood-growplus/08.webp\" width=\"1920\" height=\"1294\" alt=\"Mascot and project credits\" loading=\"lazy\">",
+		"order": 1010
+	},
+	{
 		"title": "Krimadikt Ice Cream",
 		"slug": "krimadikt-ice-cream",
 		"description": "Packaging design.",

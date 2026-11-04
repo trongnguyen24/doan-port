@@ -272,6 +272,23 @@ section.reveal .reveal-text {
 	@apply rounded mx-auto;
 }
 
+#con.seamless {
+	max-width: 1600px;
+	margin-inline: auto;
+}
+
+#con.seamless img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+}
+
+/* Overlap by 1px so fractional scaling can't open a hairline between slices */
+#con.seamless img + img {
+	margin-top: -1px;
+}
+
 #con p {
 	@apply my-6 md:my-12 mx-auto;
 }

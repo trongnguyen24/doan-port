@@ -10,6 +10,9 @@
 
 	let { data } = $props();
 
+	// Slices of one artboard: they must read as a single block, so no lightbox per image.
+	const seamless = $derived(data.post.layout === 'seamless');
+
 	const startFancy = () =>
 		Fancybox.bind('[data-fancybox="gallery"]', {
 			Thumbs: false,
@@ -74,7 +77,7 @@
 
 			const cmsContent = document.querySelector('#con');
 
-			if (cmsContent) {
+			if (cmsContent && !seamless) {
 				const images = cmsContent.querySelectorAll('img');
 				images.forEach((img) => {
 					// Thêm thuộc tính data-fancybox để kích hoạt Fancybox cho mỗi hình ảnh
@@ -123,7 +126,12 @@
 		<MagicText text={data.post.title} />
 	</h1>
 
-	<div id="con" class="prose lg:prose-xl container max-w-screen-xl">{@html data.post.content}</div>
+	<div
+		id="con"
+		class={seamless ? 'seamless fadein' : 'prose lg:prose-xl container max-w-screen-xl'}
+	>
+		{@html data.post.content}
+	</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
 		<div class="marquee-container overflow-hidden fadein container flex my-8 max-w-96 relative">
