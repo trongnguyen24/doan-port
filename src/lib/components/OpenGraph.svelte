@@ -17,7 +17,7 @@
 		url = $page.url.origin,
 		siteName = 'Portfolio của Doan',
 		locale = 'vi_VN',
-		twitterCard = "Doan's Portfolio"
+		twitterCard = 'summary_large_image'
 	} = $props();
 </script>
 

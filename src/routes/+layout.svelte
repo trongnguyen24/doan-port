@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
 	import PageTransition from '$lib/components/PageTransition.svelte';
 	import Dock from '$lib/components/Dock.svelte';
+	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '$lib/style/app.css';
 	let { data, children } = $props();
 
@@ -14,6 +14,7 @@
 	});
 </script>
 
+<Gsapsetup />
 <Dock />
 {#key data.pathname}
 	{#if firstload > 1}

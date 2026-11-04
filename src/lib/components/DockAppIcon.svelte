@@ -76,6 +76,7 @@
 <div
 	bind:this={ref}
 	class="dock-icon relative aspect-square w-[2.75rem] rounded-full border active:translate-y-0.5 transition-all duration-100 ease-in"
+	class:is-active={isActive}
 >
 	<div
 		class="tooltip pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -130,9 +131,16 @@
 			box-shadow 0.5s ease;
 	}
 
+	.dock-icon.is-active {
+		border-color: #ede9fe; /* violet-100 */
+		background-color: #f5f3ff; /* violet-50 */
+		color: #8b5cf6; /* violet-500 */
+	}
+
 	/* --- Tooltip --- */
 	.arrow_box {
 		position: relative;
+		white-space: nowrap;
 		border-color: rgba(226, 228, 233, 0.95);
 		background-color: #f7f8fb;
 		color: #6b6b70;
@@ -145,7 +153,7 @@
 	.active-indicator {
 		height: 4px;
 		width: 4px;
-		background-color: rgb(175, 175, 175);
+		background-color: #8b5cf6; /* violet-500 */
 		border-radius: 50%;
 		position: absolute;
 		bottom: -0.4rem;

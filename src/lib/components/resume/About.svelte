@@ -6,121 +6,111 @@
 	import { page } from '$app/stores';
 	import MagicText from '../MagicText.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 
 	onMount(() => {
-		(function () {
-			let xPercent, yPercent;
-			let clientX = 1,
-				clientY = 1;
-			let xPointer, yPointer;
-			let windowHeight = window.innerHeight,
-				windowWidth = window.innerWidth;
-			let handPointer = document.querySelector('.pointer');
-			let rect = handPointer.getBoundingClientRect();
+		let xPercent, yPercent;
+		let clientX = 1,
+			clientY = 1;
+		let xPointer, yPointer;
+		let windowHeight = window.innerHeight,
+			windowWidth = window.innerWidth;
+		let handPointer = document.querySelector('.pointer');
+		let rect = handPointer.getBoundingClientRect();
 
-			const dom = {
-				face: document.querySelector('#face'),
-				eye: document.querySelectorAll('#eye'),
-				innerFace: document.querySelector('#inner-face'),
-				hairFront: document.querySelector('#hair-front'),
-				eyeLightL: document.querySelector('#eyeLight_L'),
-				eyeLightR: document.querySelector('#eyeLight_R'),
-				hairBack: document.querySelector('#hair-back'),
-				ear: document.querySelectorAll('#ear'),
-				eyebrowLeft: document.querySelector('#eyebrow_L'),
-				eyebrowRight: document.querySelector('#eyebrow_R')
-			};
+		const dom = {
+			face: document.querySelector('#face'),
+			eye: document.querySelectorAll('#eye'),
+			innerFace: document.querySelector('#inner-face'),
+			hairFront: document.querySelector('#hair-front'),
+			eyeLightL: document.querySelector('#eyeLight_L'),
+			eyeLightR: document.querySelector('#eyeLight_R'),
+			hairBack: document.querySelector('#hair-back'),
+			ear: document.querySelectorAll('#ear'),
+			eyebrowLeft: document.querySelector('#eyebrow_L'),
+			eyebrowRight: document.querySelector('#eyebrow_R')
+		};
 
-			// update mousemove
-			document.addEventListener('mousemove', updateMouseCoords);
+		// update mousemove
+		function updateMouseCoords(e) {
+			clientX = e.clientX;
+			clientY = e.clientY;
+		}
 
-			function updateMouseCoords(e) {
-				clientX = e.clientX;
-				clientY = e.clientY;
-			}
+		// update if browser resizes
+		function updateWindowSize() {
+			windowHeight = window.innerHeight;
+			windowWidth = window.innerWidth;
+		}
 
-			// update if browser resizes
-			function updateWindowSize() {
-				windowHeight = window.innerHeight;
-				windowWidth = window.innerWidth;
-			}
-			window.addEventListener('resize', updateWindowSize);
-			updateWindowSize();
+		function movePointer() {
+			rect = handPointer.getBoundingClientRect();
+			// console.log('running');
+			xPointer = rect.x + rect.width / 2;
+			yPointer = rect.y + rect.height / 2;
+			xPercent = gsap.utils.mapRange(
+				0,
+				windowWidth,
+				(xPointer / windowWidth) * -1,
+				1 - xPointer / windowWidth,
+				clientX
+			);
+			yPercent = gsap.utils.mapRange(
+				0,
+				windowHeight,
+				(yPointer / windowHeight) * -1,
+				1 - yPointer / windowHeight,
+				clientY
+			);
+			let x = xPercent * 80;
+			let y = yPercent * 80;
 
-			function movePointer() {
-				let element = document.getElementById('pointer');
-				if (!element) {
-					document.removeEventListener('mousemove', movePointer);
-					document.removeEventListener('touchmove', movePointer);
-					return;
-				}
-				rect = handPointer.getBoundingClientRect();
-				// console.log('running');
-				xPointer = rect.x + rect.width / 2;
-				yPointer = rect.y + rect.height / 2;
-				xPercent = gsap.utils.mapRange(
-					0,
-					windowWidth,
-					(xPointer / windowWidth) * -1,
-					1 - xPointer / windowWidth,
-					clientX
-				);
-				yPercent = gsap.utils.mapRange(
-					0,
-					windowHeight,
-					(xPointer / windowHeight) * -1,
-					1 - yPointer / windowHeight,
-					clientY
-				);
-				let x = xPercent * 80;
-				let y = yPercent * 80;
+			gsap.to(dom.face, {
+				yPercent: y / 50,
+				xPercent: x / 50
+			});
+			gsap.to(dom.eye, {
+				yPercent: y / 10,
+				xPercent: x / 18
+			});
+			gsap.to(dom.innerFace, {
+				yPercent: y / 8.5,
+				xPercent: x / 8.5
+			});
+			gsap.to(dom.hairFront, {
+				yPercent: y / 15,
+				xPercent: x / 22
+			});
+			gsap.to(dom.hairBack, {
+				yPercent: (y / 20) * -1,
+				xPercent: (x / 20) * -1
+			});
+			gsap.to(dom.ear, {
+				yPercent: (y / 10) * -1,
+				xPercent: (x / 50) * -1
+			});
+			gsap.to([dom.eyebrowLeft, dom.eyebrowRight], {
+				yPercent: y / 10
+			});
+			gsap.to([dom.eyeLightL, dom.eyeLightR], {
+				yPercent: (y / 3) * -1,
+				xPercent: (x / 2) * -1
+			});
+		}
 
-				gsap.to(dom.face, {
-					yPercent: y / 50,
-					xPercent: x / 50
-				});
-				gsap.to(dom.eye, {
-					yPercent: y / 10,
-					xPercent: x / 18
-				});
-				gsap.to(dom.innerFace, {
-					yPercent: y / 8.5,
-					xPercent: x / 8.5
-				});
-				gsap.to(dom.hairFront, {
-					yPercent: y / 15,
-					xPercent: x / 22
-				});
-				gsap.to(dom.hairBack, {
-					yPercent: (y / 20) * -1,
-					xPercent: (x / 20) * -1
-				});
-				gsap.to(dom.ear, {
-					yPercent: (y / 10) * -1,
-					xPercent: (x / 50) * -1
-				});
-				gsap.to([dom.eyebrowLeft, dom.eyebrowRight], {
-					yPercent: y / 10
-				});
-				gsap.to([dom.eyeLightL, dom.eyeLightR], {
-					yPercent: (y / 3) * -1,
-					xPercent: (x / 2) * -1
-				});
-			}
+		document.addEventListener('mousemove', updateMouseCoords);
+		document.addEventListener('mousemove', movePointer);
+		document.addEventListener('touchmove', movePointer);
+		window.addEventListener('resize', updateWindowSize);
 
-			// Nếu phần tử tồn tại, gắn sự kiện
-			document.addEventListener('mousemove', movePointer);
-			document.addEventListener('touchmove', movePointer);
-			// Gọi hàm khi trang tải xong
-
-			// gsap.ticker.add(movePointer);
-			// gsap.ticker.remove(movePointer);
-		})();
+		return () => {
+			document.removeEventListener('mousemove', updateMouseCoords);
+			document.removeEventListener('mousemove', movePointer);
+			document.removeEventListener('touchmove', movePointer);
+			window.removeEventListener('resize', updateWindowSize);
+		};
 	});
 </script>
 
-<Gsapsetup />
 <PageGsapRefresh />
 
 <section class="py-4">

@@ -8,7 +8,11 @@ const config = {
 		// Toàn bộ trang được prerender thành file tĩnh để deploy lên Cloudflare Pages
 		adapter: adapter({
 			fallback: '404.html'
-		})
+		}),
+		// Origin dùng khi prerender, để các thẻ Open Graph có URL tuyệt đối đúng
+		prerender: {
+			origin: 'https://doannguyen.pages.dev'
+		}
 	},
 	preprocess: [vitePreprocess()]
 };

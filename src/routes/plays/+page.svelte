@@ -5,7 +5,6 @@
 	import { gsap } from 'gsap';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
 
@@ -37,7 +36,12 @@
 		});
 
 	onMount(() => {
-		startFancy();
+		// fancybox.umd.js tải với defer nên có thể chưa sẵn sàng khi mount
+		if (window.Fancybox) {
+			startFancy();
+		} else {
+			window.addEventListener('load', startFancy, { once: true });
+		}
 		setTimeout(() => {
 			document.querySelectorAll('[data-fancybox="gallery"]').forEach((element) => {
 				gsap.fromTo(
@@ -58,7 +62,6 @@
 </script>
 
 <OpenGraph title="Doan's Portfolio" />
-<Gsapsetup />
 <PageGsapRefresh />
 
 <section class="max-w-screen-xl container py-12 md:py-28">
