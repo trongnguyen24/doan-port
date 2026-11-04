@@ -1,6 +1,9 @@
 {
 	"name": "doan-port",
 	"version": "0.0.1",
+	"engines": {
+		"node": ">=20.19"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -12,26 +15,24 @@
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
-		"@neoconfetti/svelte": "^1.0.0",
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/enhanced-img": "^0.1.8",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/enhanced-img": "^0.11.0",
+		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/eslint": "8.56.0",
 		"autoprefixer": "^10.4.16",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.35.1",
-		"mdsvex": "^0.11.0",
+		"eslint-plugin-svelte": "^2.46.1",
 		"postcss": "^8.4.33",
 		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "^4.2.7",
-		"svelte-check": "^3.6.0",
+		"prettier-plugin-svelte": "^3.4.0",
+		"svelte": "^5.57.3",
+		"svelte-check": "^4.7.8",
 		"tailwindcss": "^3.4.1",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3"
+		"typescript": "^5.9.3",
+		"vite": "^7.3.7"
 	},
 	"type": "module",
 	"dependencies": {
@@ -39,13 +40,9 @@
 		"@fontsource-variable/inter": "^5.0.16",
 		"@studio-freight/lenis": "^1.0.33",
 		"@thoughtbot/tailwindcss-aria-attributes": "^0.2.0",
-		"bits-ui": "^0.16.0",
+		"bits-ui": "^0.22.0",
 		"clsx": "^2.1.0",
 		"gsap": "^3.12.4",
-		"lucide-svelte": "^0.314.0",
-		"pocketbase": "^0.21.1",
-		"tailwind-merge": "^2.2.1",
-		"tailwind-variants": "^0.1.20",
-		"vaul-svelte": "^0.1.1"
+		"tailwind-merge": "^2.2.1"
 	}
 }

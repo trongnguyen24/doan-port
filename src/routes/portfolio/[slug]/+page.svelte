@@ -5,12 +5,10 @@
 	import { gsap } from 'gsap';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import '@fancyapps/ui/dist/fancybox/fancybox.css';
 	import MagicText from '$lib/components/MagicText.svelte';
-	import { getImageURL } from '$lib/js/utils.js';
 
-	export let data;
+	let { data } = $props();
 
 	const startFancy = () =>
 		Fancybox.bind('[data-fancybox="gallery"]', {
@@ -115,7 +113,6 @@
 
 <OpenGraph title={data.post.title} description={data.post.description} />
 
-<Gsapsetup />
 
 <PageGsapRefresh />
 
@@ -129,9 +126,7 @@
 	<div id="con" class="prose lg:prose-xl container max-w-screen-xl">{@html data.post.content}</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
-		<div class="overflow-hidden fadein container flex my-8 max-w-96 relative">
-			<div side="left" class="horizontalFade"></div>
-			<div side="right" class="horizontalFade"></div>
+		<div class="marquee-container overflow-hidden fadein container flex my-8 max-w-96 relative">
 			<div class="moveLeft shrink-0 flex justify-center items-center">
 				<div class="text-content text-violet-400 shrink-0 px-6 py-4 title-2">
 					<MagicText text="Next project" />
@@ -152,10 +147,7 @@
 				<a href="/portfolio/{data.nextPost.slug}" data-sveltekit-noscroll>
 					<div class="reveal-img overflow-hidden rounded">
 						<div class="tranform hover:scale-[1.03] transition duration-700">
-							<img
-								src={getImageURL(data.nextPost.collectionId, data.nextPost.id, data.nextPost.image)}
-								alt={data.nextPost.title}
-							/>
+							<img src={data.nextPost.image} alt={data.nextPost.title} />
 						</div>
 					</div>
 					<div class="reveal-text pt-6">
@@ -180,22 +172,9 @@
 </div>
 
 <style>
-	.horizontalFade {
-		@apply absolute inset-y-0 w-24 z-10;
-		-webkit-backdrop-filter: blur(2px);
-		backdrop-filter: blur(2px);
-	}
-	.horizontalFade[side='left'] {
-		background: linear-gradient(to right, white 10%, transparent);
-		left: 0;
-		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
-		mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
-	}
-	.horizontalFade[side='right'] {
-		background: linear-gradient(to left, white 10%, transparent);
-		right: 0;
-		-webkit-mask-image: linear-gradient(to right, #fcfcfc 25%, transparent);
-		mask-image: linear-gradient(to left, #fcfcfc 25%, transparent);
+	.marquee-container {
+		-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+		mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 	}
 	.moveLeft {
 		animation: moveLeft 6s linear infinite;

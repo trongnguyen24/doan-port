@@ -5,27 +5,27 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		if (typeof window !== 'undefined') {
-			gsap.registerPlugin(ScrollTrigger);
-			const lenis = new Lenis({});
+		gsap.registerPlugin(ScrollTrigger);
 
-			lenis.on('scroll', ScrollTrigger.update);
+		const lenis = new Lenis({});
+		const onScroll = () => ScrollTrigger.update();
+		let frame = 0;
 
-			/**
-			 * @param {any} time
-			 */
-			function raf(time) {
-				lenis.raf(time);
-				requestAnimationFrame(raf);
-			}
+		/**
+		 * @param {number} time
+		 */
+		const raf = (time) => {
+			lenis.raf(time);
+			frame = requestAnimationFrame(raf);
+		};
 
-			requestAnimationFrame(raf);
+		lenis.on('scroll', onScroll);
+		frame = requestAnimationFrame(raf);
 
-			gsap.ticker.add((time) => {
-				lenis.raf(time * 1000);
-			});
-
-			gsap.ticker.lagSmoothing(0);
-		}
+		return () => {
+			cancelAnimationFrame(frame);
+			lenis.off('scroll', onScroll);
+			lenis.destroy();
+		};
 	});
 </script>

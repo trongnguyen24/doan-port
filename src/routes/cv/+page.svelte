@@ -1,13 +1,10 @@
 <script>
 	// @ts-nocheck
 
-	import { onMount, onDestroy } from 'svelte';
-	import { gsap } from 'gsap';
-	import Icon from '$lib/icon/index.svelte';
+	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 	import OpenGraph from '$lib/components/OpenGraph.svelte';
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import About from '$lib/components/resume/About.svelte';
 	import Education from '$lib/components/resume/Education.svelte';
@@ -19,7 +16,6 @@
 	import IconExperience from '$lib/icon/iconExperience.svelte';
 	import IconReferences from '$lib/icon/iconReferences.svelte';
 	import IconSkills from '$lib/icon/iconSkills.svelte';
-	import IconDownload from '$lib/icon/iconDownload.svelte';
 	import Buttonsm from '$lib/components/Buttonsm.svelte';
 
 	function fadeScale(node, { delay = 0, duration = 200, easing = (x) => x, baseScale = 0.95 }) {
@@ -38,7 +34,17 @@
 		};
 	}
 
-	let pagecur = 'About';
+	let pagecur = $state('About');
+
+	const updateCoords = (button) => {
+		if (button) {
+			coords.set({
+				activeBtXPos: button.offsetLeft,
+				activeBtYPos: button.offsetTop,
+				activeBtWidth: button.offsetWidth
+			});
+		}
+	};
 
 	function switchPage(componentName) {
 		pagecur = componentName;
@@ -57,14 +63,9 @@
 			button.removeAttribute('aria-current');
 		});
 
-		const button = event.target;
+		const button = event.currentTarget;
 		button.setAttribute('aria-current', 'true');
-
-		coords.set({
-			activeBtXPos: button.offsetLeft,
-			activeBtYPos: button.offsetTop, // Assuming you need the Y position
-			activeBtWidth: button.offsetWidth
-		});
+		updateCoords(button);
 	}
 	function handleResize() {
 		const activeButton = document.querySelector('.item-nav[aria-current="true"]');
@@ -74,23 +75,16 @@
 		const firstButton = document.querySelector('.item-nav[aria-current="true"]');
 		updateCoords(firstButton);
 
-		function updateCoords(button) {
-			if (button) {
-				coords.set({
-					activeBtXPos: button.offsetLeft,
-					activeBtYPos: button.offsetTop,
-					activeBtWidth: button.offsetWidth
-				});
-			}
-		}
-
 		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	});
 </script>
 
 <OpenGraph title="My CV" />
 
-<Gsapsetup />
 <PageGsapRefresh />
 <section class="col-span-1 pt-12 pb-28 md:py-28 col-start-1 min-h-screen">
 	<div class=" max-w-screen-lg fadein container">
@@ -107,8 +101,10 @@
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
 						aria-current="true"
-						on:click={() => switchPage('About')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('About');
+							handleClick(e);
+						}}
 					>
 						<IconAbout />
 						About</button
@@ -117,8 +113,10 @@
 				<div class="">
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('Experience')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('Experience');
+							handleClick(e);
+						}}
 					>
 						<IconExperience />
 						Experience</button
@@ -127,8 +125,10 @@
 				<div class=" ">
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('Education')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('Education');
+							handleClick(e);
+						}}
 					>
 						<IconEducation />
 						Education</button
@@ -137,8 +137,10 @@
 				<div>
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('Skills')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('Skills');
+							handleClick(e);
+						}}
 					>
 						<IconSkills />
 						Skills</button
@@ -147,8 +149,10 @@
 				<div>
 					<button
 						class="md:text-lg flex gap-2 text-base md:gap-3 items-center item-nav px-4 py-1 hover:text-violet-500 aria-current:text-[#8b5cf6] duration-300 transition-colors"
-						on:click={() => switchPage('References')}
-						on:click={handleClick}
+						onclick={(e) => {
+							switchPage('References');
+							handleClick(e);
+						}}
 					>
 						<IconReferences />
 						References</button

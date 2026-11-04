@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	export const metadata = {
 		title: 'Retro Café Revival',
 		description: 'Blend of retro and modern café style.',
@@ -10,7 +10,6 @@
 
 <script>
 	import PageGsapRefresh from '$lib/utils/PageGsapRefresh.svelte';
-	import Gsapsetup from '$lib/utils/Gsapsetup.svelte';
 	import Section from '$lib/mdstyle/Section.svelte';
 	import Block from '$lib/mdstyle/Block.svelte';
 	import Title from '$lib/mdstyle/Title.svelte';
@@ -18,7 +17,6 @@
 	import Image from '$lib/mdstyle/Image.svelte';
 </script>
 
-<Gsapsetup />
 <PageGsapRefresh />
 
 <Title>

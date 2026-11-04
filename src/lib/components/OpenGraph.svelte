@@ -1,13 +1,24 @@
 <script>
 	import { page } from '$app/stores';
-	export let title = "Doan's Portfolio  - Graphic Designer";
-	export let description =
-		'who believes that creativity should always be fun even though you have to mix it with caffein every morning (and night).';
-	export let url = $page.url.origin;
-	export let siteName = 'Portfolio của Doan';
-	export let locale = 'vi_VN';
-	export let twitterCard = "Doan's Portfolio";
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [title]
+	 * @property {string} [description]
+	 * @property {any} [url]
+	 * @property {string} [siteName]
+	 * @property {string} [locale]
+	 * @property {string} [twitterCard]
+	 */
 
+	/** @type {Props} */
+	let {
+		title = "Doan's Portfolio  - Graphic Designer",
+		description = 'who believes that creativity should always be fun even though you have to mix it with caffein every morning (and night).',
+		url = $page.url.origin,
+		siteName = 'Portfolio của Doan',
+		locale = 'vi_VN',
+		twitterCard = 'summary_large_image'
+	} = $props();
 </script>
 
 <svelte:head>
@@ -25,4 +36,3 @@
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={$page.url.origin + '/og-image.jpg'} />
 </svelte:head>
-

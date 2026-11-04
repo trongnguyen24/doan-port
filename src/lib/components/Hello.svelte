@@ -1,35 +1,8 @@
 <script>
 	// @ts-nocheck
 
-	import { onMount } from 'svelte';
 	import MagicText from '$lib/components/MagicText.svelte';
 	import Button from '$lib/components/Button.svelte';
-
-	let index = 0,
-		interval = 1000;
-
-	const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-	onMount(() => {
-		const animate = (star) => {
-			star.style.setProperty('--star-left', `${rand(-10, 100)}%`);
-			star.style.setProperty('--star-top', `${rand(-40, 80)}%`);
-
-			star.style.animation = 'none';
-			star.offsetHeight;
-			star.style.animation = '';
-		};
-
-		for (const star of document.getElementsByClassName('magic-star')) {
-			setTimeout(
-				() => {
-					animate(star);
-
-					setInterval(() => animate(star), 1600);
-				},
-				index++ * (interval / 3)
-			);
-		}
-	});
 </script>
 
 <div

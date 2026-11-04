@@ -1,0 +1,56 @@
+[
+	{
+		"name": "Army truck. Hard-surfacing modelling practising in Blender.",
+		"image": "/plays/army_truck_8ybH4HQXlS.webp",
+		"thumb": "/plays/army_truck_thumb_I6SUcj9gbP.webp",
+		"order": 10
+	},
+	{
+		"name": "Dog robot. Hard-surfacing modelling practising in Blender.",
+		"image": "/plays/dog_robot_opbZyY7gBG.webp",
+		"thumb": "/plays/dog_robot_thumb_rI2DrtQ0T4.webp",
+		"order": 9
+	},
+	{
+		"name": "'Lao dong la vinh quang' (Work is glory) illustration.",
+		"image": "/plays/ldvq_28oz8HaWVP.webp",
+		"thumb": "/plays/ldvq_thumb_68ASwNMVU4.webp",
+		"order": 8
+	},
+	{
+		"name": "'Play it by ear' illustration. ",
+		"image": "/plays/pibe_2Xcz4TemjZ.webp",
+		"thumb": "/plays/pibe_thumb_XsuglJAHWd.webp",
+		"order": 7
+	},
+	{
+		"name": "Inspired by my neighbor who's been singing karaoke tirelessly. Created with Blender and Redshift.",
+		"image": "/plays/karaoke_VoY59UYIRv.webp",
+		"thumb": "/plays/karaoke_thumb_3koTQ1zZj5.webp",
+		"order": 5
+	},
+	{
+		"name": "Choose your emotion. Created with Cinema4D and Redshift. ",
+		"image": "/plays/gacha_XicmruJQMG.webp",
+		"thumb": "/plays/gacha_thumb_kDkLxU9Cs5.webp",
+		"order": 4
+	},
+	{
+		"name": "A sleepy jellyfish. Created with Cinema4D and Redshift.",
+		"image": "/plays/jellyfish_Evi4KgrFH8.webp",
+		"thumb": "/plays/jellyfish_thumb_DZMNvEIWGm.webp",
+		"order": 3
+	},
+	{
+		"name": "Dandelions blooming from a helmet. Created with Blender and Redshift.",
+		"image": "/plays/helmet_bh8UcVJ2fT.webp",
+		"thumb": "/plays/helmet_thumb_4WqL08AEfj.webp",
+		"order": 2
+	},
+	{
+		"name": "A lost suitcase. Created with Blender.",
+		"image": "/plays/suitcase_jYhnBgkk0k.webp",
+		"thumb": "/plays/suitcase_thumb_GxZvp98agx.webp",
+		"order": 1
+	}
+]
