@@ -29,6 +29,19 @@
 			}
 		});
 
+	// Swap a video poster for the YouTube player only on click, so the page doesn't load it upfront.
+	const playVideo = (event) => {
+		const slot = event.target.closest('[data-youtube]');
+		if (!slot) return;
+		event.preventDefault();
+		const iframe = document.createElement('iframe');
+		iframe.src = `https://www.youtube-nocookie.com/embed/${slot.dataset.youtube}?autoplay=1&rel=0`;
+		iframe.title = 'Project video';
+		iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+		iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+		slot.replaceWith(iframe);
+	};
+
 	onMount(() => {
 		setTimeout(() => {
 			document.querySelectorAll('#con p').forEach((element) => {
@@ -126,9 +139,12 @@
 		<MagicText text={data.post.title} />
 	</h1>
 
+	<!-- Delegated click: the real targets are the .video-slot links inside the {@html} content. -->
+	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 	<div
 		id="con"
 		class={seamless ? 'seamless fadein' : 'prose lg:prose-xl container max-w-screen-xl'}
+		onclick={playVideo}
 	>
 		{@html data.post.content}
 	</div>

@@ -285,8 +285,124 @@ section.reveal .reveal-text {
 }
 
 /* Overlap by 1px so fractional scaling can't open a hairline between slices */
-#con.seamless img + img {
+#con.seamless > * + * {
 	margin-top: -1px;
+}
+
+#con.seamless .video-slot {
+	position: relative;
+	display: block;
+}
+
+/* Play button: a triangle on a dark disc, drawn on the poster */
+#con.seamless .video-slot::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: clamp(3.5rem, 8vw, 6rem);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: rgb(0 0 0 / 0.55);
+	transform: translate(-50%, -50%);
+	transition:
+		background-color 200ms ease,
+		transform 200ms ease;
+}
+
+#con.seamless .video-slot::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: clamp(1.25rem, 2.8vw, 2.1rem);
+	aspect-ratio: 1;
+	background: #fff;
+	clip-path: polygon(0 0, 100% 50%, 0 100%);
+	transform: translate(-40%, -50%);
+}
+
+#con.seamless .video-slot:hover::before,
+#con.seamless .video-slot:focus-visible::before {
+	background: rgb(0 0 0 / 0.75);
+	transform: translate(-50%, -50%) scale(1.08);
+}
+
+#con.seamless iframe {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1920 / 1081;
+	border: 0;
+}
+
+/* The gap shows the grid background, the same green as the artwork around it */
+#con.seamless .tiktok-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: clamp(4px, 0.6vw, 10px);
+	background: #0d2611;
+}
+
+@media (min-width: 768px) {
+	#con.seamless .tiktok-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+#con.seamless .tiktok-tile {
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+#con.seamless .tiktok-tile::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background: rgb(0 0 0 / 0.45);
+	opacity: 0;
+	transition: opacity 200ms ease;
+}
+
+#con.seamless .tiktok-tile span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	padding: 0.5em 1em;
+	border-radius: 999px;
+	background: #fff;
+	color: #111;
+	font-size: clamp(0.75rem, 1.1vw, 1rem);
+	font-weight: 500;
+	white-space: nowrap;
+	opacity: 0;
+	transform: translate(-50%, calc(-50% + 0.5rem));
+	transition:
+		opacity 200ms ease,
+		transform 200ms ease;
+}
+
+#con.seamless .tiktok-tile:hover::before,
+#con.seamless .tiktok-tile:focus-visible::before {
+	opacity: 1;
+}
+
+#con.seamless .tiktok-tile:hover span,
+#con.seamless .tiktok-tile:focus-visible span {
+	opacity: 1;
+	transform: translate(-50%, -50%);
+}
+
+/* Touch screens have no hover, so the label stays visible at the bottom of each tile */
+@media (hover: none) {
+	#con.seamless .tiktok-tile span {
+		top: auto;
+		bottom: 0.75rem;
+		opacity: 1;
+		transform: translateX(-50%);
+	}
 }
 
 #con p {
