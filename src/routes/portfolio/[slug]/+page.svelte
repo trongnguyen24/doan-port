@@ -10,6 +10,9 @@
 
 	let { data } = $props();
 
+	// Slices of one artboard: they must read as a single block, so no lightbox per image.
+	const seamless = $derived(data.post.layout === 'seamless');
+
 	const startFancy = () =>
 		Fancybox.bind('[data-fancybox="gallery"]', {
 			Thumbs: false,
@@ -25,6 +28,19 @@
 				}
 			}
 		});
+
+	// Swap a video poster for the YouTube player only on click, so the page doesn't load it upfront.
+	const playVideo = (event) => {
+		const slot = event.target.closest('[data-youtube]');
+		if (!slot) return;
+		event.preventDefault();
+		const iframe = document.createElement('iframe');
+		iframe.src = `https://www.youtube-nocookie.com/embed/${slot.dataset.youtube}?autoplay=1&rel=0`;
+		iframe.title = 'Project video';
+		iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+		iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+		slot.replaceWith(iframe);
+	};
 
 	onMount(() => {
 		setTimeout(() => {
@@ -74,7 +90,7 @@
 
 			const cmsContent = document.querySelector('#con');
 
-			if (cmsContent) {
+			if (cmsContent && !seamless) {
 				const images = cmsContent.querySelectorAll('img');
 				images.forEach((img) => {
 					// Thêm thuộc tính data-fancybox để kích hoạt Fancybox cho mỗi hình ảnh
@@ -123,7 +139,15 @@
 		<MagicText text={data.post.title} />
 	</h1>
 
-	<div id="con" class="prose lg:prose-xl container max-w-screen-xl">{@html data.post.content}</div>
+	<!-- Delegated click: the real targets are the .video-slot links inside the {@html} content. -->
+	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+	<div
+		id="con"
+		class={seamless ? 'seamless fadein' : 'prose lg:prose-xl container max-w-screen-xl'}
+		onclick={playVideo}
+	>
+		{@html data.post.content}
+	</div>
 
 	<div id="portfolios" class="flex fadein flex-col pt-10 items-center justify-center">
 		<div class="marquee-container overflow-hidden fadein container flex my-8 max-w-96 relative">
