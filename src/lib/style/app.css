@@ -328,6 +328,17 @@ section.reveal .reveal-text {
 	transform: translate(-50%, -50%) scale(1.08);
 }
 
+/* Clips sit on the gray slots of the artboard; their positions are percentages in the post content */
+.video-board {
+	position: relative;
+}
+
+.video-board video {
+	position: absolute;
+	display: block;
+	object-fit: cover;
+}
+
 #con.seamless iframe {
 	display: block;
 	width: 100%;

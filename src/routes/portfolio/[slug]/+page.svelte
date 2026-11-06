@@ -42,7 +42,28 @@
 		slot.replaceWith(iframe);
 	};
 
+	// Only download and run the clips near the viewport; reduced-motion visitors keep the poster.
+	const watchClips = () => {
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach(({ target: video, isIntersecting }) => {
+					if (isIntersecting) video.play().catch(() => {});
+					else video.pause();
+				});
+			},
+			{ rootMargin: '200px' }
+		);
+		document.querySelectorAll('.video-board video').forEach((video) => {
+			video.muted = true;
+			observer.observe(video);
+		});
+		return () => observer.disconnect();
+	};
+
 	onMount(() => {
+		const stopWatchingClips = watchClips();
+
 		setTimeout(() => {
 			document.querySelectorAll('#con p').forEach((element) => {
 				let page2 = gsap.fromTo(
@@ -118,6 +139,8 @@
 			// 	})
 			// 	.to('#portfolios', { x: () => `-${maxWidth - window.innerWidth}` });
 		}, 1050);
+
+		return stopWatchingClips;
 	});
 	// afterNavigate(() => {
 	// 	disableScrollHandling;
