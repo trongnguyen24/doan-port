@@ -19,7 +19,7 @@
 			<p>Hard-surface 3D Modelling</p>
 		</article>
 		<article>
-			<small>2023 - Now</small>
+			<small>2023</small>
 			<p class="font-semibold text-slate-900">Interactiv Studio (Online)</p>
 			<p>Master Product Visualisation</p>
 		</article>

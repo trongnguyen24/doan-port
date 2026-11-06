@@ -5,50 +5,64 @@
 	<div class="flex flex-col text-slate-600 gap-6 md:gap-8">
 		<article>
 			<p class="font-semibold flex flex-col text-slate-900">
-				<small class="font-normal text-slate-600">2021 - 2022</small>Ru9 - The Sleep Company
+				<small class="font-normal text-slate-600">2024 - 2026</small>ZEE Creative Agency
+				<small class="font-normal text-slate-600">Senior Graphic Designer</small>
 			</p>
-			<p>Key Responsibilities:</p>
 			<ul>
 				<li>
-					Conceptualised and designed digital and print-based assets including social media
-					graphics, product packaging, brochures, bedding patterns, etc.
+					Developed creative proposals, concepts and visual directions with Creative Directors and
+					Copywriters for <strong>social and IMC campaigns</strong>.
+				</li>
+				<li>
+					Created <strong
+						>art direction, key visuals, TVC/iTVC storyboards, social videos and campaign assets</strong
+					> across multiple touchpoints.
 				</li>
 			</ul>
-			<p>Key Achievements:</p>
+			<p class="font-semibold text-slate-900">Key Achievements</p>
 			<ul>
-				<li>Successfully designed product packaging currently in use.</li>
-				<li>Developed a website for baby products.</li>
+				<li>
+					Contributed to successful pitches and major campaigns for <strong
+						>Unilever brands including Knorr, P/S, Surf and Dove, as well as NutiFood, TikTok,
+						adidas, X-Men</strong
+					>, and others.
+				</li>
+				<li>
+					Contributed to modernising Knorr's brand identity, expanding its appeal to younger
+					audiences and supporting sales growth.
+				</li>
 			</ul>
 		</article>
 		<article>
 			<p class="font-semibold flex flex-col text-slate-900">
 				<small class="font-normal text-slate-600">2022 - 2024</small>TPF Group
+				<small class="font-normal text-slate-600">Graphic Designer</small>
 			</p>
-			<p>Key Responsibilities:</p>
 			<ul>
-				<li>Designed presentations, infographics, business documents, etc.</li>
-				<li>Conceptualised and designed merchandise key visuals for clients.</li>
-				<li>Prepared finished artworks for production.</li>
-				<li>Created visual mockups and product images for commercial websites.</li>
-				<li>Developed product and store visualisations.</li>
-				<li>Designed electronic direct emails.</li>
+				<li>
+					Designed merchandise, presentations, product visuals and commercial mockups using 2D/3D
+					workflows.
+				</li>
 			</ul>
-			<p>Key Achievements:</p>
+			<p class="font-semibold text-slate-900">Key Achievements</p>
 			<ul>
 				<li>
-					Implemented various methods to streamline the process of producing visual mockups and
-					commercial product images, including integrating 3D software with Photoshop and utilising
-					actions/plug-ins for time-saving.
+					Improved production efficiency through 3D, automation and AI-assisted workflows, and
+					contributed to successful client pitches.
 				</li>
-				<li>Incorporated AI technologies into design processes for improved efficiency.</li>
-				<li>
-					Designed merchandise for numerous Australian sports clubs, notably responsible for the
-					Auskick 2024 program's merchandise.
-				</li>
-				<li>
-					Crafted visually appealing presentations and concepts contributing to successful client
-					acquisitions.
-				</li>
+			</ul>
+		</article>
+		<article>
+			<p class="font-semibold flex flex-col text-slate-900">
+				<small class="font-normal text-slate-600">2022</small>Ru9 - The Sleep Company
+				<small class="font-normal text-slate-600">Graphic Designer</small>
+			</p>
+			<ul>
+				<li>Designed social, packaging, editorial and product communication materials.</li>
+			</ul>
+			<p class="font-semibold text-slate-900">Key Achievements</p>
+			<ul>
+				<li>Developed packaging used commercially.</li>
 			</ul>
 		</article>
 	</div>

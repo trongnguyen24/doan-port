@@ -2,6 +2,12 @@
 	<div class=" bg-white sticky top-0">
 		<div class="text-lg font-medium magic-title py-4">Skills</div>
 	</div>
+	<p class="font-semibold text-slate-900 pb-1">Expertise</p>
+	<p class="text-slate-600 pb-8">
+		Campaign Design · Key Visual · Art Direction · Storyboarding · POSM · Packaging · Merchandise ·
+		Editorial
+	</p>
+	<p class="font-semibold text-slate-900 pb-4">Software</p>
 	<div class="grid-cols-2 grid md:grid-cols-3 text-slate-600 gap-8">
 		<article>
 			<div><img src="/ps.svg" alt="" /></div>
@@ -20,12 +26,8 @@
 			<p>Blender</p>
 		</article>
 		<article>
-			<div><img src="/c4d.svg" alt="" /></div>
-			<p>Cinema 4D</p>
-		</article>
-		<article>
-			<div><img src="/zbrush.svg" alt="" /></div>
-			<p>Zbrush</p>
+			<div><img src="/ai-flow.svg" alt="" /></div>
+			<p>AI Flow</p>
 		</article>
 	</div>
 </section>

@@ -447,12 +447,10 @@
 		</div>
 	</div>
 	<div class="title-4 text-slate-600 leading-relaxed">
-		With a keen eye for design and 2 years of hands-on experience, I specialise in using Adobe
-		Creative Suite to create visually compelling content. My expertise spans across merchandise
-		concepts, editorial design, POSM, and comprehensive branding to packaging.<br /> <br />I pride
-		myself on my ability to transform concepts into simplified 2D vector or 3D illustrations,
-		typography, engaging social media graphics, and realistic 3D product visualisations,
-		contributing to cohesive brand identities and storytelling.
+		<strong>Senior Graphic Designer with 4 years of experience in advertising and visual
+			communication</strong>, across social & IMC campaigns, merchandise, editorial, POSM and
+		packaging. Experienced in
+		<strong>key visuals, art direction, TVC/iTVC storyboards and campaign assets</strong>.
 	</div>
 </section>
 
